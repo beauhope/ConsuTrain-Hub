@@ -844,3 +844,42 @@ a{ color: inherit; text-decoration:none; }
     text-align: center;
   }
 }
+
+
+.accordion { display: grid; gap: 12px; }
+
+.acc {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.acc__sum {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.acc__sum::-webkit-details-marker { display: none; }
+
+.acc__head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.acc__title { font-size: 1.05rem; }
+.acc__date { color: var(--muted); font-weight: 800; font-size: .9rem; }
+
+.acc__chev { transition: transform .2s ease; font-weight: 900; }
+.acc[open] .acc__chev { transform: rotate(180deg); }
+
+.acc__body {
+  padding: 0 16px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.acc__excerpt { margin: 12px 0 10px; color: var(--muted); font-weight: 700; }
+.acc__content p { margin: 10px 0; }

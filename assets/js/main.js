@@ -48,6 +48,16 @@ const I18N = {
 
     footer_rights: "© جميع الحقوق محفوظة",
     to_top: "أعلى"
+
+    home_articles_title: "أحدث المقالات"
+
+home_articles_desc: "ملاحظات قصيرة وعملية من واقع العمل الإداري."
+
+home_articles_cta: "عرض جميع المقالات"
+
+articles_title: "المقالات"
+
+articles_desc: "عناوين مختصرة، ومعها إمكانية فتح المقال بالكامل."
   },
 
   fr: {
