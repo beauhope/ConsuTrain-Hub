@@ -58,6 +58,11 @@ home_articles_cta: "عرض جميع المقالات"
 articles_title: "المقالات"
 
 articles_desc: "عناوين مختصرة، ومعها إمكانية فتح المقال بالكامل."
+
+home_articles_title: "أحدث المقالات",
+home_articles_desc: "ملاحظات قصيرة وعملية من واقع العمل الإداري.",
+home_articles_cta: "عرض جميع المقالات",
+read_more: "اقرأ المزيد",
   },
 
   fr: {
@@ -108,6 +113,21 @@ articles_desc: "عناوين مختصرة، ومعها إمكانية فتح ا�
 
     footer_rights: "© Tous droits réservés",
     to_top: "Haut"
+
+    home_articles_title: "Articles récents"
+
+home_articles_desc: "Notes courtes et pratiques issues du terrain."
+
+home_articles_cta: "Voir tous les articles"
+
+articles_title: "Articles"
+
+articles_desc: "Titres courts, et un clic pour lire l’article complet."
+
+home_articles_title: "Articles récents",
+home_articles_desc: "Notes courtes et pratiques issues du terrain administratif.",
+home_articles_cta: "Voir tous les articles",
+read_more: "Lire la suite",
   },
 
   en: {
@@ -158,8 +178,74 @@ articles_desc: "عناوين مختصرة، ومعها إمكانية فتح ا�
 
     footer_rights: "© All rights reserved",
     to_top: "Top"
+
+    home_articles_title: "Latest Articles"
+
+home_articles_desc: "Short, practical notes from real administrative work."
+
+home_articles_cta: "View all articles"
+
+articles_title: "Articles"
+
+articles_desc: "Compact titles—click to expand and read the full article."
+
+home_articles_title: "Latest Articles",
+home_articles_desc: "Short, practical notes from real administrative work.",
+home_articles_cta: "View all articles",
+read_more: "Read more",
   }
 };
+
+const ARTICLES = [
+  {
+    id: "vision-mission-values",
+    date: "2026-01-31",
+    thumb: "assets/images/articles/vision.jpg",
+    title: {
+      ar: "الرؤية والرسالة والقيم: كيف نجعلها قابلة للقياس؟",
+      fr: "Vision, mission et valeurs : comment les rendre mesurables ?",
+      en: "Vision, Mission & Values: How to Make Them Measurable?"
+    },
+    excerpt: {
+      ar: "3 خطوات عملية لتحويل الشعارات إلى مؤشرات وسلوكيات داخل المؤسسة.",
+      fr: "3 étapes simples pour passer des slogans à des indicateurs et comportements.",
+      en: "3 practical steps to turn slogans into indicators and behaviors."
+    }
+  },
+  {
+    id: "swot-pestel",
+    date: "2026-01-28",
+    thumb: "assets/images/articles/swot.jpg",
+    title: {
+      ar: "تحليل SWOT وPESTEL دون تعقيد: نموذج سريع لفرق العمل",
+      fr: "SWOT & PESTEL sans complexité : un modèle rapide pour les équipes",
+      en: "SWOT & PESTEL Without Complexity: A Quick Team Template"
+    },
+    excerpt: {
+      ar: "قالب مبسط يساعدك على استخراج فرص واقعية وربطها بمبادرات قابلة للتنفيذ.",
+      fr: "Un canevas simple pour extraire des opportunités réelles et les relier à des initiatives.",
+      en: "A simple canvas to extract real opportunities and link them to executable initiatives."
+    }
+  },
+  {
+    id: "kpi-review",
+    date: "2026-01-25",
+    thumb: "assets/images/articles/kpi.jpg",
+    title: {
+      ar: "مراجعة المؤشرات KPI: متى نُعدّل الهدف ومتى نُعدّل العمل؟",
+      fr: "Revue des KPI : quand ajuster l’objectif et quand ajuster le travail ?",
+      en: "KPI Reviews: When to Adjust Targets vs. Improve Work?"
+    },
+    excerpt: {
+      ar: "قاعدة عملية لتفادي تغيير الأهداف بلا مبرر، وتحسين الأداء بقرارات واضحة.",
+      fr: "Une règle pratique pour éviter de changer les objectifs sans raison et améliorer la performance.",
+      en: "A practical rule to avoid unjustified target changes and improve performance."
+    }
+  }
+];
+
+
+
 
 /* =========================================
    TOPICS PAGE — i18n additions (AR/FR/EN)
@@ -693,6 +779,52 @@ function applyI18n(lang){
   localStorage.setItem("cth_lang", lang);
 }
 
+function formatDateTiny(dateStr, lang){
+  // اختيارية وبسيطة: يمكنك حذف التاريخ إذا لا تريده
+  const d = new Date(dateStr);
+  if (Number.isNaN(d.getTime())) return "";
+  const opts = { year: "numeric", month: "short", day: "2-digit" };
+  try {
+    return new Intl.DateTimeFormat(lang === "ar" ? "ar" : lang, opts).format(d);
+  } catch {
+    return dateStr;
+  }
+}
+
+function renderLatestArticles(lang){
+  const wrap = document.getElementById("latest-articles");
+  if (!wrap) return;
+
+  // أحدث 3 مقالات (حسب date)
+  const latest = [...ARTICLES]
+    .sort((a,b) => (b.date || "").localeCompare(a.date || ""))
+    .slice(0, 3);
+
+  wrap.innerHTML = latest.map(a => {
+    const t = a.title?.[lang] || a.title?.ar || "";
+    const x = a.excerpt?.[lang] || a.excerpt?.ar || "";
+    const dt = formatDateTiny(a.date, lang);
+
+    return `
+      <article class="article-card">
+        <a class="article-thumb" href="articles.html#${a.id}" aria-label="${t}">
+          <img src="${a.thumb}" alt="" loading="lazy">
+        </a>
+        <div class="article-body">
+          ${dt ? `<div class="article-meta">${dt}</div>` : ``}
+          <h3 class="article-title">
+            <a href="articles.html#${a.id}">${t}</a>
+          </h3>
+          <p class="article-excerpt">${x}</p>
+          <a class="link article-link" href="articles.html#${a.id}" data-i18n="read_more">اقرأ المزيد</a>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+
+
 function initLanguage(){
   const saved = localStorage.getItem("cth_lang");
   const lang = saved || "ar";
@@ -704,6 +836,10 @@ function initLanguage(){
     });
   });
 }
+
+renderLatestArticles(lang);
+
+
 
 function initToTop(){
   const toTop = document.getElementById("toTop");
@@ -718,3 +854,27 @@ function initToTop(){
 // expose for includes.js
 window.initI18n = initLanguage;
 window.initToTop = initToTop;
+
+
+function initSingleOpenPillars() {
+  const pillars = document.querySelectorAll(".pillars-acc > details.pillar");
+  if (!pillars.length) return;
+
+  pillars.forEach(p => {
+    p.addEventListener("toggle", () => {
+      if (!p.open) return; // إذا انغلق لا تعمل شيء
+      pillars.forEach(other => {
+        if (other !== p) other.removeAttribute("open");
+      });
+    });
+  });
+}
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadPartial("#site-header", "partials/header.html");
+  await loadPartial("#site-footer", "partials/footer.html");
+
+  if (window.initLanguage) window.initLanguage();
+
+  // ✅ Accordion واحد فقط
+  initSingleOpenPillars();
+});

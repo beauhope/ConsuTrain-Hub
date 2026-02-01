@@ -14,8 +14,8 @@
   --shadow: 0 10px 28px rgba(0,0,0,.35);
 }
 
-*{box-sizing:border-box}
-body{
+.tool-feasibility *{box-sizing:border-box}
+.tool-feasibility{
   margin:0;
   font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
   background:
@@ -380,7 +380,7 @@ input:focus, textarea:focus, select:focus{
 
 /* PDF via print */
 @media print{
-  body{background:#fff}
+  .tool-feasibility{background:#fff}
   .topbar, .sidebar, .footer, .content > *:not(#report), #report + script{
     display:none !important;
   }
@@ -398,3 +398,57 @@ input:focus, textarea:focus, select:focus{
 @media (max-width: 560px){
   .summary-grid{grid-template-columns: 1fr}
 }
+
+
+/* Feasibility Accordion Sections */
+.fsec{
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.fsec__sum{
+  cursor: pointer;
+  padding: 14px 16px;
+  background: rgba(255,255,255,.07); /* خلفية العنوان الرئيسي */
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  list-style: none;
+}
+.fsec__sum::-webkit-details-marker{ display:none; }
+
+.fsec__sum::after{
+  content:"+";
+  font-weight: 900;
+  opacity: .9;
+  float: left; /* في RTL تظهر يسار */
+}
+.fsec[open] > .fsec__sum::after{ content:"–"; }
+
+.fsec__body{
+  padding: 12px 14px 14px;
+  background: rgba(255,255,255,.03); /* خلفية محتوى القسم */
+}
+
+/* الأسئلة الفرعية */
+.fsec .q{
+  background: rgba(0,0,0,.18);
+}
+
+
+/* Section accordion header (main titles) */
+details.fsec > summary.fsec__sum{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  padding: 10px 12px;
+  cursor: pointer;
+  list-style: none;
+}
+details.fsec > summary::-webkit-details-marker{ display:none; }
+
+details.fsec[open] > summary.fsec__sum{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.14);
+}
+
+/* Questions remain as-is; only spacing */
+.fsec__body{ padding-top: 12px; }

@@ -181,6 +181,7 @@ function setSaveStatus(text){
 }
 
 // ===== Build Form (sections + questions) =====
+
 function buildForm(){
   // group by section
   const grouped = {};
@@ -190,7 +191,7 @@ function buildForm(){
     grouped[sec].push(q);
   });
 
-  // build nav + cards
+  // build nav + accordion sections
   const $nav = $("#navSections").empty();
   const $container = $("#formContainer").empty();
 
@@ -199,16 +200,22 @@ function buildForm(){
   sections.forEach((sec, idx) => {
     const secId = `sec_${idx}_${sec.replace(/\s/g, "_")}`;
 
+    // nav item
     $nav.append(`<li><a href="#${secId}" data-sec="${secId}" class="${idx===0?'active':''}">${sec}</a></li>`);
 
+    // ✅ Accordion section (details)
     const $card = $(`
-      <section class="card section-card" id="${secId}" data-section="${sec}">
-        <div class="card-head">
-          <h2>${sec}</h2>
-          <p class="hint">عدد الأسئلة: ${grouped[sec].length}</p>
+      <details class="card section-card fsec" id="${secId}" data-section="${sec}" ${idx===0 ? "open" : ""}>
+        <summary class="fsec__sum">
+          <div class="card-head fsec__head">
+            <h2 class="fsec__title">${sec}</h2>
+            <p class="hint fsec__hint">عدد الأسئلة: ${grouped[sec].length}</p>
+          </div>
+        </summary>
+        <div class="fsec__body">
+          <div class="qs"></div>
         </div>
-        <div class="qs"></div>
-      </section>
+      </details>
     `);
 
     grouped[sec].forEach(q => {
@@ -254,12 +261,78 @@ function buildForm(){
     $container.append($card);
   });
 
-  // nav active click
-  $("#navSections a").on("click", function(){
+  // ✅ Sidebar nav: open target section, close others, smooth scroll (بدون jump غريب)
+  $("#navSections a").off("click.fsec").on("click.fsec", function(e){
+    e.preventDefault();
+
     $("#navSections a").removeClass("active");
     $(this).addClass("active");
+
+    const id = $(this).attr("data-sec");
+    const target = document.getElementById(id);
+
+    if (target && target.tagName.toLowerCase() === "details") {
+      closeOtherSections(target);
+      target.open = true;
+
+      // تحديث الرابط بدون أن يسبب jump افتراضي
+      if (history.replaceState) history.replaceState(null, "", `#${id}`);
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    } else if (target) {
+      if (history.replaceState) history.replaceState(null, "", `#${id}`);
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   });
 }
+
+// ✅ helper: keep only one section open
+function closeOtherSections(opened){
+  document.querySelectorAll("#formContainer details.fsec").forEach(d => {
+    if (d !== opened) d.removeAttribute("open");
+  });
+}
+
+// ✅ when user opens a section by clicking its summary -> close previous + keep sidebar active
+function initSectionAccordion(){
+  const container = document.getElementById("formContainer");
+  if (!container) return;
+
+  container.addEventListener("toggle", (e) => {
+    const d = e.target;
+    if (!(d instanceof HTMLDetailsElement)) return;
+    if (!d.classList.contains("fsec")) return;
+
+    if (d.open) {
+      closeOtherSections(d);
+
+      // sync nav active
+      const id = d.id;
+      $("#navSections a").removeClass("active");
+      $(`#navSections a[data-sec="${id}"]`).addClass("active");
+
+      // avoid hash jump
+      if (history.replaceState) history.replaceState(null, "", `#${id}`);
+
+      // optional: keep the opened title visible (nice UX)
+      requestAnimationFrame(() => {
+        d.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }, true);
+
+  // if user lands with a hash -> open that section
+  const hash = (location.hash || "").replace("#", "");
+  if (hash) {
+    const target = document.getElementById(hash);
+    if (target && target.classList.contains("fsec")) {
+      closeOtherSections(target);
+      target.open = true;
+    }
+  }
+}
+
 
 // ===== Tables (revenues/costs) =====
 function addRevRow(row = {}){
@@ -710,6 +783,7 @@ function exportWordDoc(){
 // ===== Init =====
 $(function(){
   buildForm();
+  initSectionAccordion();
 
   // initial rows if no saved data
   const loaded = loadFromLocal();

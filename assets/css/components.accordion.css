@@ -1,0 +1,306 @@
+/* =========================================================
+   components.accordion.css — Accordion (details/summary)
+   ========================================================= */
+
+/* Accordion (details/summary) — unified */
+.accordion{ display: grid; gap: 12px; }
+
+.acc{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.acc__sum{
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 900;
+  color: var(--text);
+}
+.acc__sum::-webkit-details-marker{ display:none; }
+
+/* If you use explicit chevron span (.acc__chev) */
+.acc__chev{ transition: transform .2s ease; font-weight: 900; }
+.acc[open] .acc__chev{ transform: rotate(180deg); }
+
+/* If you rely on pseudo indicator instead (keep as fallback) */
+.acc__sum::after{
+  content: "＋";
+  font-weight: 900;
+  color: var(--accent);
+}
+.acc[open] .acc__sum::after{
+  content: "—";
+  color: var(--primary);
+}
+
+.acc__head{ display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.acc__title{ font-size: var(--text-lg); }
+.acc__date{ color: var(--muted); font-weight: 800; font-size: .9rem; }
+
+.acc__body{
+  padding: 0 16px 16px;
+  border-top: 1px solid var(--border);
+}
+.acc__excerpt{ margin: 12px 0 10px; color: var(--muted); font-weight: 700; }
+.acc__content p{ margin: 10px 0; }
+
+/* Optional blocks used in specialisation accordion */
+.acc__grid{ display: grid; gap: 12px; }
+.acc__block{
+  border: 1px solid rgba(31,41,55,.10);
+  background: rgba(255,255,255,.75);
+  border-radius: 14px;
+  padding: 12px;
+}
+.acc__h{
+  margin: 0 0 8px;
+  font-weight: 900;
+  color: rgba(31,41,55,.95);
+}
+.acc__list{
+  margin: 0;
+  padding: 0 18px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.85;
+}
+.acc__list--ol{ padding-right: 22px; }
+.acc__template{
+  border: 1px dashed rgba(31,41,55,.18);
+  background: rgba(255,255,255,.85);
+  border-radius: 14px;
+  padding: 12px;
+  color: rgba(31,41,55,.88);
+  font-weight: 700;
+}
+.acc__actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* =========================
+   Component: Pillar Accordion
+   ========================= */
+
+.pillars-acc{ display:grid; gap:14px; }
+
+.pillar{
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 22px rgba(0,0,0,.06);
+}
+
+.pillar__sum{
+  cursor:pointer;
+  padding: 14px 16px;
+  display:grid;
+  gap:6px;
+  text-align: start;
+}
+
+.pillar__sum::-webkit-details-marker{ display:none; }
+.pillar__sum::marker{ content:""; }
+
+.pillar__title{
+  font-weight: 900;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.pillar__hint{
+  color: var(--muted);
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+.pillar__body{
+  padding: 0 14px 14px;
+  display:grid;
+  gap:12px;
+}
+
+/* Sub accordion */
+.acc{
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 16px;
+  overflow:hidden;
+}
+
+.acc__sum{
+  cursor:pointer;
+  padding: 12px 14px;
+  font-weight: 900;
+  text-align: start;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.acc__sum::-webkit-details-marker{ display:none; }
+.acc__sum::marker{ content:""; }
+
+.acc__sum::after{
+  content:"+";
+  font-weight: 900;
+}
+
+.acc[open] > .acc__sum::after{ content:"–"; }
+
+.acc__body{
+  padding: 12px 14px 14px;
+}
+/* =========================
+   Articles Accordion
+========================= */
+.articles-acc{
+  display: grid;
+  gap: 14px;
+}
+
+.art{
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(10,20,35,.55);
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+
+.art__sum{
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.art__sum::-webkit-details-marker{ display:none; }
+
+.art__head{
+  display: grid;
+  gap: 8px;
+}
+
+.art__title{
+  font-weight: 900;
+  font-size: clamp(18px, 2.4vw, 24px);
+  line-height: 1.2;
+}
+
+.art__meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  opacity: .9;
+}
+
+.art__date{
+  font-weight: 700;
+  opacity: .9;
+}
+
+.art__sep{ opacity: .6; }
+
+.art__excerpt{
+  opacity: .85;
+}
+
+.art__icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* + */
+.art__icon::before,
+.art__icon::after{
+  content:"";
+  position:absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(255,255,255,.85);
+  border-radius: 2px;
+}
+.art__icon::before{ width: 16px; height: 2px; }
+.art__icon::after{ width: 2px; height: 16px; }
+
+/* when open -> minus */
+.art[open] .art__icon::after{ opacity: 0; }
+
+.art__body{
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding: 16px 16px 18px;
+  background: rgba(0,0,0,.10);
+}
+
+.art__tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom: 12px;
+}
+
+.tag{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  opacity: .95;
+}
+
+.art__p{
+  margin: 0 0 10px 0;
+  line-height: 1.9;
+  opacity: .95;
+}
+
+/* hover feel */
+.art__sum:hover{
+  background: rgba(255,255,255,.04);
+}
+
+
+/* ================================
+   FIX: Light article body (.art)
+   ================================ */
+
+/* جسم المقال يكون فاتح وواضح عند فتح الـdetails */
+.art[open] .art__body{
+  background: #f8fafc !important;
+  color: #111827 !important;
+}
+
+/* لو النصوص عندك عليها opacity وتطلع باهتة، نخليها أوضح */
+.art[open] .art__p,
+.art[open] .art__excerpt,
+.art[open] .art__date,
+.art[open] .tag{
+  color: #111827 !important;
+  opacity: 1 !important;
+}
+
+/* اختيارياً: نخلي شريط العنوان (summary) أغمق، والبطاقة نفسها أخف */
+.art{
+  background: rgba(120,130,140,.35) !important; /* أخف من السابق */
+}
+.art__sum{
+  background: rgba(0,0,0,.10); /* أو احذفها لو ما تحتاج */
+}

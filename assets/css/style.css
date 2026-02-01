@@ -1,885 +1,155 @@
-/* ========== Base ========== */
-:root{
-  --bg: #f9fafb;                 /* لؤلؤي */
-  --text: #1f2937;               /* نص داكن */
-  --muted: rgba(31,41,55,.75);   /* نص ثانوي */
-  --border: rgba(31,41,55,.14);  /* حدود خفيفة */
-  --surface: rgba(255,255,255,.92);
-  --surface2: rgba(255,255,255,.98);
+/* style.css — master file (optional)
+   If you prefer best performance, link the files directly in HTML instead of @import.
+*/
+/* ===================================================================
+   style.css — Master Stylesheet Loader (ConsuTrain Hub)
+   ===================================================================
+
+   ✅ الهدف من هذا الملف:
+   هذا الملف يعمل كـ "بوابة تحميل" لكل ملفات CSS في المشروع.
+   بدل أن نضع 7 روابط <link> في كل صفحة، نكتفي بملف واحد (style.css)
+   وهو يقوم باستيراد بقية الملفات بطريقة منظمة.
+
+   ⚠️ ملاحظة أداء مهمة:
+   - استخدام @import أحيانًا يكون أبطأ قليلًا من وضع <link> مباشر لكل ملف،
+     لأن المتصفح قد يؤخر تحميل بعض الملفات.
+   - لكن في مشروع مثل هذا (موقع ثابت + GitHub Pages) الفائدة الأكبر هي التنظيم.
+   - إذا لاحظت أي بطء لاحقًا، يمكننا بسهولة التحويل إلى روابط <link> مباشرة
+     دون تغيير أي سطر داخل الملفات نفسها.
+
+   ✅ قاعدة ذهبية:
+   ترتيب الاستيراد مهم جدًا:
+   - نبدأ بالأساسيات (base)
+   - ثم التخطيط العام (layout)
+   - ثم المكوّنات (components)
+   - ثم مكوّنات خاصة (accordion, articles...)
+   - ثم تنسيقات صفحات بعينها (pages)
+   - ثم أدوات مساعدة (utilities) في النهاية لأنها "تغلب" غيرها غالبًا
+
+   ===================================================================
+*/
+
+/* -------------------------------------------------------------------
+   1) base.css
+   -------------------------------------------------------------------
+   ✅ ماذا يحتوي؟
+   - Design Tokens / Variables داخل :root (ألوان، مسافات، shadows، radius…)
+   - Reset / Normalize (إزالة الفروقات الافتراضية بين المتصفحات)
+   - Typography: الخطوط، أحجام النصوص الأساسية، line-height
+   - إعدادات عامة مثل:
+     body, a, img, button, forms…
+   - قواعد RTL/LTR الأساسية إن وُجدت
+
+   🎯 الهدف:
+   "توحيد الأساس" قبل أي شيء، حتى تبقى بقية الملفات نظيفة وواضحة.
+*/
+@import url("./base.css");
+
+/* -------------------------------------------------------------------
+   2) layout.css
+   -------------------------------------------------------------------
+   ✅ ماذا يحتوي؟
+   - البنية العامة للصفحة:
+     .container, grids, spacing, section paddings
+   - تخطيطات متكررة:
+     header structure, footer structure, hero grid, 2-col layouts...
+   - breakpoints الأساسية (Responsive) التي تخص “التخطيط” وليس “المكوّن”
+
+   🎯 الهدف:
+   فصل "طريقة توزيع العناصر في الصفحة" عن شكل المكونات نفسها.
+*/
+@import url("./layout.css");
+
+/* -------------------------------------------------------------------
+   3) components.css
+   -------------------------------------------------------------------
+   ✅ ماذا يحتوي؟
+   - مكونات عامة قابلة لإعادة الاستخدام في أكثر من صفحة:
+     Buttons (.btn)
+     Cards (.card)
+     Badges (.badge)
+     Lists / stats / pills…
+   - أي عنصر UI يظهر كثيرًا ويجب توحيد شكله.
+
+   🎯 الهدف:
+   جعل التصميم متسقًا: نفس الزر في كل الصفحات = نفس الكود.
+*/
+@import url("./components.css");
+
+/* -------------------------------------------------------------------
+   4) components.accordion.css
+   -------------------------------------------------------------------
+   ✅ ماذا يحتوي؟
+   - جميع تنسيقات الـAccordion (الرئيسي والفرعي)
+   - icons (+ / -) أو الأسهم
+   - حالات open/close
+   - أي RTL alignment مرتبط بالـAccordion
+
+   🎯 الهدف:
+   لأن الـAccordion “مكوّن” سيتم استخدامه في:
+   - topics (محاور التميز)
+   - articles (المقالات)
+   - FAQ لاحقًا
+   لذلك نعزله في ملف مستقل لتسهيل إعادة استخدامه وصيانته.
+*/
+@import url("./components.accordion.css");
+
+/* -------------------------------------------------------------------
+   5) components.articles.css
+   -------------------------------------------------------------------
+   ✅ ماذا يحتوي؟
+   - تصميم بطاقة المقال (thumbnail + title + excerpt)
+   - قائمة المقالات في الصفحة الرئيسية (آخر 3 مقالات)
+   - صفحة المقالات (Accordion للمقالات أو قائمة)
+   - أي عناصر تخص "المقالات" فقط
+
+   🎯 الهدف:
+   جعل نظام المقالات مستقلًا، لأنك ستضيف مقالات مستقبلاً باستمرار.
+*/
+@import url("./components.articles.css");
+
+/* -------------------------------------------------------------------
+   6) pages.css
+   -------------------------------------------------------------------
+   ✅ ماذا يحتوي؟
+   - أي تنسيقات خاصة بصفحة معينة لا نريد خلطها مع المكونات العامة:
+     مثال:
+     body.topics-page ...
+     .roadmap-page ...
+   - تعديلات layout أو spacing لصفحة بعينها
+
+   🎯 الهدف:
+   لو حدثت مشكلة في صفحة معينة، نعرف أن التعديل موجود هنا وليس
+   داخل components أو base.
+*/
+@import url("./pages.css");
+
+/* -------------------------------------------------------------------
+   7) utilities.css
+   -------------------------------------------------------------------
+   ✅ ماذا يحتوي؟
+   - Classes صغيرة وسريعة للاستخدام:
+     .center, .mt-*, .mb-*, .text-muted, .hidden…
+   - Helpers للـResponsive مثل:
+     .hide-mobile, .show-mobile...
+   - قواعد صغيرة “تغلب” عند الحاجة بدون ما نكتب CSS جديد لكل حالة
+
+   ⚠️ ملاحظة مهمة:
+   utilities غالبًا تأتي في النهاية لأنها قد "تتغلب" على غيرها.
+*/
+@import url("./utilities.css");
+
+/* ===================================================================
+   نهاية ملف التحميل
+   =================================================================== */
+
+
+@import url("./base.css");
+@import url("./layout.css");
+@import url("./components.css");
+@import url("./components.accordion.css");
+@import url("./components.articles.css");
+@import url("./pages.css");
+@import url("./utilities.css");
 
-  --shadow: 0 14px 30px rgba(0,0,0,.35);
-  --radius: 18px;
-  --max: 1120px;
-  --pad: 18px;
 
-  --accent: #2b7cff;     /* blue */
-  --primary: #ff8a2a;    /* orange */
-  --gold: #caa31a;       /* dark yellow / gold */
-}
-
-*{ box-sizing: border-box; }
-
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Segoe UI", ui-sans-serif, system-ui, -apple-system, Arial, "Noto Sans Arabic", "Noto Sans", sans-serif;
-  line-height:1.7;
-}
-
-a{ color: inherit; text-decoration:none; }
-
-.container{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-}
-
-/* ========== Topbar ========== */
-.topbar{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(15, 23, 42, 0.78);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,.10);
- 
-}
-
-.topbar__inner{
-  display:flex;
-  align-items:center;
-  gap: 16px;
-  padding: 12px 0;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  margin-right: auto;
-}
-
-.brand__mark{
-  width: 46px;
-  height: 46px;
-  display:grid;
-  place-items:center;
-  border-radius: 14px;
-  font-weight: 800;
-  letter-spacing: .5px;
-  background: linear-gradient(135deg, var(--accent), var(--primary));
-  color: #fff;
-  box-shadow: 0 14px 30px rgba(0,0,0,.25);
-}
-
-.brand__name{
-  font-weight: 800;
-  color: #fff; /* أوضح */
-  opacity: .92;
-}
-
-.nav{
-  display:flex;
-  align-items:center;
-  gap: 18px;
-}
-
-.nav__link{
-  color: rgba(255,255,255,.82);
-  padding: 10px 12px;
-  border-radius: 12px;
-  transition: .2s ease;
-}
-
-.nav__link:hover{
-  background: rgba(255,255,255,.07);
-  color: rgba(255,255,255,.96);
-}
-
-.nav__link.is-active{
-  background: rgba(43,124,255,.22);
-  border: 1px solid rgba(43,124,255,.25);
-  color: #fff;
-}
-
-.lang{
-  display:flex;
-  align-items:center;
-  gap: 8px;
-}
-
-.lang__btn{
-  border: 1px solid rgba(255,255,255,.15);
-  background: rgba(255,255,255,.06);
-  color: rgba(255,255,255,.85);
-  padding: 8px 10px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.lang__btn.is-active{
-  border-color: rgba(255,138,42,.5);
-  box-shadow: 0 0 0 2px rgba(255,138,42,.15) inset;
-}
-
-@media (max-width: 900px){
-  .nav{ display:none; }
-}
-
-/* ========== Hero ========== */
-.hero{
-  padding: 54px 0 26px;
-}
-
-.hero__inner{
-  display:grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 22px;
-  align-items: start;
-}
-
-.badge{
-  display:inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(43,124,255,.10);
-  border: 1px solid rgba(43,124,255,.18);
-  color: rgba(31,41,55,.85);
-  font-weight: 700;
-  margin: 0 0 12px;
-}
-
-/* ✅ Hero title smaller (as agreed) */
-.hero__title{
-  margin: 0 0 10px;
-  font-size: clamp(20px, 2.2vw, 30px);
-  line-height: 1.25;
-  color: rgba(31,41,55,.95);
-  letter-spacing: .2px;
-}
-
-.hero__desc{
-  margin: 0 0 16px;
-  color: var(--muted);
-  max-width: 65ch;
-}
-
-.hero__actions{
-  display:flex;
-  gap: 12px;
-  align-items:center;
-  margin: 16px 0 18px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap: 10px;
-  border-radius: 14px;
-  padding: 11px 16px;
-  border: 1px solid transparent;
-  cursor:pointer;
-  font-weight: 800;
-}
-
-.btn--primary{
-  background: linear-gradient(135deg, var(--accent), var(--primary));
-  color: #fff;
-  box-shadow: 0 14px 30px rgba(0,0,0,.18);
-}
-
-.btn--ghost{
-  background: rgba(255,255,255,.85);
-  border: 1px solid rgba(31,41,55,.12);
-  color: rgba(31,41,55,.95);
-}
-
-/* ✅ Optional: if you changed second CTA to text link */
-.hero__link{
-  font-weight: 800;
-  color: var(--accent);
-  padding: 10px 4px;
-  transition: .2s ease;
-}
-.hero__link:hover{
-  color: var(--primary);
-  text-decoration: underline;
-}
-
-.hero__stats{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.stat{
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 14px;
-}
-
-.stat__num{
-  font-weight: 900;
-  font-size: 18px;
-  color: rgba(31,41,55,.92);
-}
-
-.stat__label{
-  margin-top: 2px;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.hero__card{
-  border: 1px solid var(--border);
-  background: var(--surface2);
-  border-radius: 22px;
-  padding: 18px;
-  box-shadow: 0 14px 30px rgba(0,0,0,.10);
-}
-
-.card__title{
-  margin: 0 0 10px;
-  font-weight: 900;
-  color: rgba(31,41,55,.92);
-}
-
-.list{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display:flex;
-  flex-direction:column;
-  gap: 10px;
-}
-
-.list li{
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 12px;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-@media (max-width: 900px){
-  .hero__inner{ grid-template-columns: 1fr; }
-}
-
-/* ========== Sections ========== */
-.section{
-  padding: 34px 0;
-}
-
-.section--soft{
-  background: rgba(43,124,255,.06);
-  border-top: 1px solid rgba(31,41,55,.08);
-  border-bottom: 1px solid rgba(31,41,55,.08);
-}
-
-.section__head{
-  margin-bottom: 16px;
-}
-
-.section__title{
-  margin: 0 0 8px;
-  color: rgba(31,41,55,.95);
-  font-weight: 900;
-}
-
-.section__desc{
-  margin: 0;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.grid3{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.card{
-  border: 1px solid var(--border);
-  background: var(--surface2);
-  border-radius: 18px;
-  padding: 16px;
-  box-shadow: 0 12px 22px rgba(0,0,0,.06);
-}
-
-.card__h{
-  margin: 0 0 8px;
-  font-weight: 900;
-  color: rgba(31,41,55,.95);
-}
-
-.card__p{
-  margin: 0 0 10px;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.link{
-  color: var(--accent);
-  font-weight: 900;
-}
-
-/* ========== Steps ========== */
-.steps{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display:grid;
-  gap: 10px;
-}
-
-.steps li{
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 12px;
-  color: rgba(31,41,55,.86);
-  font-weight: 800;
-}
-
-/* ========== CTA ========== */
-.cta{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 16px;
-  border: 1px solid var(--border);
-  background: var(--surface2);
-  border-radius: 22px;
-  padding: 18px;
-}
-
-.cta__title{
-  margin: 0 0 6px;
-  font-weight: 900;
-  color: rgba(31,41,55,.95);
-}
-
-.cta__desc{
-  margin: 0;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.cta__actions{
-  display:flex;
-  gap: 10px;
-}
-
-@media (max-width: 900px){
-  .grid3{ grid-template-columns: 1fr; }
-  .cta{ flex-direction:column; align-items:stretch; }
-  .cta__actions{ justify-content:center; flex-wrap:wrap; }
-}
-
-/* ========== Diagram (if used elsewhere) ========== */
-.section--diagram .diagram{
-  margin: 0;
-  display: inline-block;
-  text-align: center;
-}
-
-.section--diagram img{
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: #fff;
-}
-
-.section--diagram figcaption{
-  margin-top: 10px;
-  color: var(--muted);
-  font-weight: 800;
-}
-
-/* ========== Pillars (FINAL - No duplicates) ========== */
-.pillars-layout{
-  display:grid;
-  grid-template-columns: 1fr 1fr; /* 50 / 50 */
-  gap: 28px;
-  align-items: start;
-}
-
-/* keep image left / content right even in RTL */
-.pillars-visual{ grid-column: 1; }
-.pillars-content{ grid-column: 2; text-align: right; }
-
-.pillars-visual{
-  display:flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.pillars-visual img{
-  width:100%;
-  height:auto;
-  max-height: 340px;     /* تقليل الارتفاع */
-  object-fit: contain;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  background:#fff;
-}
-
-/* note under image to fill space nicely */
-.pillars-visual-note{
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 12px;
-  color: rgba(31,41,55,.78);
-  font-weight: 700;
-  line-height: 1.75;
-}
-
-.pillars-title{
-  margin: 0 0 6px;
-  font-weight: 900;
-  font-size: 1.35rem;
-  color: var(--text);
-  position: relative;
-  padding-bottom: 8px;
-}
-
-.pillars-title::after{
-  content:"";
-  position:absolute;
-  right:0;
-  bottom:0;
-  width:64px;
-  height:3px;
-  background: linear-gradient(90deg, var(--accent), var(--primary));
-  border-radius:3px;
-}
-
-.pillars-subtitle{
-  margin: 0 0 16px;
-  color: var(--muted);
-  font-weight: 700;
-  line-height: 1.8;
-}
-
-.pillars-cards{
-  display:grid;
-  gap: 14px;
-}
-
-@media (max-width: 900px){
-  .pillars-layout{ grid-template-columns: 1fr; }
-  .pillars-visual{ grid-column:auto; order:-1; }
-  .pillars-content{ grid-column:auto; text-align:center; }
-  .pillars-title::after{
-    right:50%;
-    transform: translateX(50%);
-  }
-}
-
-/* ========== Footer ========== */
-.footer{
-  border-top: 1px solid rgba(31,41,55,.10);
-  background-color: #000;
-  padding: 16px 0;
-}
-
-.footer__inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-}
-
-.footer__text{
-  margin: 0;
-  color: rgba(31,41,55,.75);
-  font-weight: 800;
-}
-
-.sep{ margin: 0 8px; opacity:.5; }
-
-.toTop{
-  color: var(--accent);
-  font-weight: 900;
-}
-
-/* ========== Utilities ========== */
-.center{ text-align: center; }
-
-
-/* ===== Topics Accordion (details/summary) ===== */
-.acc{
-  margin-top: 10px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.acc__sum{
-  list-style: none;
-  cursor: pointer;
-  padding: 12px 14px;
-  font-weight: 900;
-  color: rgba(31,41,55,.92);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.acc__sum::-webkit-details-marker{ display:none; }
-
-.acc__sum::after{
-  content: "＋";
-  font-weight: 900;
-  color: var(--accent);
-}
-
-.acc[open] .acc__sum::after{
-  content: "—";
-  color: var(--primary);
-}
-
-.acc__body{
-  padding: 12px 14px 14px;
-  border-top: 1px solid var(--border);
-}
-
-.acc__grid{
-  display: grid;
-  gap: 12px;
-}
-
-.acc__block{
-  border: 1px solid rgba(31,41,55,.10);
-  background: rgba(255,255,255,.75);
-  border-radius: 14px;
-  padding: 12px;
-}
-
-.acc__h{
-  margin: 0 0 8px;
-  font-weight: 900;
-  color: rgba(31,41,55,.95);
-}
-
-.acc__list{
-  margin: 0;
-  padding: 0 18px 0 0;
-  color: var(--muted);
-  font-weight: 700;
-  line-height: 1.85;
-}
-
-.acc__list--ol{
-  padding-right: 22px;
-}
-
-.acc__template{
-  border: 1px dashed rgba(31,41,55,.18);
-  background: rgba(255,255,255,.85);
-  border-radius: 14px;
-  padding: 12px;
-  color: rgba(31,41,55,.88);
-  font-weight: 700;
-}
-
-.acc__actions{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-}
-
-
-
-/* === YouTube Embed Fix === */
-.video-wrap{
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 */
-  background: #000;    /* مهم لتفادي الأبيض */
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-
-.video-wrap iframe{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-.yt-fallback{
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: #000;
-}
-
-.yt-fallback img{
-  display:block;
-  width:100%;
-  height:auto;
-}
-
-.yt-fallback__play{
-  position:absolute;
-  inset:0;
-  display:grid;
-  place-items:center;
-  font-size: 54px;
-  color:#fff;
-  text-decoration:none;
-  background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.55));
-  transition: .2s ease;
-}
-
-.yt-fallback__play:hover{
-  background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.65));
-  transform: scale(1.02);
-}
-
-/* ========== Icons ========== */
-.icon{
-  width: 22px;
-  height: 22px;
-  display:grid;
-  place-items:center;
-  flex: 0 0 auto;
-}
-.icon svg{
-  width: 22px;
-  height: 22px;
-  fill: var(--primary); /* بدل --orange غير الموجودة */
-}
-
-/* =========================
-   Header Centering (Grid)
-   ========================= */
-.topbar__inner--grid{
-  display: grid;
-  grid-template-columns: 1fr auto 1fr; /* left | center | right */
-  align-items: center;
-  gap: 16px;
-}
-
-/* center group */
-.topbar__center{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  min-width: 0;
-}
-
-/* مهم: لأن .brand عندك فيها margin-right:auto */
-.topbar__center .brand{
-  margin-right: 0;
-}
-
-/* =========================
-   Language Dropdown
-   ========================= */
-.lang-dropdown{
-  position: relative;
-  justify-self: start;  /* في العمود الأيسر */
-}
-
-.lang-dropdown__toggle{
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.20);
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: 800;
-}
-
-.lang-dropdown__menu{
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 14px;
-  padding: 8px;
-  display: none;
-  min-width: 160px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.25);
-  z-index: 200;
-}
-
-/* عرض القائمة بدون JS (hover + focus) */
-.lang-dropdown:hover .lang-dropdown__menu,
-.lang-dropdown:focus-within .lang-dropdown__menu{
-  display: block;
-}
-
-.lang-dropdown__menu .lang__btn{
-  display: block;
-  width: 100%;
-  text-align: right;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-  color: rgba(255,255,255,.92);
-  padding: 9px 12px;
-  border-radius: 12px;
-  cursor: pointer;
-  margin: 6px 0;
-}
-
-.lang-dropdown__menu .lang__btn:hover{
-  background: rgba(255,255,255,.12);
-}
-
-/* spacer */
-.topbar__side--spacer{}
-
-/* Mobile */
-@media (max-width: 900px){
-  .nav{ display:none; } /* كما عندك */
-  .topbar__inner--grid{
-    grid-template-columns: auto 1fr auto; /* dropdown | brand | spacer */
-  }
-  .topbar__center{
-    justify-content: flex-start;
-  }
-}
-
-/* =========================
-   Footer matches Header
-   ========================= */
-.footer{
-  background: rgba(15, 23, 42, 0.78); /* نفس topbar */
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255,255,255,.10);
-  padding: 16px 0;
-}
-
-.footer__text{
-  color: rgba(255,255,255,.85);
-}
-
-.footer .sep{ opacity: .6; }
-
-.footer .toTop{
-  color: #fff;
-  opacity: .9;
-}
-.footer .toTop:hover{ opacity: 1; }
-
-
-.brand {
-  padding-inline-start: 8px;
-}
-.brand__mark {
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.brand__mark:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.25);
-}
-
-
-/* =========================
-   Footer (match header style)
-   ========================= */
-
-.footer--dark{
-  background: #454b58; /* نفس لون الهيدر */
-  border-top: 1px solid rgba(255,255,255,.08);
-  padding: 22px 0;
-}
-
-.footer__inner{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.footer__text{
-  margin: 0;
-  color: rgba(255,255,255,.85);
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.footer__text .sep{
-  margin: 0 8px;
-  opacity: .5;
-}
-
-.toTop{
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.08);
-  transition: all .25s ease;
-}
-
-.toTop:hover{
-  background: rgba(255,255,255,.18);
-  transform: translateY(-2px);
-}
-
-/* Responsive */
-@media (max-width: 700px){
-  .footer__inner{
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-
-.accordion { display: grid; gap: 12px; }
-
-.acc {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.acc__sum {
-  list-style: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  font-weight: 900;
-  color: var(--text);
-}
-
-.acc__sum::-webkit-details-marker { display: none; }
-
-.acc__head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
-.acc__title { font-size: 1.05rem; }
-.acc__date { color: var(--muted); font-weight: 800; font-size: .9rem; }
-
-.acc__chev { transition: transform .2s ease; font-weight: 900; }
-.acc[open] .acc__chev { transform: rotate(180deg); }
-
-.acc__body {
-  padding: 0 16px 16px;
-  border-top: 1px solid var(--border);
-}
-
-.acc__excerpt { margin: 12px 0 10px; color: var(--muted); font-weight: 700; }
-.acc__content p { margin: 10px 0; }

@@ -1,19 +1,39 @@
-<div id="site-header"></div>
-<link rel="stylesheet" href="assets/css/style.css" />
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-<main>
-  <section class="section">
+<body>
+  <div id="site-header"></div>
+
+  
+    <main id="site-main" data-main="partials/mainArticles.html"></main>
+
     <div class="container">
+
       <div class="section__head">
-        <h1 class="section__title" data-i18n="articles_title">المقالات</h1>
-        <p class="section__desc" data-i18n="articles_desc">عناوين مختصرة، ومعها إمكانية فتح المقال بالكامل.</p>
+        <h1 class="section__title">المقالات</h1>
+       
       </div>
 
-      <div id="articles-accordion" class="accordion"></div>
+      <!-- Accordion Wrapper -->
+      <div class="articles-acc" id="articlesAcc" data-accordion="single">
+        <!-- articles.js سيحقن المحتوى هنا -->
+      </div>
+
     </div>
-  </section>
-</main>
-<div id="site-footer"></div>
-<script src="assets/js/includes.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/articles.js"></script>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/includes.js"></script>
+  <script src="assets/js/accordion.js"></script>
+
+  <!-- جديد -->
+  <script src="assets/js/articles.js"></script>
+</body>
+</html>
