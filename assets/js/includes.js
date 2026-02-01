@@ -62,22 +62,32 @@ function setActiveNav() {
    Init “to top” button
    ------------------------- */
 function initToTop() {
-  const toTop = document.getElementById("toTop");
-  if (!toTop) return;
+  const footerLink = document.getElementById("toTop");
+  if (!footerLink) return;
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      toTop.classList.add("is-visible");
-    } else {
-      toTop.classList.remove("is-visible");
-    }
-  });
+  // أنشئ زر عائم جديد
+  const floatBtn = document.createElement("a");
+  floatBtn.href = "#";
+  floatBtn.className = "toTop toTop--float";
+  floatBtn.textContent = footerLink.textContent || "أعلى";
+  floatBtn.setAttribute("data-i18n", footerLink.getAttribute("data-i18n") || "to_top");
 
-  toTop.addEventListener("click", (e) => {
+  document.body.appendChild(floatBtn);
+
+  // إظهار/إخفاء أثناء التمرير
+  function toggle() {
+    if (window.scrollY > 300) floatBtn.classList.add("is-visible");
+    else floatBtn.classList.remove("is-visible");
+  }
+  window.addEventListener("scroll", toggle, { passive: true });
+  toggle();
+
+  floatBtn.addEventListener("click", (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
+
 
 
 /* -------------------------
@@ -107,4 +117,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   /* 5) i18n */
   if (window.initLanguage) window.initLanguage();
   else if (window.initI18n) window.initI18n(); // alias احتياطي
+
+  window.dispatchEvent(new Event("partials:loaded"));
+
 });
