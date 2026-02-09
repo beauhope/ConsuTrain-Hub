@@ -1,0 +1,2266 @@
+{
+  "glossary": [
+    {
+      "id": "globalization",
+      "term_en": "Globalization",
+      "term_ar": "العولمة",
+      "domain": "economic"
+    },
+    {
+      "id": "economic-problem",
+      "term_en": "Economic Problem",
+      "term_ar": "المشكلة الاقتصادية",
+      "domain": "economic"
+    },
+    {
+      "id": "economics",
+      "term_en": "Economics",
+      "term_ar": "علم الاقتصاد",
+      "domain": "economic"
+    },
+    {
+      "id": "scarcity",
+      "term_en": "Scarcity",
+      "term_ar": "الندرة",
+      "domain": "economic"
+    },
+    {
+      "id": "scarce-resources",
+      "term_en": "Scarce Resources",
+      "term_ar": "الموارد النادرة",
+      "domain": "economic"
+    },
+    {
+      "id": "economic-resources",
+      "term_en": "Economic Resources",
+      "term_ar": "الموارد الاقتصادية",
+      "domain": "economic"
+    },
+    {
+      "id": "recourses-allocation",
+      "term_en": "Recourses Allocation",
+      "term_ar": "تخصيص الموارد",
+      "domain": "economic"
+    },
+    {
+      "id": "wants-or-needs",
+      "term_en": "Wants or Needs",
+      "term_ar": "حاجات",
+      "domain": "economic"
+    },
+    {
+      "id": "free-resources",
+      "term_en": "Free Resources",
+      "term_ar": "الموارد غير الاقتصادية \"الحرة\"",
+      "domain": "economic"
+    },
+    {
+      "id": "human-resources",
+      "term_en": "Human Resources",
+      "term_ar": "الموارد البشرية",
+      "domain": "economic"
+    },
+    {
+      "id": "natural-resources",
+      "term_en": "Natural Resources",
+      "term_ar": "الموارد الطبيعية",
+      "domain": "economic"
+    },
+    {
+      "id": "labor",
+      "term_en": "Labor",
+      "term_ar": "العمل",
+      "domain": "economic"
+    },
+    {
+      "id": "land",
+      "term_en": "Land",
+      "term_ar": "الأرض",
+      "domain": "economic"
+    },
+    {
+      "id": "capital",
+      "term_en": "Capital",
+      "term_ar": "رأس المال",
+      "domain": "economic"
+    },
+    {
+      "id": "organization",
+      "term_en": "Organization",
+      "term_ar": "التنظيم",
+      "domain": "economic"
+    },
+    {
+      "id": "factors-of-production",
+      "term_en": "Factors of Production",
+      "term_ar": "عناصر الإنتاج",
+      "domain": "economic"
+    },
+    {
+      "id": "macroeconomics",
+      "term_en": "Macroeconomics",
+      "term_ar": "الاقتصاد الكلي",
+      "domain": "economic"
+    },
+    {
+      "id": "microeconomics",
+      "term_en": "Microeconomics",
+      "term_ar": "الاقتصاد الجزئي",
+      "domain": "economic"
+    },
+    {
+      "id": "positive-economics",
+      "term_en": "Positive Economics",
+      "term_ar": "الاقتصاد الموضوعي",
+      "domain": "economic"
+    },
+    {
+      "id": "normative-economics",
+      "term_en": "Normative Economics",
+      "term_ar": "الاقتصاد المعياري",
+      "domain": "economic"
+    },
+    {
+      "id": "mathematical-economics",
+      "term_en": "Mathematical Economics",
+      "term_ar": "الاقتصاد الرياضي",
+      "domain": "economic"
+    },
+    {
+      "id": "econometrics",
+      "term_en": "Econometrics",
+      "term_ar": "الاقتصاد القياسي",
+      "domain": "economic"
+    },
+    {
+      "id": "income",
+      "term_en": "Income",
+      "term_ar": "الدخل",
+      "domain": "economic"
+    },
+    {
+      "id": "economic-systems",
+      "term_en": "Economic Systems",
+      "term_ar": "النظم الاقتصادية",
+      "domain": "economic"
+    },
+    {
+      "id": "capitalism",
+      "term_en": "Capitalism",
+      "term_ar": "الرأسمالية",
+      "domain": "economic"
+    },
+    {
+      "id": "socialism",
+      "term_en": "Socialism",
+      "term_ar": "الإشتراكية",
+      "domain": "economic"
+    },
+    {
+      "id": "optimal-choice",
+      "term_en": "Optimal Choice",
+      "term_ar": "الإختيار الأمثل",
+      "domain": "economic"
+    },
+    {
+      "id": "opportunity-cost",
+      "term_en": "Opportunity Cost",
+      "term_ar": "تكلفة الفرصة البديلة \"الضائعة\"",
+      "domain": "economic"
+    },
+    {
+      "id": "alternative",
+      "term_en": "Alternative",
+      "term_ar": "بديل",
+      "domain": "economic"
+    },
+    {
+      "id": "trade-off",
+      "term_en": "Trade-Off",
+      "term_ar": "المعاوضة",
+      "domain": "economic"
+    },
+    {
+      "id": "benefits",
+      "term_en": "Benefits",
+      "term_ar": "منافع",
+      "domain": "economic"
+    },
+    {
+      "id": "allocation-of-resources",
+      "term_en": "Allocation of Resources",
+      "term_ar": "تخصيص الموارد",
+      "domain": "economic"
+    },
+    {
+      "id": "production-possibilities-curve-ppc",
+      "term_en": "Production Possibilities Curve “PPC”",
+      "term_ar": "منحنى إمكانيات الإنتاج",
+      "domain": "economic"
+    },
+    {
+      "id": "full-employment",
+      "term_en": "Full Employment",
+      "term_ar": "التشغيل الكامل",
+      "domain": "economic"
+    },
+    {
+      "id": "efficiency",
+      "term_en": "Efficiency",
+      "term_ar": "الفعالية",
+      "domain": "economic"
+    },
+    {
+      "id": "unemployed-resources",
+      "term_en": "Unemployed Resources",
+      "term_ar": "موارد معطلة",
+      "domain": "economic"
+    },
+    {
+      "id": "consumption-goods",
+      "term_en": "Consumption Goods",
+      "term_ar": "سلع إستهلاكية",
+      "domain": "economic"
+    },
+    {
+      "id": "capital-goods",
+      "term_en": "Capital Goods",
+      "term_ar": "سلع رأسمالية",
+      "domain": "economic"
+    },
+    {
+      "id": "law-of-increasing-cost",
+      "term_en": "Law of Increasing Cost",
+      "term_ar": "قانون تزايد التكلفة",
+      "domain": "economic"
+    },
+    {
+      "id": "homogeneous-goods",
+      "term_en": "Homogeneous Goods",
+      "term_ar": "سلع متجانسة",
+      "domain": "economic"
+    },
+    {
+      "id": "division-of-labor",
+      "term_en": "Division of Labor",
+      "term_ar": "تقسيم العمل",
+      "domain": "economic"
+    },
+    {
+      "id": "comparative-advantage",
+      "term_en": "Comparative Advantage",
+      "term_ar": "الميزة النسبية",
+      "domain": "economic"
+    },
+    {
+      "id": "market",
+      "term_en": "Market",
+      "term_ar": "السوق",
+      "domain": "economic"
+    },
+    {
+      "id": "demand",
+      "term_en": "Demand",
+      "term_ar": "الطلب",
+      "domain": "economic"
+    },
+    {
+      "id": "supply",
+      "term_en": "Supply",
+      "term_ar": "العرض",
+      "domain": "economic"
+    },
+    {
+      "id": "market-price",
+      "term_en": "Market Price",
+      "term_ar": "سعر السوق",
+      "domain": "economic"
+    },
+    {
+      "id": "seller",
+      "term_en": "Seller",
+      "term_ar": "بائع",
+      "domain": "economic"
+    },
+    {
+      "id": "buyer",
+      "term_en": "Buyer",
+      "term_ar": "مشتري",
+      "domain": "economic"
+    },
+    {
+      "id": "quantity-demanded",
+      "term_en": "Quantity Demanded",
+      "term_ar": "الكمية المطلوبة",
+      "domain": "economic"
+    },
+    {
+      "id": "the-law-of-demand",
+      "term_en": "The Law of Demand",
+      "term_ar": "قانون الطلب",
+      "domain": "economic"
+    },
+    {
+      "id": "demand-schedule",
+      "term_en": "Demand Schedule",
+      "term_ar": "جدول الطلب",
+      "domain": "economic"
+    },
+    {
+      "id": "demand-curve",
+      "term_en": "Demand curve",
+      "term_ar": "منحنى الطلب",
+      "domain": "economic"
+    },
+    {
+      "id": "tastes-preferences",
+      "term_en": "Tastes & Preferences",
+      "term_ar": "الميول والأذواق",
+      "domain": "economic"
+    },
+    {
+      "id": "size-of-the-market",
+      "term_en": "Size of the Market",
+      "term_ar": "حجم السوق",
+      "domain": "economic"
+    },
+    {
+      "id": "expectations",
+      "term_en": "Expectations",
+      "term_ar": "التوقعات",
+      "domain": "economic"
+    },
+    {
+      "id": "normal-goods",
+      "term_en": "Normal Goods",
+      "term_ar": "سلع عادية",
+      "domain": "economic"
+    },
+    {
+      "id": "inferior-goods",
+      "term_en": "Inferior Goods",
+      "term_ar": "سلع رديئة",
+      "domain": "economic"
+    },
+    {
+      "id": "substitute-goods",
+      "term_en": "Substitute Goods",
+      "term_ar": "سلع بديلة / إحلالية",
+      "domain": "economic"
+    },
+    {
+      "id": "complementary-goods",
+      "term_en": "Complementary Goods",
+      "term_ar": "سلع مكملة",
+      "domain": "economic"
+    },
+    {
+      "id": "derived-demand",
+      "term_en": "Derived Demand",
+      "term_ar": "طلب مشتق",
+      "domain": "economic"
+    },
+    {
+      "id": "supply-curve",
+      "term_en": "Supply Curve",
+      "term_ar": "منحنى العرض",
+      "domain": "economic"
+    },
+    {
+      "id": "the-law-of-supply",
+      "term_en": "The Law of Supply",
+      "term_ar": "قانون العرض",
+      "domain": "economic"
+    },
+    {
+      "id": "costs-of-production",
+      "term_en": "Costs of Production",
+      "term_ar": "تكاليف الإنتاج",
+      "domain": "economic"
+    },
+    {
+      "id": "taxes",
+      "term_en": "Taxes",
+      "term_ar": "الضرائب",
+      "domain": "economic"
+    },
+    {
+      "id": "government-regulations",
+      "term_en": "Government Regulations",
+      "term_ar": "القيود الحكومية",
+      "domain": "economic"
+    },
+    {
+      "id": "subsidy",
+      "term_en": "Subsidy",
+      "term_ar": "الدعم",
+      "domain": "economic"
+    },
+    {
+      "id": "market-equilibrium",
+      "term_en": "Market Equilibrium",
+      "term_ar": "توازن السوق",
+      "domain": "economic"
+    },
+    {
+      "id": "excess-supply",
+      "term_en": "Excess Supply",
+      "term_ar": "فائض عرض",
+      "domain": "economic"
+    },
+    {
+      "id": "excess-demand",
+      "term_en": "Excess Demand",
+      "term_ar": "فائض طلب",
+      "domain": "economic"
+    },
+    {
+      "id": "market-forces",
+      "term_en": "Market Forces",
+      "term_ar": "قوى السقف",
+      "domain": "economic"
+    },
+    {
+      "id": "black-market",
+      "term_en": "Black Market",
+      "term_ar": "السوق السوداء",
+      "domain": "economic"
+    },
+    {
+      "id": "equilibrium-price",
+      "term_en": "Equilibrium Price",
+      "term_ar": "السعر التوازني",
+      "domain": "economic"
+    },
+    {
+      "id": "equilibrium-quantity",
+      "term_en": "Equilibrium quantity",
+      "term_ar": "الكمية التوازنية",
+      "domain": "economic"
+    },
+    {
+      "id": "price-floor",
+      "term_en": "Price floor",
+      "term_ar": "الأرضية السعرية",
+      "domain": "economic"
+    },
+    {
+      "id": "price-ceiling",
+      "term_en": "Price ceiling",
+      "term_ar": "السقف السعري",
+      "domain": "economic"
+    },
+    {
+      "id": "unemployment",
+      "term_en": "Unemployment",
+      "term_ar": "البطالة",
+      "domain": "economic"
+    },
+    {
+      "id": "consumption-rationing",
+      "term_en": "Consumption rationing",
+      "term_ar": "ترشيد الاستهلاك",
+      "domain": "economic"
+    },
+    {
+      "id": "aggregate-demand",
+      "term_en": "Aggregate demand",
+      "term_ar": "الطلب الكلي",
+      "domain": "economic"
+    },
+    {
+      "id": "aggregate-supply",
+      "term_en": "Aggregate supply",
+      "term_ar": "العرض الكلي",
+      "domain": "economic"
+    },
+    {
+      "id": "general-price-level",
+      "term_en": "General price level",
+      "term_ar": "المستوى العام للأسعار",
+      "domain": "economic"
+    },
+    {
+      "id": "inter-mediate-goods",
+      "term_en": "Inter mediate goods",
+      "term_ar": "سلع وسيطة",
+      "domain": "economic"
+    },
+    {
+      "id": "final-goods",
+      "term_en": "Final goods",
+      "term_ar": "سلع نهائية",
+      "domain": "economic"
+    },
+    {
+      "id": "value-added",
+      "term_en": "Value added",
+      "term_ar": "القيمة المضافة",
+      "domain": "economic"
+    },
+    {
+      "id": "real-gdp",
+      "term_en": "Real GDP",
+      "term_ar": "الناتج الحقيقي",
+      "domain": "economic"
+    },
+    {
+      "id": "gdp-deflator",
+      "term_en": "GDP Deflator",
+      "term_ar": "مثبط الناتج المحلي الإجمالي",
+      "domain": "economic"
+    },
+    {
+      "id": "households",
+      "term_en": "Households",
+      "term_ar": "القطاع العائلي",
+      "domain": "economic"
+    },
+    {
+      "id": "depreciation",
+      "term_en": "Depreciation",
+      "term_ar": "الإهتلاك (إهتلاك رأس المال)",
+      "domain": "economic"
+    },
+    {
+      "id": "indirect-taxes",
+      "term_en": "Indirect taxes",
+      "term_ar": "ضرائب غير مباشرة",
+      "domain": "economic"
+    },
+    {
+      "id": "direct-taxes",
+      "term_en": "Direct taxes",
+      "term_ar": "ضرائب مباشرة",
+      "domain": "economic"
+    },
+    {
+      "id": "income-taxes",
+      "term_en": "Income taxes",
+      "term_ar": "ضرائب الدخل",
+      "domain": "economic"
+    },
+    {
+      "id": "retained-profits",
+      "term_en": "Retained profits",
+      "term_ar": "أرباح محتجزة",
+      "domain": "economic"
+    },
+    {
+      "id": "relative-price",
+      "term_en": "Relative price",
+      "term_ar": "الأسعار النسبية",
+      "domain": "economic"
+    },
+    {
+      "id": "policy-variables",
+      "term_en": "Policy variables",
+      "term_ar": "متغيرات سياسية",
+      "domain": "economic"
+    },
+    {
+      "id": "external-shocks",
+      "term_en": "External shocks",
+      "term_ar": "صدمات خارجية",
+      "domain": "economic"
+    },
+    {
+      "id": "monetary-policy",
+      "term_en": "Monetary policy",
+      "term_ar": "سياسة نقدية",
+      "domain": "economic"
+    },
+    {
+      "id": "fiscal-policy",
+      "term_en": "Fiscal policy",
+      "term_ar": "سياسة مالية",
+      "domain": "economic"
+    },
+    {
+      "id": "full-employment-4cf772",
+      "term_en": "Full employment",
+      "term_ar": "الإنتاج الكامل",
+      "domain": "economic"
+    },
+    {
+      "id": "say-s-law",
+      "term_en": "Say’s law",
+      "term_ar": "قانون ساي",
+      "domain": "economic"
+    },
+    {
+      "id": "potential-output",
+      "term_en": "Potential output",
+      "term_ar": "الإنتاج الكامن",
+      "domain": "economic"
+    },
+    {
+      "id": "consumption",
+      "term_en": "Consumption",
+      "term_ar": "الإستهلاك",
+      "domain": "economic"
+    },
+    {
+      "id": "saving",
+      "term_en": "Saving",
+      "term_ar": "الإدخار",
+      "domain": "economic"
+    },
+    {
+      "id": "private-consumption",
+      "term_en": "Private consumption",
+      "term_ar": "الإستهلاك الخاص",
+      "domain": "economic"
+    },
+    {
+      "id": "public-consumption",
+      "term_en": "Public consumption",
+      "term_ar": "الإستهلاك العام",
+      "domain": "economic"
+    },
+    {
+      "id": "durable-goods",
+      "term_en": "Durable goods",
+      "term_ar": "سلع معمرة",
+      "domain": "economic"
+    },
+    {
+      "id": "non-durable-goods",
+      "term_en": "Non-durable goods",
+      "term_ar": "سلع غير معمرة",
+      "domain": "economic"
+    },
+    {
+      "id": "services",
+      "term_en": "Services",
+      "term_ar": "خدمات",
+      "domain": "economic"
+    },
+    {
+      "id": "autonomous-consumption",
+      "term_en": "Autonomous consumption",
+      "term_ar": "الإستهلاك الذاتي",
+      "domain": "economic"
+    },
+    {
+      "id": "dis-saving",
+      "term_en": "Dis-saving",
+      "term_ar": "إدخار سال",
+      "domain": "economic"
+    },
+    {
+      "id": "break-even-point",
+      "term_en": "Break – even point",
+      "term_ar": "نقطة تعادل",
+      "domain": "economic"
+    },
+    {
+      "id": "induced-consumption",
+      "term_en": "Induced consumption",
+      "term_ar": "الإستهلاك المستحدث",
+      "domain": "economic"
+    },
+    {
+      "id": "consumption-function",
+      "term_en": "Consumption function",
+      "term_ar": "دالة الإستهلاك",
+      "domain": "economic"
+    },
+    {
+      "id": "saving-function",
+      "term_en": "Saving function",
+      "term_ar": "دالة الإدخار",
+      "domain": "economic"
+    },
+    {
+      "id": "mpc-marginal-propensity-to-consume",
+      "term_en": "MPC) Marginal propensity to consume)",
+      "term_ar": "الميل الحدي للإستهلاك",
+      "domain": "economic"
+    },
+    {
+      "id": "marginal-propensity-to-save",
+      "term_en": "Marginal propensity to save",
+      "term_ar": "الميل الحدي للإدخار",
+      "domain": "economic"
+    },
+    {
+      "id": "average-propensity-to-consume",
+      "term_en": "Average propensity to consume",
+      "term_ar": "متوسط الميل للإستهلاك",
+      "domain": "economic"
+    },
+    {
+      "id": "average-propensity-to-save",
+      "term_en": "Average propensity to save",
+      "term_ar": "متوسط الميل للإدخار",
+      "domain": "economic"
+    },
+    {
+      "id": "investment",
+      "term_en": "Investment",
+      "term_ar": "الإستثمار",
+      "domain": "economic"
+    },
+    {
+      "id": "fixed-capital-formation",
+      "term_en": "Fixed capital formation",
+      "term_ar": "التكوين الرأسمالي الثابت",
+      "domain": "economic"
+    },
+    {
+      "id": "change-in-stock",
+      "term_en": "Change in stock",
+      "term_ar": "التغير في المخزون",
+      "domain": "economic"
+    },
+    {
+      "id": "financial-investment",
+      "term_en": "Financial investment",
+      "term_ar": "الإستثمار المالي",
+      "domain": "economic"
+    },
+    {
+      "id": "revenues",
+      "term_en": "Revenues",
+      "term_ar": "العوائد / ألإيرادات",
+      "domain": "economic"
+    },
+    {
+      "id": "economic-recovery",
+      "term_en": "Economic recovery",
+      "term_ar": "الإنتعاش الإقتصادي",
+      "domain": "economic"
+    },
+    {
+      "id": "costs",
+      "term_en": "Costs",
+      "term_ar": "التكاليف",
+      "domain": "economic"
+    },
+    {
+      "id": "technology",
+      "term_en": "Technology",
+      "term_ar": "التكنولوجيا / التقنية",
+      "domain": "economic"
+    },
+    {
+      "id": "innovation",
+      "term_en": "Innovation",
+      "term_ar": "الإبداع",
+      "domain": "economic"
+    },
+    {
+      "id": "incentives",
+      "term_en": "Incentives",
+      "term_ar": "الحوافز",
+      "domain": "economic"
+    },
+    {
+      "id": "nominal-interest-rate",
+      "term_en": "Nominal interest rate",
+      "term_ar": "سعر الفائدة الإسمي",
+      "domain": "economic"
+    },
+    {
+      "id": "real-interest-rate",
+      "term_en": "Real interest rate",
+      "term_ar": "سعر الفائدة الحقيقي",
+      "domain": "economic"
+    },
+    {
+      "id": "fisher-equation",
+      "term_en": "Fisher equation",
+      "term_ar": "معادلة فيشر",
+      "domain": "economic"
+    },
+    {
+      "id": "equilibrium-income",
+      "term_en": "Equilibrium income",
+      "term_ar": "الدخل التوازني",
+      "domain": "economic"
+    },
+    {
+      "id": "sectors",
+      "term_en": "Sectors",
+      "term_ar": "قطاعات",
+      "domain": "economic"
+    },
+    {
+      "id": "multiplier",
+      "term_en": "Multiplier",
+      "term_ar": "المضاعف",
+      "domain": "economic"
+    },
+    {
+      "id": "macroeconomic-distortions",
+      "term_en": "Macroeconomic distortions",
+      "term_ar": "الإختلالات الكلية",
+      "domain": "economic"
+    },
+    {
+      "id": "reversionary-gap",
+      "term_en": "Reversionary gap",
+      "term_ar": "فجوة ركودية",
+      "domain": "economic"
+    },
+    {
+      "id": "stagnation",
+      "term_en": "Stagnation",
+      "term_ar": "ركود",
+      "domain": "economic"
+    },
+    {
+      "id": "inflationary-gap",
+      "term_en": "Inflationary gap",
+      "term_ar": "فجوة تضخمية",
+      "domain": "economic"
+    },
+    {
+      "id": "simple-multiplier",
+      "term_en": "Simple multiplier",
+      "term_ar": "المضاعف البسيط",
+      "domain": "economic"
+    },
+    {
+      "id": "aggregate-expenditure",
+      "term_en": "Aggregate expenditure",
+      "term_ar": "الإنفاق الإجمالي",
+      "domain": "economic"
+    },
+    {
+      "id": "autonomous-investment",
+      "term_en": "Autonomous investment",
+      "term_ar": "الإستثمار الذاتي (المستقل)",
+      "domain": "economic"
+    },
+    {
+      "id": "recessionary-gap",
+      "term_en": "Recessionary gap",
+      "term_ar": "فجوة ركودية",
+      "domain": "economic"
+    },
+    {
+      "id": "potential-output-df4fa2",
+      "term_en": "Potential output",
+      "term_ar": "الإنتاج الكامن",
+      "domain": "economic"
+    },
+    {
+      "id": "leakages",
+      "term_en": "leakages",
+      "term_ar": "التسربات",
+      "domain": "economic"
+    },
+    {
+      "id": "government-role",
+      "term_en": "Government role",
+      "term_ar": "دور الحكومة",
+      "domain": "economic"
+    },
+    {
+      "id": "taxes-c27394",
+      "term_en": "Taxes",
+      "term_ar": "الضرائب",
+      "domain": "economic"
+    },
+    {
+      "id": "revenues-01cf08",
+      "term_en": "Revenues",
+      "term_ar": "إيرادات",
+      "domain": "economic"
+    },
+    {
+      "id": "disposable-income",
+      "term_en": "Disposable income",
+      "term_ar": "الدخل المتاح",
+      "domain": "economic"
+    },
+    {
+      "id": "fiscal-policy-d440d8",
+      "term_en": "Fiscal policy",
+      "term_ar": "السياسة المالية",
+      "domain": "economic"
+    },
+    {
+      "id": "spending-multiplier",
+      "term_en": "Spending multiplier",
+      "term_ar": "مضاعف الإنفاق",
+      "domain": "economic"
+    },
+    {
+      "id": "balanced-budget",
+      "term_en": "Balanced budget",
+      "term_ar": "موازنة متوازنة",
+      "domain": "economic"
+    },
+    {
+      "id": "balanced-budget-multiplier",
+      "term_en": "Balanced budget multiplier",
+      "term_ar": "مضاعف الموازنة المتوازنة",
+      "domain": "economic"
+    },
+    {
+      "id": "open-economy",
+      "term_en": "Open economy",
+      "term_ar": "اقتصاد مفتوح",
+      "domain": "economic"
+    },
+    {
+      "id": "price-taker",
+      "term_en": "Price taker",
+      "term_ar": "متلق للسعر",
+      "domain": "economic"
+    },
+    {
+      "id": "foreign-trade",
+      "term_en": "Foreign trade",
+      "term_ar": "التجارة الخارجية",
+      "domain": "economic"
+    },
+    {
+      "id": "net-exports",
+      "term_en": "Net exports",
+      "term_ar": "صافي الصادرات",
+      "domain": "economic"
+    },
+    {
+      "id": "current-account",
+      "term_en": "Current account",
+      "term_ar": "الميزان الجاري",
+      "domain": "economic"
+    },
+    {
+      "id": "balance-of-payments",
+      "term_en": "Balance of payments",
+      "term_ar": "ميزان المدفوعات",
+      "domain": "economic"
+    },
+    {
+      "id": "relative-prices",
+      "term_en": "Relative prices",
+      "term_ar": "الأسعار النسبية",
+      "domain": "economic"
+    },
+    {
+      "id": "exchange-rate",
+      "term_en": "Exchange rate",
+      "term_ar": "سعر الصرف",
+      "domain": "economic"
+    },
+    {
+      "id": "foreign-trade-multiplier",
+      "term_en": "Foreign trade multiplier",
+      "term_ar": "مضاعف التجارة الخارجية",
+      "domain": "economic"
+    },
+    {
+      "id": "open-economy-multiplier",
+      "term_en": "Open economy multiplier",
+      "term_ar": "مضاعف الإقتصاد المفتوح",
+      "domain": "economic"
+    },
+    {
+      "id": "marginal-propensity-to-import",
+      "term_en": "Marginal propensity to import",
+      "term_ar": "الميل الحدي للإستيراد",
+      "domain": "economic"
+    },
+    {
+      "id": "general-price-level-f76e72",
+      "term_en": "General price level",
+      "term_ar": "المستوى العام للأسعار",
+      "domain": "economic"
+    },
+    {
+      "id": "purchasing-power",
+      "term_en": "Purchasing power",
+      "term_ar": "القوة الشرائية",
+      "domain": "economic"
+    },
+    {
+      "id": "real-income",
+      "term_en": "Real income",
+      "term_ar": "الدخل الحقيقي",
+      "domain": "economic"
+    },
+    {
+      "id": "family-budget-survey",
+      "term_en": "Family budget survey",
+      "term_ar": "مسح ميزانية الأسرة",
+      "domain": "economic"
+    },
+    {
+      "id": "cost-of-living-index",
+      "term_en": "Cost of living index",
+      "term_ar": "الرقم القياسي لتكاليف المعيشة",
+      "domain": "economic"
+    },
+    {
+      "id": "moderate-inflation",
+      "term_en": "Moderate inflation",
+      "term_ar": "تضخم معتدل",
+      "domain": "economic"
+    },
+    {
+      "id": "creeping-inflation",
+      "term_en": "Creeping inflation",
+      "term_ar": "تضخم زاحف",
+      "domain": "economic"
+    },
+    {
+      "id": "galloping-inflation",
+      "term_en": "Galloping inflation",
+      "term_ar": "تضخم متسارع",
+      "domain": "economic"
+    },
+    {
+      "id": "hype-inflation",
+      "term_en": "Hype – inflation",
+      "term_ar": "تضخم جامع",
+      "domain": "economic"
+    },
+    {
+      "id": "demand-pull-inflation",
+      "term_en": "Demand pull inflation",
+      "term_ar": "تضخم سحب الطلب",
+      "domain": "economic"
+    },
+    {
+      "id": "cost-push-inflation",
+      "term_en": "Cost push inflation",
+      "term_ar": "تضخم دفع النفقة (الكلفة)",
+      "domain": "economic"
+    },
+    {
+      "id": "imported-inflation",
+      "term_en": "Imported inflation",
+      "term_ar": "تضخم مستورد",
+      "domain": "economic"
+    },
+    {
+      "id": "fiscal-deficit",
+      "term_en": "Fiscal deficit",
+      "term_ar": "العجز المالي",
+      "domain": "economic"
+    },
+    {
+      "id": "unemployment-rate",
+      "term_en": "Unemployment rate",
+      "term_ar": "معدل البطالة",
+      "domain": "economic"
+    },
+    {
+      "id": "law",
+      "term_en": "law",
+      "term_ar": "قانون",
+      "domain": "economic"
+    },
+    {
+      "id": "frictional-unemployment",
+      "term_en": "Frictional unemployment",
+      "term_ar": "بطالة إحتكاكية",
+      "domain": "economic"
+    },
+    {
+      "id": "structural-unemployment",
+      "term_en": "Structural unemployment",
+      "term_ar": "بطالة هيكلية",
+      "domain": "economic"
+    },
+    {
+      "id": "cyclical-unemployment",
+      "term_en": "Cyclical unemployment",
+      "term_ar": "بطالة دورية",
+      "domain": "economic"
+    },
+    {
+      "id": "seasonal-unemployment",
+      "term_en": "Seasonal unemployment",
+      "term_ar": "بطالة موسمية",
+      "domain": "economic"
+    },
+    {
+      "id": "disguised-unemployment",
+      "term_en": "Disguised unemployment",
+      "term_ar": "بطالة مقنعة",
+      "domain": "economic"
+    },
+    {
+      "id": "open-unemployment",
+      "term_en": "Open unemployment",
+      "term_ar": "بطالة سافرة",
+      "domain": "economic"
+    },
+    {
+      "id": "behavioral-unemployment",
+      "term_en": "Behavioral unemployment",
+      "term_ar": "بطالة سلوكية",
+      "domain": "economic"
+    },
+    {
+      "id": "imported-unemployment",
+      "term_en": "Imported unemployment",
+      "term_ar": "بطالة مستوردة",
+      "domain": "economic"
+    },
+    {
+      "id": "trade-off-481e02",
+      "term_en": "Trade – off",
+      "term_ar": "معاوضة",
+      "domain": "economic"
+    },
+    {
+      "id": "curve",
+      "term_en": "curve",
+      "term_ar": "منحنى",
+      "domain": "economic"
+    },
+    {
+      "id": "stagflation",
+      "term_en": "Stagflation",
+      "term_ar": "ركود تضخم",
+      "domain": "economic"
+    },
+    {
+      "id": "money",
+      "term_en": "Money",
+      "term_ar": "نقود",
+      "domain": "economic"
+    },
+    {
+      "id": "banks",
+      "term_en": "Banks",
+      "term_ar": "بنوك",
+      "domain": "economic"
+    },
+    {
+      "id": "barter",
+      "term_en": "Barter",
+      "term_ar": "مقايضة",
+      "domain": "economic"
+    },
+    {
+      "id": "commodity-money",
+      "term_en": "Commodity money",
+      "term_ar": "نقود سلعية",
+      "domain": "economic"
+    },
+    {
+      "id": "paper-money",
+      "term_en": "Paper money",
+      "term_ar": "نقود ورقية",
+      "domain": "economic"
+    },
+    {
+      "id": "check",
+      "term_en": "Check",
+      "term_ar": "شيك",
+      "domain": "economic"
+    },
+    {
+      "id": "credit-money",
+      "term_en": "Credit money",
+      "term_ar": "نقود إئتمانية",
+      "domain": "economic"
+    },
+    {
+      "id": "credit-cards",
+      "term_en": "Credit cards",
+      "term_ar": "بطاقات إئتمانية",
+      "domain": "economic"
+    },
+    {
+      "id": "medium-of-exchange",
+      "term_en": "Medium of exchange",
+      "term_ar": "وسيط للمبادلة",
+      "domain": "economic"
+    },
+    {
+      "id": "unit-of-account",
+      "term_en": "Unit of account",
+      "term_ar": "وحدة للقياس",
+      "domain": "economic"
+    },
+    {
+      "id": "store-of-value",
+      "term_en": "Store of value",
+      "term_ar": "مخزن للقيم",
+      "domain": "economic"
+    },
+    {
+      "id": "money-supply",
+      "term_en": "Money supply",
+      "term_ar": "عرض النقود",
+      "domain": "economic"
+    },
+    {
+      "id": "money-in-circulation",
+      "term_en": "Money in circulation",
+      "term_ar": "نقود متداولة",
+      "domain": "economic"
+    },
+    {
+      "id": "demand-deposits",
+      "term_en": "Demand deposits",
+      "term_ar": "ودائع تحت الطلب",
+      "domain": "economic"
+    },
+    {
+      "id": "time-deposits",
+      "term_en": "Time deposits",
+      "term_ar": "ودائع لأجل",
+      "domain": "economic"
+    },
+    {
+      "id": "saving-accounts",
+      "term_en": "Saving accounts",
+      "term_ar": "حسابات التوفير (الإدخار)",
+      "domain": "economic"
+    },
+    {
+      "id": "assets",
+      "term_en": "Assets",
+      "term_ar": "موجودات (أصول)",
+      "domain": "economic"
+    },
+    {
+      "id": "liabilities",
+      "term_en": "Liabilities",
+      "term_ar": "مطلوبات (خصوم)",
+      "domain": "economic"
+    },
+    {
+      "id": "reserves-policy",
+      "term_en": "Reserves policy",
+      "term_ar": "سياسة الإحتياطات",
+      "domain": "economic"
+    },
+    {
+      "id": "money-multiplier",
+      "term_en": "Money multiplier",
+      "term_ar": "مضاعف النقود",
+      "domain": "economic"
+    },
+    {
+      "id": "banking-system",
+      "term_en": "Banking system",
+      "term_ar": "الجهاز المصرفي",
+      "domain": "economic"
+    },
+    {
+      "id": "monetary-instruments",
+      "term_en": "Monetary instruments",
+      "term_ar": "الأدوات النقدية",
+      "domain": "economic"
+    },
+    {
+      "id": "general-instruments",
+      "term_en": "General instruments",
+      "term_ar": "أدوات تقليدية",
+      "domain": "economic"
+    },
+    {
+      "id": "selective-instruments",
+      "term_en": "Selective instruments",
+      "term_ar": "أدوات نوعية",
+      "domain": "economic"
+    },
+    {
+      "id": "open-market-operations-omo",
+      "term_en": "Open market operations (OMO)",
+      "term_ar": "عمليات السوق المفتوحة",
+      "domain": "economic"
+    },
+    {
+      "id": "discount-mechanism",
+      "term_en": "Discount mechanism",
+      "term_ar": "آلية إعادة الخصم",
+      "domain": "economic"
+    },
+    {
+      "id": "reserves-policy-bbfda6",
+      "term_en": "Reserves policy",
+      "term_ar": "سياسة الإحتياطات",
+      "domain": "economic"
+    },
+    {
+      "id": "contractionary-policy",
+      "term_en": "Contractionary policy",
+      "term_ar": "سياسة إنكماشية",
+      "domain": "economic"
+    },
+    {
+      "id": "expansionary-policy",
+      "term_en": "Expansionary policy",
+      "term_ar": "سياسة توسعية",
+      "domain": "economic"
+    },
+    {
+      "id": "treasury-bills",
+      "term_en": "Treasury bills",
+      "term_ar": "أذونات خزينة",
+      "domain": "economic"
+    },
+    {
+      "id": "excess-reserves",
+      "term_en": "Excess reserves",
+      "term_ar": "إحتياطات فائضة",
+      "domain": "economic"
+    },
+    {
+      "id": "credit-control",
+      "term_en": "Credit control",
+      "term_ar": "الرقابة على الإئتمان",
+      "domain": "economic"
+    },
+    {
+      "id": "credit-ceilings",
+      "term_en": "Credit ceilings",
+      "term_ar": "السقوف الإئتمانية",
+      "domain": "economic"
+    },
+    {
+      "id": "foreign-assets-control",
+      "term_en": "Foreign assets control",
+      "term_ar": "الرقابة على الموجودات الأجنبية",
+      "domain": "economic"
+    },
+    {
+      "id": "fiscal-policy-d440d8",
+      "term_en": "Fiscal policy",
+      "term_ar": "السياسة المالية",
+      "domain": "economic"
+    },
+    {
+      "id": "public-finance",
+      "term_en": "Public finance",
+      "term_ar": "المالية العامة",
+      "domain": "economic"
+    },
+    {
+      "id": "full-employment-fed5d0",
+      "term_en": "Full employment",
+      "term_ar": "التشغيل الكامل",
+      "domain": "economic"
+    },
+    {
+      "id": "sustainable-growth",
+      "term_en": "Sustainable growth",
+      "term_ar": "نمو مضطرد",
+      "domain": "economic"
+    },
+    {
+      "id": "prices-stability",
+      "term_en": "Prices stability",
+      "term_ar": "إستقرار أسعار",
+      "domain": "economic"
+    },
+    {
+      "id": "economic-welfare",
+      "term_en": "Economic welfare",
+      "term_ar": "الرفاهية الإقتصادية",
+      "domain": "economic"
+    },
+    {
+      "id": "government-budget",
+      "term_en": "Government budget",
+      "term_ar": "الموازنة الحكومية (العامة)",
+      "domain": "economic"
+    },
+    {
+      "id": "fiscal-deficit-6d4a6c",
+      "term_en": "Fiscal deficit",
+      "term_ar": "العجز المالي",
+      "domain": "economic"
+    },
+    {
+      "id": "fiscal-surplus",
+      "term_en": "Fiscal surplus",
+      "term_ar": "الفائض المالي",
+      "domain": "economic"
+    },
+    {
+      "id": "balanced-budget-c24cce",
+      "term_en": "Balanced budget",
+      "term_ar": "توازن الموازنة",
+      "domain": "economic"
+    },
+    {
+      "id": "public-debt",
+      "term_en": "Public debt",
+      "term_ar": "الدين العام",
+      "domain": "economic"
+    },
+    {
+      "id": "government-revenues",
+      "term_en": "Government revenues",
+      "term_ar": "الإيرادات الحكومية",
+      "domain": "economic"
+    },
+    {
+      "id": "direct-taxes-875d98",
+      "term_en": "Direct taxes",
+      "term_ar": "ضرائب مباشرة",
+      "domain": "economic"
+    },
+    {
+      "id": "current-expenditures",
+      "term_en": "Current expenditures",
+      "term_ar": "نفقات جارية",
+      "domain": "economic"
+    },
+    {
+      "id": "capital-expenditures",
+      "term_en": "Capital expenditures",
+      "term_ar": "نفقات رأسمالية",
+      "domain": "economic"
+    },
+    {
+      "id": "automatic-instruments",
+      "term_en": "Automatic instruments",
+      "term_ar": "أدوات تلقائية",
+      "domain": "economic"
+    },
+    {
+      "id": "discretionary-instruments",
+      "term_en": "Discretionary instruments",
+      "term_ar": "أدوات مقصودة",
+      "domain": "economic"
+    },
+    {
+      "id": "transfer-payments",
+      "term_en": "Transfer payments",
+      "term_ar": "مدفوعات تحويلية",
+      "domain": "economic"
+    },
+    {
+      "id": "subsidy-policies",
+      "term_en": "Subsidy policies",
+      "term_ar": "سياسات الدعم",
+      "domain": "economic"
+    },
+    {
+      "id": "great-depression",
+      "term_en": "Great depression",
+      "term_ar": "الكساد الكبير",
+      "domain": "economic"
+    },
+    {
+      "id": "international-trade",
+      "term_en": "International trade",
+      "term_ar": "التجارة الدولية",
+      "domain": "economic"
+    },
+    {
+      "id": "specialization",
+      "term_en": "Specialization",
+      "term_ar": "التخصصية",
+      "domain": "economic"
+    },
+    {
+      "id": "foreign-trade-03a8b3",
+      "term_en": "Foreign trade",
+      "term_ar": "التجارة الخارجية",
+      "domain": "economic"
+    },
+    {
+      "id": "economies-of-scale",
+      "term_en": "Economies of scale",
+      "term_ar": "وفورات الحجم الكبير",
+      "domain": "economic"
+    },
+    {
+      "id": "the-law-of-comparative-advantage",
+      "term_en": "The law of comparative advantage",
+      "term_ar": "مبدأ الميزة النسبية",
+      "domain": "economic"
+    },
+    {
+      "id": "absolute-advantage",
+      "term_en": "Absolute advantage",
+      "term_ar": "الميزة المطلقة",
+      "domain": "economic"
+    },
+    {
+      "id": "internal-terms-of-trade",
+      "term_en": "Internal terms of trade",
+      "term_ar": "معدل التبادل الداخلي",
+      "domain": "economic"
+    },
+    {
+      "id": "international-terms-of-trade",
+      "term_en": "International terms of trade",
+      "term_ar": "معدل التبادل الدولي",
+      "domain": "economic"
+    },
+    {
+      "id": "free-trade",
+      "term_en": "Free trade",
+      "term_ar": "تجارة حرة",
+      "domain": "economic"
+    },
+    {
+      "id": "quotas",
+      "term_en": "Quotas",
+      "term_ar": "الحصص",
+      "domain": "economic"
+    },
+    {
+      "id": "exports-subsidies",
+      "term_en": "Exports subsidies",
+      "term_ar": "دعم الصادرات",
+      "domain": "economic"
+    },
+    {
+      "id": "protection",
+      "term_en": "Protection",
+      "term_ar": "الحماية",
+      "domain": "economic"
+    },
+    {
+      "id": "consumer-surplus",
+      "term_en": "Consumer surplus",
+      "term_ar": "فائق المستهلك",
+      "domain": "economic"
+    },
+    {
+      "id": "producer-surplus",
+      "term_en": "Producer surplus",
+      "term_ar": "فائض المنتج",
+      "domain": "economic"
+    },
+    {
+      "id": "import-licenses",
+      "term_en": "Import licenses",
+      "term_ar": "نظام رخص الإستيراد",
+      "domain": "economic"
+    },
+    {
+      "id": "exchange-rate-8c2858",
+      "term_en": "Exchange rate",
+      "term_ar": "سعر الصرف",
+      "domain": "economic"
+    },
+    {
+      "id": "balance-of-payments-e03efb",
+      "term_en": "Balance of payments",
+      "term_ar": "ميزان المدفوعات",
+      "domain": "economic"
+    },
+    {
+      "id": "appreciation",
+      "term_en": "Appreciation",
+      "term_ar": "ارتفاع قيمة العملة",
+      "domain": "economic"
+    },
+    {
+      "id": "devaluation",
+      "term_en": "Devaluation",
+      "term_ar": "تخفيض سعر الصرف بتدخل الحكومة",
+      "domain": "economic"
+    },
+    {
+      "id": "depreciation-f809bb",
+      "term_en": "Depreciation",
+      "term_ar": "انخفاض قيمة العملة",
+      "domain": "economic"
+    },
+    {
+      "id": "black-market-b65205",
+      "term_en": "Black market",
+      "term_ar": "السوق السوداء",
+      "domain": "economic"
+    },
+    {
+      "id": "flexible-exchange",
+      "term_en": "Flexible exchange",
+      "term_ar": "سعر الصرف المرن (المُعَوَّم)",
+      "domain": "economic"
+    },
+    {
+      "id": "current-account-ede82c",
+      "term_en": "Current account",
+      "term_ar": "الحساب الجاري",
+      "domain": "economic"
+    },
+    {
+      "id": "trade-balance",
+      "term_en": "Trade balance",
+      "term_ar": "الميزان الجاري",
+      "domain": "economic"
+    },
+    {
+      "id": "capital-account",
+      "term_en": "Capital account",
+      "term_ar": "حساب رأس المال",
+      "domain": "economic"
+    },
+    {
+      "id": "services-balance",
+      "term_en": "Services balance",
+      "term_ar": "ميزان الخدمات",
+      "domain": "economic"
+    },
+    {
+      "id": "current-transfers",
+      "term_en": "Current transfers",
+      "term_ar": "التحويلات الجارية",
+      "domain": "economic"
+    },
+    {
+      "id": "economic-development",
+      "term_en": "Economic development",
+      "term_ar": "التنمية الإقتصادية",
+      "domain": "economic"
+    },
+    {
+      "id": "economic-growth",
+      "term_en": "Economic growth",
+      "term_ar": "النمو الإقتصادي",
+      "domain": "economic"
+    },
+    {
+      "id": "per-capita-income",
+      "term_en": "Per capita income",
+      "term_ar": "معدل الدخل الفردي",
+      "domain": "economic"
+    },
+    {
+      "id": "classical-theory",
+      "term_en": "Classical theory",
+      "term_ar": "النظرية الكلاسيكية (التقليدية)",
+      "domain": "economic"
+    },
+    {
+      "id": "absolute-advantage-26f329",
+      "term_en": "Absolute advantage",
+      "term_ar": "ميزة مطلقة",
+      "domain": "economic"
+    },
+    {
+      "id": "aggregate-demand-01c521",
+      "term_en": "Aggregate demand",
+      "term_ar": "الطلب الكلي",
+      "domain": "economic"
+    },
+    {
+      "id": "aggregate-supply-2a3ed5",
+      "term_en": "Aggregate supply",
+      "term_ar": "العرض الكلي",
+      "domain": "economic"
+    },
+    {
+      "id": "aggregate-spending",
+      "term_en": "Aggregate spending",
+      "term_ar": "الإنفاق الإجمالي",
+      "domain": "economic"
+    },
+    {
+      "id": "appreciation-39fdb1",
+      "term_en": "Appreciation",
+      "term_ar": "إرتفاع سعر الصرف",
+      "domain": "economic"
+    },
+    {
+      "id": "autonomous-consumption-753464",
+      "term_en": "Autonomous consumption",
+      "term_ar": "الإستهلاك المستقل أو الذاتي",
+      "domain": "economic"
+    },
+    {
+      "id": "balanced-budget-c24cce",
+      "term_en": "Balanced budget",
+      "term_ar": "توازن الموازنة",
+      "domain": "economic"
+    },
+    {
+      "id": "balance-of-payments-e03efb",
+      "term_en": "Balance of payments",
+      "term_ar": "ميزان المدفوعات",
+      "domain": "economic"
+    },
+    {
+      "id": "barter-8ffc79",
+      "term_en": "Barter",
+      "term_ar": "مقايضة",
+      "domain": "economic"
+    },
+    {
+      "id": "breakeven-point",
+      "term_en": "Breakeven point",
+      "term_ar": "نقطة التعادل",
+      "domain": "economic"
+    },
+    {
+      "id": "budget",
+      "term_en": "Budget",
+      "term_ar": "موازنة",
+      "domain": "economic"
+    },
+    {
+      "id": "budget-deficit",
+      "term_en": "Budget deficit",
+      "term_ar": "عجز الموازنة",
+      "domain": "economic"
+    },
+    {
+      "id": "budget-surplus",
+      "term_en": "Budget surplus",
+      "term_ar": "فائض الموازنة",
+      "domain": "economic"
+    },
+    {
+      "id": "capital-account-a5bdd9",
+      "term_en": "Capital account",
+      "term_ar": "الحساب الرأسمالي",
+      "domain": "economic"
+    },
+    {
+      "id": "capital-goods-2d1cd7",
+      "term_en": "Capital goods",
+      "term_ar": "سلع رأسمالية",
+      "domain": "economic"
+    },
+    {
+      "id": "central-bank",
+      "term_en": "Central bank",
+      "term_ar": "البنك المركزي",
+      "domain": "economic"
+    },
+    {
+      "id": "choices",
+      "term_en": "Choices",
+      "term_ar": "خيارات",
+      "domain": "economic"
+    },
+    {
+      "id": "commodity-money-1c8ee3",
+      "term_en": "Commodity money",
+      "term_ar": "نقود سلعية",
+      "domain": "economic"
+    },
+    {
+      "id": "comparative-advantage-7431bf",
+      "term_en": "Comparative advantage",
+      "term_ar": "ميزة نسبية",
+      "domain": "economic"
+    },
+    {
+      "id": "complementary-goods-720ff2",
+      "term_en": "Complementary goods",
+      "term_ar": "سلع مكملة",
+      "domain": "economic"
+    },
+    {
+      "id": "consumption-9b81f9",
+      "term_en": "Consumption",
+      "term_ar": "استهلاك",
+      "domain": "economic"
+    },
+    {
+      "id": "contraction-policy",
+      "term_en": "Contraction policy",
+      "term_ar": "سياسة انكماشية",
+      "domain": "economic"
+    },
+    {
+      "id": "cost",
+      "term_en": "Cost",
+      "term_ar": "تكلفة",
+      "domain": "economic"
+    },
+    {
+      "id": "creeping-inflation-191538",
+      "term_en": "Creeping inflation",
+      "term_ar": "تضخم زاحف",
+      "domain": "economic"
+    },
+    {
+      "id": "cyclical-unemployment-6e963f",
+      "term_en": "Cyclical unemployment",
+      "term_ar": "بطالة دورية",
+      "domain": "economic"
+    },
+    {
+      "id": "depreciation-0e3cc6",
+      "term_en": "Depreciation",
+      "term_ar": "تخفيض قيمة",
+      "domain": "economic"
+    },
+    {
+      "id": "depression",
+      "term_en": "Depression",
+      "term_ar": "كساد",
+      "domain": "economic"
+    },
+    {
+      "id": "direct-taxes-875d98",
+      "term_en": "Direct taxes",
+      "term_ar": "ضرائب مباشرة",
+      "domain": "economic"
+    },
+    {
+      "id": "discount-rate",
+      "term_en": "Discount rate",
+      "term_ar": "سعر اعادة الخصم",
+      "domain": "economic"
+    },
+    {
+      "id": "disguised-unemployment-f8b68f",
+      "term_en": "Disguised unemployment",
+      "term_ar": "بطالة مقنعة",
+      "domain": "economic"
+    },
+    {
+      "id": "dividends",
+      "term_en": "Dividends",
+      "term_ar": "عوائد",
+      "domain": "economic"
+    },
+    {
+      "id": "durable-goods-0b7991",
+      "term_en": "Durable goods",
+      "term_ar": "سلع معمرة",
+      "domain": "economic"
+    },
+    {
+      "id": "economic-development-5f2e43",
+      "term_en": "Economic development",
+      "term_ar": "تنمية اقتصادية",
+      "domain": "economic"
+    },
+    {
+      "id": "efficiency-aac5e3",
+      "term_en": "Efficiency",
+      "term_ar": "فعالية",
+      "domain": "economic"
+    },
+    {
+      "id": "equilibrium",
+      "term_en": "Equilibrium",
+      "term_ar": "توازن",
+      "domain": "economic"
+    },
+    {
+      "id": "excess-reserves-63f60b",
+      "term_en": "Excess reserves",
+      "term_ar": "احتياطي فائض",
+      "domain": "economic"
+    },
+    {
+      "id": "exchange-rate-8c2858",
+      "term_en": "Exchange rate",
+      "term_ar": "سعر الصرف",
+      "domain": "economic"
+    },
+    {
+      "id": "expectations-165eb4",
+      "term_en": "Expectations",
+      "term_ar": "توقعات",
+      "domain": "economic"
+    },
+    {
+      "id": "exports",
+      "term_en": "Exports",
+      "term_ar": "صادرات",
+      "domain": "economic"
+    },
+    {
+      "id": "export-subsidies",
+      "term_en": "Export subsidies",
+      "term_ar": "دعم الصادرات",
+      "domain": "economic"
+    },
+    {
+      "id": "external-shocks-6eb77d",
+      "term_en": "External shocks",
+      "term_ar": "صدمات خارجية",
+      "domain": "economic"
+    },
+    {
+      "id": "fiscal-policy-5fd6d4",
+      "term_en": "Fiscal policy",
+      "term_ar": "سياسة مالية",
+      "domain": "economic"
+    },
+    {
+      "id": "fixed-capital",
+      "term_en": "Fixed capital",
+      "term_ar": "رأسمال ثابت",
+      "domain": "economic"
+    },
+    {
+      "id": "fixed-exchange-rate",
+      "term_en": "Fixed exchange rate",
+      "term_ar": "سعر الصرف الثابت",
+      "domain": "economic"
+    },
+    {
+      "id": "flexible-exchange-rate",
+      "term_en": "Flexible exchange rate",
+      "term_ar": "سعر الصرف المرن",
+      "domain": "economic"
+    },
+    {
+      "id": "foreign-reserves",
+      "term_en": "Foreign reserves",
+      "term_ar": "احتياطي أجنبي",
+      "domain": "economic"
+    },
+    {
+      "id": "frictional-unemployment-2b045e",
+      "term_en": "Frictional unemployment",
+      "term_ar": "بطالة احتكاكية",
+      "domain": "economic"
+    },
+    {
+      "id": "full-employment-edd495",
+      "term_en": "Full employment",
+      "term_ar": "تشغيل كامل",
+      "domain": "economic"
+    },
+    {
+      "id": "galloping-inflation-439b58",
+      "term_en": "Galloping inflation",
+      "term_ar": "تضخم متسارع",
+      "domain": "economic"
+    },
+    {
+      "id": "government-spending",
+      "term_en": "Government spending",
+      "term_ar": "إنفاق حكومي",
+      "domain": "economic"
+    },
+    {
+      "id": "gross-domestic-product",
+      "term_en": "Gross domestic product",
+      "term_ar": "الناتج المحلي الإجمالي",
+      "domain": "economic"
+    },
+    {
+      "id": "gross-national-product",
+      "term_en": "Gross national product",
+      "term_ar": "الناتج القومي الإجمالي",
+      "domain": "economic"
+    },
+    {
+      "id": "growth-rate",
+      "term_en": "Growth rate",
+      "term_ar": "معدل النمو",
+      "domain": "economic"
+    },
+    {
+      "id": "imports",
+      "term_en": "Imports",
+      "term_ar": "الواردات",
+      "domain": "economic"
+    },
+    {
+      "id": "import-substitution",
+      "term_en": "Import substitution",
+      "term_ar": "إحلال المستوردات",
+      "domain": "economic"
+    },
+    {
+      "id": "inflation",
+      "term_en": "Inflation",
+      "term_ar": "تضخم",
+      "domain": "economic"
+    },
+    {
+      "id": "innovation-58e808",
+      "term_en": "Innovation",
+      "term_ar": "ابداع",
+      "domain": "economic"
+    },
+    {
+      "id": "interest-rate",
+      "term_en": "Interest rate",
+      "term_ar": "سعر الفائدة",
+      "domain": "economic"
+    },
+    {
+      "id": "macroeconomics-13db70",
+      "term_en": "Macroeconomics",
+      "term_ar": "الاقتصاد الكلي",
+      "domain": "economic"
+    },
+    {
+      "id": "marginal-propensity",
+      "term_en": "Marginal propensity",
+      "term_ar": "الميل الحدي",
+      "domain": "economic"
+    },
+    {
+      "id": "microeconomics-e3c98a",
+      "term_en": "Microeconomics",
+      "term_ar": "الاقتصاد الجزئي",
+      "domain": "economic"
+    },
+    {
+      "id": "minimum-wages",
+      "term_en": "Minimum wages",
+      "term_ar": "حد أدنى للأجور",
+      "domain": "economic"
+    },
+    {
+      "id": "monetary-base",
+      "term_en": "Monetary base",
+      "term_ar": "القاعدة النقدية",
+      "domain": "economic"
+    },
+    {
+      "id": "monetary-policy-84a8c7",
+      "term_en": "Monetary policy",
+      "term_ar": "السياسة النقدية",
+      "domain": "economic"
+    },
+    {
+      "id": "money-supply-c81fd5",
+      "term_en": "Money supply",
+      "term_ar": "عرض النقد",
+      "domain": "economic"
+    },
+    {
+      "id": "multiplier-885b90",
+      "term_en": "multiplier",
+      "term_ar": "المضاعف",
+      "domain": "economic"
+    },
+    {
+      "id": "net-exports-05c726",
+      "term_en": "Net exports",
+      "term_ar": "صافي الصادرات",
+      "domain": "economic"
+    },
+    {
+      "id": "nominal-interest-rate-c5437e",
+      "term_en": "Nominal interest rate",
+      "term_ar": "سعر الفائدة الإسمي",
+      "domain": "economic"
+    },
+    {
+      "id": "nominal-wages",
+      "term_en": "Nominal wages",
+      "term_ar": "الأجر الإسمي",
+      "domain": "economic"
+    },
+    {
+      "id": "normative-economics-33be78",
+      "term_en": "Normative economics",
+      "term_ar": "اقتصاد معياري",
+      "domain": "economic"
+    },
+    {
+      "id": "open-market-operations",
+      "term_en": "Open market operations",
+      "term_ar": "عمليات السوق المفتوحة",
+      "domain": "economic"
+    },
+    {
+      "id": "positive-economics-40639f",
+      "term_en": "Positive economics",
+      "term_ar": "اقتصاد موضوعي",
+      "domain": "economic"
+    },
+    {
+      "id": "poverty",
+      "term_en": "Poverty",
+      "term_ar": "فقر",
+      "domain": "economic"
+    },
+    {
+      "id": "precaution",
+      "term_en": "Precaution",
+      "term_ar": "احتياط",
+      "domain": "economic"
+    },
+    {
+      "id": "price-ceiling-81786d",
+      "term_en": "Price ceiling",
+      "term_ar": "تحديد سقف للأسعار",
+      "domain": "economic"
+    },
+    {
+      "id": "price-floor-883119",
+      "term_en": "Price floor",
+      "term_ar": "تحيد حد أدنى للأسعار",
+      "domain": "economic"
+    },
+    {
+      "id": "price-level",
+      "term_en": "Price level",
+      "term_ar": "مستوى الأسعار",
+      "domain": "economic"
+    },
+    {
+      "id": "production-possibility-frontier-curve",
+      "term_en": "Production possibility frontier / curve",
+      "term_ar": "منحنى إمكانات الإنتاج",
+      "domain": "economic"
+    },
+    {
+      "id": "quotas-8a6d0c",
+      "term_en": "Quotas",
+      "term_ar": "نظام الحصص",
+      "domain": "economic"
+    },
+    {
+      "id": "real-income-7ba13a",
+      "term_en": "Real income",
+      "term_ar": "الدخل الحقيقي",
+      "domain": "economic"
+    },
+    {
+      "id": "real-wage",
+      "term_en": "Real wage",
+      "term_ar": "الأجر الحقيقي",
+      "domain": "economic"
+    },
+    {
+      "id": "recessionary-gap-7afedc",
+      "term_en": "Recessionary gap",
+      "term_ar": "فجوة ركودية",
+      "domain": "economic"
+    },
+    {
+      "id": "regulations",
+      "term_en": "Regulations",
+      "term_ar": "تعليمات / قيود",
+      "domain": "economic"
+    },
+    {
+      "id": "required-reserve",
+      "term_en": "Required reserve",
+      "term_ar": "احتياطي الزامي",
+      "domain": "economic"
+    },
+    {
+      "id": "reserves",
+      "term_en": "Reserves",
+      "term_ar": "احتياطات",
+      "domain": "economic"
+    },
+    {
+      "id": "resources",
+      "term_en": "Resources",
+      "term_ar": "موارد",
+      "domain": "economic"
+    },
+    {
+      "id": "revenues-b7b946",
+      "term_en": "Revenues",
+      "term_ar": "عوائد",
+      "domain": "economic"
+    },
+    {
+      "id": "savings",
+      "term_en": "Savings",
+      "term_ar": "مدخرات",
+      "domain": "economic"
+    },
+    {
+      "id": "seasonal-unemployment-455071",
+      "term_en": "Seasonal unemployment",
+      "term_ar": "بطالة موسمية",
+      "domain": "economic"
+    },
+    {
+      "id": "services-828fb4",
+      "term_en": "Services",
+      "term_ar": "خدمات",
+      "domain": "economic"
+    },
+    {
+      "id": "specialization-46fbaa",
+      "term_en": "Specialization",
+      "term_ar": "تخصصية",
+      "domain": "economic"
+    },
+    {
+      "id": "structural-unemployment-77f785",
+      "term_en": "Structural unemployment",
+      "term_ar": "بطالة هيكلية",
+      "domain": "economic"
+    },
+    {
+      "id": "substitute-goods-a4a98e",
+      "term_en": "Substitute goods",
+      "term_ar": "سلع بديلة أو إحلالية",
+      "domain": "economic"
+    },
+    {
+      "id": "tariffs",
+      "term_en": "Tariffs",
+      "term_ar": "تعريفة جمركية",
+      "domain": "economic"
+    },
+    {
+      "id": "taxes-8a0a45",
+      "term_en": "Taxes",
+      "term_ar": "ضرائب",
+      "domain": "economic"
+    },
+    {
+      "id": "terms-of-trade",
+      "term_en": "Terms of trade",
+      "term_ar": "اسعار التبادل",
+      "domain": "economic"
+    },
+    {
+      "id": "trade-account",
+      "term_en": "Trade account",
+      "term_ar": "الحساب الجاري",
+      "domain": "economic"
+    },
+    {
+      "id": "trade-deficit",
+      "term_en": "Trade deficit",
+      "term_ar": "عجز تجاري",
+      "domain": "economic"
+    },
+    {
+      "id": "trade-policy",
+      "term_en": "Trade policy",
+      "term_ar": "سياسة تجارية",
+      "domain": "economic"
+    },
+    {
+      "id": "trade-surplus",
+      "term_en": "Trade surplus",
+      "term_ar": "فائض تجاري",
+      "domain": "economic"
+    },
+    {
+      "id": "unemployment-32cae2",
+      "term_en": "Unemployment",
+      "term_ar": "بطالة",
+      "domain": "economic"
+    },
+    {
+      "id": "voluntary-exchange",
+      "term_en": "Voluntary exchange",
+      "term_ar": "تبادل طوعي",
+      "domain": "economic"
+    },
+    {
+      "id": "voluntary-unemployment",
+      "term_en": "Voluntary unemployment",
+      "term_ar": "بطالة طوعية",
+      "domain": "economic"
+    },
+    {
+      "id": "wants",
+      "term_en": "Wants",
+      "term_ar": "الحاجات",
+      "domain": "economic"
+    },
+    {
+      "id": "wealth",
+      "term_en": "Wealth",
+      "term_ar": "ثروة",
+      "domain": "economic"
+    }
+  ]
+}

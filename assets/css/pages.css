@@ -1,6 +1,44 @@
-/* =========================================================
-   pages.css — Page-specific styling
-   Keep this file minimal. Add rules here ONLY when they apply to a single page.
-   ========================================================= */
+.home-tiles{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:14px;
+  margin-top:16px;
+}
 
-/* (currently empty by design) */
+.home-tile{
+  background:#fff;
+  border:1px solid rgba(15,23,42,.12);
+  border-radius:18px;
+  padding:14px;
+  text-align:center;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.home-tile:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.09);
+}
+
+.home-tile img{
+  width:100%;
+  height:130px;
+  object-fit:cover;
+  border-radius:14px;
+  display:block;
+  margin-bottom:10px;
+}
+
+.home-tile h3{
+  margin:0;
+  font-weight:800;
+  font-size:1.05rem;
+}
+
+@media (max-width: 900px){
+  .home-tiles{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px){
+  .home-tiles{ grid-template-columns: 1fr; }
+  .home-tile img{ height:150px; }
+}

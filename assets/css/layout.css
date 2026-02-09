@@ -141,3 +141,106 @@
   font-weight: 700;
   color: var(--accent);
 }
+
+
+/* ===== Header layout fix (Center nav + RTL) ===== */
+.topbar {
+  background: #444b56; /* نفس طابعك */
+  color: #fff;
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+/* لو عندك container عام، سيأخذ max-width تلقائياً.
+   وإن لم يكن مضبوطاً، هذا يضمن التوسيط */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* الوسط: الشعار + الروابط */
+.topbar__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex: 1;            /* يخلي الوسط يأخذ المساحة */
+  text-align: center;
+}
+
+/* قائمة الروابط */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ✅ توسيط */
+  gap: 18px;
+  flex-wrap: wrap;         /* ✅ على الموبايل تتلف تلقائياً */
+}
+
+/* الروابط */
+.nav__link {
+  color: rgba(255,255,255,.88);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.nav__link:hover,
+.nav__link.is-active {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+}
+
+/* الشعار */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* زر البحث (يمين أعلى) */
+.nav-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Mobile header tweaks ===== */
+@media (max-width: 720px) {
+  .topbar__inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .topbar__center {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* ===== Footer center fix ===== */
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ✅ توسيط */
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;      /* ✅ توسيط النص */
+}
+
+.footer__text {
+  margin: 0;
+  text-align: center;
+}

@@ -5,6 +5,9 @@
 /* =========================================
    RTL / LTR GLOBAL SUPPORT
    ========================================= */
+html[lang="ar"], body {
+  direction: rtl;
+}
 
 
 html[dir="rtl"] {

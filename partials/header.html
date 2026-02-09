@@ -1,45 +1,54 @@
-<header class="topbar">
-  <div class="container topbar__inner topbar__inner--grid">
+<header class="site-header">
 
-    <!-- LEFT: Language dropdown -->
-    <div class="lang-dropdown">
-      <button class="lang-dropdown__toggle" type="button">
-        اللغة <span aria-hidden="true">🌐</span>
-      </button>
+  <!-- ===== Banner (Logo/Name + Search) ===== -->
+  <div class="topbar">
+    <div class="container topbar__row">
 
-      <div class="lang-dropdown__menu">
-        <button class="lang__btn" type="button" data-set-lang="en" aria-label="English">English</button>
-        <button class="lang__btn" type="button" data-set-lang="fr" aria-label="French">Français</button>
-        <button class="lang__btn" type="button" data-set-lang="ar" aria-label="Arabic">العربية</button>
+      <!-- Brand -->
+      <a class="brand" href="index.html" aria-label="ConsuTrain Hub">
+        <span class="brand__mark">CTH</span>
+        <span class="brand__name">ConsuTrain Hub</span>
+      </a>
+
+      <!-- Search button -->
+      <div class="nav-search" role="search">
+        <p>بحث في الموقع</p>
+        <button class="nav-search__btn" type="button" id="openSearch" aria-label="بحث">
+          🔍 
+        </button>
       </div>
-    </div>
-
-    <!-- CENTER: Brand + Nav -->
-    <div class="topbar__center">
-     <a class="brand" href="index.html" aria-label="ConsuTrain Hub" title="ConsuTrain Hub | Consulting & Training">
-  <span class="brand__mark">CTH</span>
-</a>
-
-
-      <nav class="nav" aria-label="Main Navigation">
-  <a href="../../index.html" class="btn btn--icon nav-home" title="العودة إلى الصفحة الرئيسية">
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 9l9-7 9 7"></path>
-    <path d="M9 22V12h6v10"></path>
-  </svg></a>
-  <a class="nav__link" href="/topics.html">المعرفة الإدارية</a>
-<a class="nav__link" href="/articles.html">المقالات</a>
-<a class="nav__link" href="/roadmap.html">خارطة الطريق</a>
-<a class="nav__link" href="/about.html">من نحن</a>
-<a class="nav__link" href="/contact.html">تواصل</a>
-
-</nav>
 
     </div>
-
-    <!-- RIGHT: Spacer (keeps true center) -->
-    <div class="topbar__side--spacer" aria-hidden="true"></div>
-
   </div>
+
+  <!-- ===== Nav ===== -->
+  <nav class="nav container" aria-label="Main Navigation">
+    <a class="nav__link" href="topics.html">محاور التميز</a>
+    <a class="nav__link" href="articles.html">المقالات</a>
+    <a class="nav__link" href="glossary.html">القاموس</a>
+    <a class="nav__link" href="tools.html">الأدوات والنماذج</a>
+    <a class="nav__link" href="SoftSkill.html">المهارات الناعمة</a>
+    <a class="nav__link" href="contact.html">تواصل معنا</a>
+    <a class="nav__link" href="about.html">من نحن</a>
+  </nav>
+
+  <!-- ===== Search Overlay ===== -->
+  <div class="search" id="searchOverlay" aria-hidden="true">
+    <div class="search__panel" role="dialog" aria-modal="true" aria-label="بحث الموقع">
+      <div class="search__head">
+        <input
+          id="searchInput"
+          class="search__input"
+          type="search"
+          placeholder="ابحث في المقالات والصفحات..."
+          autocomplete="off"
+        />
+        <button class="search__close" id="closeSearch" type="button" aria-label="إغلاق">✕</button>
+      </div>
+
+      <div class="search__results" id="searchResults"></div>
+      <div class="search__hint">اضغط ESC للإغلاق</div>
+    </div>
+  </div>
+
 </header>

@@ -121,3 +121,51 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.dispatchEvent(new Event("partials:loaded"));
 
 });
+function fixHeaderLinks() {
+  const header = document.getElementById("site-header");
+  if (!header) return;
+
+  // أي رابط يبدأ بـ "/" نحوله لمسار مناسب داخل المشروع
+  header.querySelectorAll('a[href^="/"]').forEach(a => {
+    const raw = a.getAttribute("href");
+    a.setAttribute("href", withBase(raw.replace(/^\//, "")));
+  });
+
+  // لو عندك home مكتوب ../../index.html خلّه يعتمد على base
+  header.querySelectorAll('a[href*="index.html"]').forEach(a => {
+    const raw = a.getAttribute("href") || "";
+    if (raw.includes("../")) a.setAttribute("href", withBase("index.html"));
+  });
+}
+
+
+const navToggle = document.getElementById("navToggle");
+const headerNav = document.getElementById("headerNav");
+if (navToggle && headerNav) {
+  navToggle.addEventListener("click", () => headerNav.classList.toggle("is-open"));
+}
+
+// فتح/إغلاق البحث
+const openSearch = document.getElementById("openSearch");
+const closeSearch = document.getElementById("closeSearch");
+const overlay = document.getElementById("searchOverlay");
+
+if (openSearch && closeSearch && overlay) {
+  openSearch.addEventListener("click", () => {
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.getElementById("searchInput")?.focus();
+  });
+
+  closeSearch.addEventListener("click", () => {
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      overlay.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+    }
+  });
+}

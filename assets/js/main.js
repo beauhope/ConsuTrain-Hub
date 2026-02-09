@@ -878,3 +878,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ✅ Accordion واحد فقط
   initSingleOpenPillars();
 });
+<script src="assets/js/search.js"></script>
