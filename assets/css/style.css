@@ -29,7 +29,17 @@ body {
 =============================== */
 @media (max-width: 768px) {
   body {
-    padding-top: 80px;
+    padding-top: 200px;
+  }
+}
+/* FORCE single column on mobile – final override */
+@media (max-width: 768px) {
+  .portal-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .portal-card {
+    width: 100% !important;
   }
 }
 
