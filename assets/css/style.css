@@ -22,15 +22,7 @@ body {
   background: #f6f8fb;
   color: #0f172a;
   line-height: 1.7;
-  padding-top: 72px; /* عدّل الرقم حسب ارتفاع الهيدر */
-}
-/* ===============================
-   Mobile header offset fix
-=============================== */
-@media (max-width: 768px) {
-  body {
-    padding-top: 180px;
-  }
+  
 }
 /* FORCE single column on mobile – final override */
 @media (max-width: 768px) {
@@ -70,9 +62,9 @@ body {
 ====================================== */
 
 .site-header {
-  position: fixed;        /* بدل sticky */
+   position: sticky;
   top: 0;
-  right: 0;
+    right: 0;
   left: 0;
   z-index: 1000;
 
