@@ -150,17 +150,20 @@ body {
   gap: 24px;
 }
 
+/* تابلت */
 @media (max-width: 1024px) {
   .portal-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+/* موبايل */
+@media (max-width: 600px) {
   .portal-grid {
     grid-template-columns: 1fr;
   }
 }
+
 
 .portal-card {
   background: var(--surface);
