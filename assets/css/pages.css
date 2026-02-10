@@ -29,16 +29,4 @@
   margin-bottom:10px;
 }
 
-.home-tile h3{
-  margin:0;
-  font-weight:800;
-  font-size:1.05rem;
-}
 
-@media (max-width: 900px){
-  .home-tiles{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 520px){
-  .home-tiles{ grid-template-columns: 1fr; }
-  .home-tile img{ height:150px; }
-}
