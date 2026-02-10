@@ -581,8 +581,44 @@ body {
   }
 }
 
+
+/* =========================
+   MOBILE FIX — HOME PORTAL
+========================= */
 @media (max-width: 768px) {
+
+  /* إجبار عمود واحد */
   .portal-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .portal-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  /* تكبير الصورة */
+  .portal-card__img {
+    height: 180px;
+  }
+
+  .portal-card__img img {
+    max-width: 90%;
+  }
+
+  /* تكبير العنوان */
+  .portal-card__title {
+    font-size: 1.25rem;
+    margin-top: 16px;
+  }
+
+  /* عنوان القسم */
+  .section__title {
+    font-size: 1.6rem;
+  }
+
+  .section__desc {
+    font-size: 1rem;
   }
 }
