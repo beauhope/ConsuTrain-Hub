@@ -29,7 +29,7 @@ body {
 =============================== */
 @media (max-width: 768px) {
   body {
-    padding-top: 250px;
+    padding-top: 180px;
   }
 }
 /* FORCE single column on mobile – final override */
