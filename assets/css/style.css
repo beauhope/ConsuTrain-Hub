@@ -42,6 +42,9 @@ body {
     width: 100% !important;
   }
 }
+.page-title {
+  scroll-margin-top: 130px;
+}
 
 /* =====================
    2. VARIABLES
@@ -776,4 +779,41 @@ button.danger {
 
 .footer-copy strong {
   color: #1f2937;
+}
+
+
+/* ===============================
+   MOBILE HEADER – COMPACT MODE
+================================ */
+@media (max-width: 768px) {
+
+  .header-inner {
+    padding: 10px 14px;        /* تقليل الارتفاع العام */
+    gap: 10px;                 /* تقليل المسافة بين العناصر */
+  }
+
+  .header-nav {
+    gap: 10px;                 /* تقليل المسافة بين روابط القائمة */
+  }
+
+  .header-nav a {
+    font-size: 0.9rem;         /* تصغير بسيط للخط */
+    padding: 4px 8px;          /* تقليل padding */
+  }
+
+  .header-brand__logo,
+  .brand-circle {
+    width: 34px;
+    height: 34px;              /* تصغير الشعار */
+  }
+
+  .header-brand__name,
+  .brand-name {
+    font-size: 0.9rem;         /* تصغير اسم الموقع */
+  }
+
+  .header-search {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
 }
