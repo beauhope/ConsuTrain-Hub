@@ -309,5 +309,22 @@ function injectGlossarySchema() {
 injectGlossarySchema();
 </script>
 
+<!---- scroll btn-->
+ <button id="scrollTopBtn" aria-label="العودة للأعلى">
+  ⬆︎
+</button>
+<script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  scrollBtn.style.display =
+    window.scrollY > 300 ? "flex" : "none";
+});
+
+scrollBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+</script>
+<!---- End scroll btn-->
 </body>
 </html>

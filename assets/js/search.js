@@ -37,13 +37,22 @@ function scoreText(text, q) {
   });
   return score;
 }
+function highlight(text, q) {
+  const terms = q.split(/\s+/).filter(Boolean);
+  let result = text;
+  terms.forEach(t => {
+    const re = new RegExp(`(${t})`, "gi");
+    result = result.replace(re, `<span class="search-highlight">$1</span>`);
+  });
+  return result;
+}
 
 function initSearch() {
-  const openBtn = document.getElementById("openSearch");
-  const overlay = document.getElementById("searchOverlay");
+  const openBtn  = document.getElementById("openSearch");
+  const overlay  = document.getElementById("searchOverlay");
   const closeBtn = document.getElementById("closeSearch");
-  const input = document.getElementById("globalSearchInput");
-  const results = document.getElementById("searchResults");
+  const input    = document.getElementById("globalSearchInput");
+  const results  = document.getElementById("searchResults");
 
   if (!openBtn || !overlay || !closeBtn || !input || !results) return;
 
@@ -52,7 +61,8 @@ function initSearch() {
 
   let articlesCache = null;
 
-  function open() {
+  function open(e) {
+    if (e) e.preventDefault(); // ⬅️ يمنع النزول للفوتر
     overlay.classList.add("is-open");
     overlay.setAttribute("aria-hidden", "false");
     input.focus();
@@ -76,14 +86,19 @@ function initSearch() {
 
     SITE_PAGES.forEach(p => {
       if (scoreText(`${p.title} ${p.keywords}`, q)) {
-        html += `<a class="search__item" href="${withBase(p.url)}">${p.title}</a>`;
+        html += `<a class="search__item" href="${withBase(p.url)}">
+  ${highlight(p.title, q)}
+</a>`;
       }
     });
 
     if (!articlesCache) articlesCache = await fetchArticles();
     articlesCache.forEach(a => {
       if (scoreText(a.title || "", q)) {
-        html += `<a class="search__item" href="articles.html#${a.id || ""}">${a.title}</a>`;
+        html += `<a class="search__item" href="articles.html#${a.id || ""}">
+  ${highlight(a.title, q)}
+</a>`;
+
       }
     });
 
@@ -94,7 +109,6 @@ function initSearch() {
   closeBtn.addEventListener("click", close);
   overlay.addEventListener("click", e => e.target === overlay && close());
   document.addEventListener("keydown", e => e.key === "Escape" && close());
-
   input.addEventListener("input", () => searchNow(input.value));
 }
 
