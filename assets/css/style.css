@@ -1,51 +1,144 @@
-/* ======================================
+/* ==================================================
    ConsuTrain Hub – MASTER STYLE
-   CLEAN • RESPONSIVE • PRODUCTION
-====================================== */
+   CLEAN • STABLE • PRODUCTION
+================================================== */
 
-/* ========== IMPORTS ========== */
-@import url("./base.css");
-@import url("./layout.css");
-@import url("./components.css");
-@import url("./components.accordion.css");
-@import url("./components.articles.css");
-@import url("./components.search.css");
-@import url("./pages.css");
-@import url("./utilities.css");
+/* =====================
+   1. RESET & BASE
+===================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-/* ========== VARIABLES ========== */
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: "Cairo", Tahoma, Arial, sans-serif;
+  background: #f6f8fb;
+  color: #0f172a;
+  line-height: 1.7;
+}
+
+/* =====================
+   2. VARIABLES
+===================== */
 :root {
   --primary: #1e3a8a;
   --secondary: #64748b;
   --border: #e5e7eb;
   --card: #ffffff;
   --bg: #f6f8fb;
-  --shadow: 0 10px 25px rgba(0,0,0,.06);
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
-/* ========== GLOBAL ========== */
-body {
-  font-family: "Cairo", Tahoma, Arial, sans-serif;
-  background: var(--bg);
-  margin: 0;
-  padding: 0;
-  line-height: 1.7;
+/* ======================================
+   HEADER & NAV — SINGLE SOURCE
+====================================== */
+.site-header {
+  background: #47505d;
+  color: #fff;
 }
 
-/* ========== CONTAINER ========== */
+.site-header .header-inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-brand__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.header-brand__name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.header-nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header-nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+/* Mobile Header */
+@media (max-width: 768px) {
+  .site-header .header-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* =====================
+   3. LAYOUT
+===================== */
 .container {
   max-width: 1200px;
   margin-inline: auto;
   padding: 24px;
 }
 
-/* ========== PAGE TITLES ========== */
+.section {
+  padding: 60px 0;
+}
+
+.section__head {
+  text-align: center;
+}
+
+.section__title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.section__desc {
+  color: var(--secondary);
+  font-size: 1.05rem;
+}
+
+/* =====================
+   4. PAGE TITLES
+===================== */
 .page-title {
   text-align: center;
   margin: 40px 0 10px;
   font-size: 2.2rem;
   font-weight: 800;
-  color: #0f172a;
 }
 
 .page-subtitle {
@@ -55,14 +148,12 @@ body {
 }
 
 /* =================================================
-   HOME – PORTAL GRID (SINGLE SOURCE OF TRUTH)
+   5. HOME – PORTAL GRID (ONLY GRID DEFINITION)
 ================================================= */
-
 .portal-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  align-items: stretch;
 }
 
 /* Tablet */
@@ -72,14 +163,16 @@ body {
   }
 }
 
-/* Mobile — ONE COLUMN ONLY */
+/* Mobile – ONE COLUMN */
 @media (max-width: 768px) {
   .portal-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ========== PORTAL CARD ========== */
+/* =====================
+   PORTAL CARD
+===================== */
 .portal-card {
   background: var(--card);
   border-radius: 18px;
@@ -93,12 +186,12 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  transition: transform .25s ease, box-shadow .25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .portal-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
 .portal-card__img {
@@ -118,13 +211,11 @@ body {
   margin-top: 16px;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #0f172a;
 }
 
 /* =================================================
-   GLOSSARY
+   6. GLOSSARY
 ================================================= */
-
 .glossary-search {
   width: 100%;
   max-width: 520px;
@@ -133,15 +224,7 @@ body {
   padding: 14px 20px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  font-size: 1rem;
   box-shadow: var(--shadow);
-}
-
-.glossary-counter {
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 600;
-  color: #475569;
 }
 
 .glossary-list {
@@ -150,120 +233,23 @@ body {
   gap: 22px;
 }
 
-/* ========== TERM CARD ========== */
-.gterm {
-  background: var(--card);
-  border-radius: 18px;
-  padding: 22px;
-  box-shadow: var(--shadow);
-}
-
-.gterm h3 {
-  font-size: 1.3rem;
-  margin-bottom: 6px;
-}
-
-.gterm__en {
-  direction: ltr;
-  color: var(--secondary);
-  font-weight: 600;
-}
-
-.gterm__footer {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 18px;
-  flex-wrap: wrap;
-}
-
-/* =================================================
-   ADMIN
-================================================= */
-
-.admin-bar {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.admin-btn {
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: #fff;
-  cursor: pointer;
-  font-size: .95rem;
-}
-
-.admin-btn.primary {
-  background: #2563eb;
-  color: #fff;
-  border: none;
-}
-
-.admin-btn.danger {
-  background: #ef4444;
-  color: #fff;
-  border: none;
-}
-
-.admin-panel {
-  max-width: 700px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-
-/* =================================================
-   MODAL
-================================================= */
-
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.modal {
-  background: #fff;
-  padding: 24px;
-  border-radius: 14px;
-  max-width: 420px;
-  width: 90%;
+/* =====================
+   7. UTILITIES
+===================== */
+.center {
   text-align: center;
 }
 
-/* =================================================
-   UNDO TOAST
-================================================= */
-
-.undo-toast {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #222;
-  color: #fff;
-  padding: 12px 16px;
-  border-radius: 10px;
-  display: flex;
-  gap: 12px;
-  z-index: 9999;
+.hidden {
+  display: none !important;
 }
 
-/* =================================================
-   MOBILE TYPOGRAPHY FIX
-================================================= */
-
+/* =====================
+   8. MOBILE TYPOGRAPHY
+===================== */
 @media (max-width: 768px) {
-  .page-title {
+  .page-title,
+  .section__title {
     font-size: 1.7rem;
   }
 
@@ -271,34 +257,8 @@ body {
   .section__desc {
     font-size: 1rem;
   }
-}
-/* =========================
-   HOME PORTAL – SINGLE SOURCE OF TRUTH
-========================= */
 
-.home-menu .portal-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .home-menu .portal-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile – عنصر واحد فقط */
-@media (max-width: 768px) {
-  .home-menu .portal-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* MOBILE — FORCE SINGLE COLUMN */
-@media (max-width: 768px) {
-  .portal-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
+  .container {
+    padding: 16px;
   }
 }

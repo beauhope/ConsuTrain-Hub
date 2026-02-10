@@ -1,54 +1,22 @@
 <header class="site-header">
+  <div class="header-inner">
 
-  <!-- ===== Banner (Logo/Name + Search) ===== -->
-  <div class="topbar">
-    <div class="container topbar__row">
+    <a href="index.html" class="header-brand">
+      <img src="assets/images/logo.png" class="header-brand__logo" alt="CTH">
+      <span class="header-brand__name">ConsuTrain Hub</span>
+    </a>
 
-      <!-- Brand -->
-      <a class="brand" href="index.html" aria-label="ConsuTrain Hub">
-        <span class="brand__mark">CTH</span>
-        <span class="brand__name">ConsuTrain Hub</span>
-      </a>
+    <nav class="header-nav">
+      <a href="topics.html">محاور التميز</a>
+      <a href="articles.html">المقالات</a>
+      <a href="glossary.html">القاموس</a>
+      <a href="tools.html">الأدوات والنماذج</a>
+      <a href="SoftSkill.html">المهارات الناعمة</a>
+      <a href="contact.html">تواصل معنا</a>
+      <a href="about.html">من نحن</a>
+    </nav>
 
-      <!-- Search button -->
-      <div class="nav-search" role="search">
-        <p>بحث في الموقع</p>
-        <button class="nav-search__btn" type="button" id="openSearch" aria-label="بحث">
-          🔍 
-        </button>
-      </div>
+    <div class="header-search">🔍</div>
 
-    </div>
   </div>
-
-  <!-- ===== Nav ===== -->
-  <nav class="nav container" aria-label="Main Navigation">
-    <a class="nav__link" href="topics.html">محاور التميز</a>
-    <a class="nav__link" href="articles.html">المقالات</a>
-    <a class="nav__link" href="glossary.html">القاموس</a>
-    <a class="nav__link" href="tools.html">الأدوات والنماذج</a>
-    <a class="nav__link" href="SoftSkill.html">المهارات الناعمة</a>
-    <a class="nav__link" href="contact.html">تواصل معنا</a>
-    <a class="nav__link" href="about.html">من نحن</a>
-  </nav>
-
-  <!-- ===== Search Overlay ===== -->
-  <div class="search" id="searchOverlay" aria-hidden="true">
-    <div class="search__panel" role="dialog" aria-modal="true" aria-label="بحث الموقع">
-      <div class="search__head">
-        <input
-          id="searchInput"
-          class="search__input"
-          type="search"
-          placeholder="ابحث في المقالات والصفحات..."
-          autocomplete="off"
-        />
-        <button class="search__close" id="closeSearch" type="button" aria-label="إغلاق">✕</button>
-      </div>
-
-      <div class="search__results" id="searchResults"></div>
-      <div class="search__hint">اضغط ESC للإغلاق</div>
-    </div>
-  </div>
-
 </header>
