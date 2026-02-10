@@ -1,6 +1,6 @@
 /* ======================================
-   MASTER STYLE – ConsuTrain Hub
-   Clean & Production Ready
+   ConsuTrain Hub – MASTER STYLE
+   CLEAN • RESPONSIVE • PRODUCTION
 ====================================== */
 
 /* ========== IMPORTS ========== */
@@ -29,12 +29,13 @@ body {
   background: var(--bg);
   margin: 0;
   padding: 0;
+  line-height: 1.7;
 }
 
 /* ========== CONTAINER ========== */
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin-inline: auto;
   padding: 24px;
 }
 
@@ -53,476 +54,9 @@ body {
   margin-bottom: 30px;
 }
 
-/* ========== HOME GRID (FIXED) ========== */
-.home-grid,
-.quick-links,
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  align-items: stretch;
-}
-
-/* ========== CARDS ========== */
-.card,
-.home-card {
-  background: var(--card);
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: var(--shadow);
-  text-align: center;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.card:hover,
-.home-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0,0,0,.08);
-}
-
-.card img {
-  max-width: 90px;
-  margin-bottom: 12px;
-}
-
-.card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 6px;
-}
-
-.card p {
-  font-size: .9rem;
-  color: #475569;
-}
-
-/* ========== GLOSSARY ========== */
-.glossary-search {
-  width: 100%;
-  max-width: 520px;
-  margin: 0 auto 12px;
-  display: block;
-  padding: 14px 20px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  font-size: 1rem;
-  box-shadow: var(--shadow);
-}
-
-.glossary-counter {
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 600;
-  color: #475569;
-}
-
-.glossary-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 22px;
-}
-
-/* ========== TERM CARD ========== */
-.gterm {
-  background: var(--card);
-  border-radius: 18px;
-  padding: 22px;
-  box-shadow: var(--shadow);
-}
-
-.gterm h3 {
-  font-size: 1.25rem;
-}
-
-.gterm__en {
-  direction: ltr;
-  color: var(--secondary);
-  font-weight: 600;
-}
-
-.gterm__footer {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 18px;
-}
-
-/* ========== ADMIN ========== */
-.admin-bar {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.admin-btn {
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: #fff;
-  cursor: pointer;
-}
-
-.admin-btn.primary {
-  background: #2563eb;
-  color: #fff;
-  border: none;
-}
-
-.admin-btn.danger {
-  background: #ef4444;
-  color: #fff;
-  border: none;
-}
-
-.admin-panel {
-  max-width: 700px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-
-/* ========== MODAL ========== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.modal {
-  background: #fff;
-  padding: 24px;
-  border-radius: 14px;
-  max-width: 420px;
-  width: 90%;
-  text-align: center;
-}
-
-/* ========== UNDO TOAST ========== */
-.undo-toast {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #222;
-  color: #fff;
-  padding: 12px 16px;
-  border-radius: 10px;
-  display: flex;
-  gap: 12px;
-  z-index: 9999;
-}
-
-/* ========== RESPONSIVE ========== */
-
-/* Large screens */
-@media (min-width: 1400px) {
-  .home-grid,
-  .quick-links,
-  .cards-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .home-grid,
-  .quick-links,
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .container {
-    padding: 16px;
-  }
-
-  .home-grid,
-  .quick-links,
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .page-title {
-    font-size: 1.6rem;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-/* ======================================
-   MASTER STYLE – ConsuTrain Hub
-   Clean & Production Ready
-====================================== */
-
-/* ========== IMPORTS ========== */
-@import url("./base.css");
-@import url("./layout.css");
-@import url("./components.css");
-@import url("./components.accordion.css");
-@import url("./components.articles.css");
-@import url("./components.search.css");
-@import url("./pages.css");
-@import url("./utilities.css");
-
-/* ========== VARIABLES ========== */
-:root {
-  --primary: #1e3a8a;
-  --secondary: #64748b;
-  --border: #e5e7eb;
-  --card: #ffffff;
-  --bg: #f6f8fb;
-  --shadow: 0 10px 25px rgba(0,0,0,.06);
-}
-
-/* ========== GLOBAL ========== */
-body {
-  font-family: "Cairo", Tahoma, Arial, sans-serif;
-  background: var(--bg);
-  margin: 0;
-  padding: 0;
-}
-
-/* ========== CONTAINER ========== */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 24px;
-}
-
-/* ========== PAGE TITLES ========== */
-.page-title {
-  text-align: center;
-  margin: 40px 0 10px;
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #0f172a;
-}
-
-.page-subtitle {
-  text-align: center;
-  color: var(--secondary);
-  margin-bottom: 30px;
-}
-
-/* ========== HOME GRID (FIXED) ========== */
-.home-grid,
-.quick-links,
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  align-items: stretch;
-}
-
-/* ========== CARDS ========== */
-.card,
-.home-card {
-  background: var(--card);
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: var(--shadow);
-  text-align: center;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.card:hover,
-.home-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0,0,0,.08);
-}
-
-.card img {
-  max-width: 90px;
-  margin-bottom: 12px;
-}
-
-.card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 6px;
-}
-
-.card p {
-  font-size: .9rem;
-  color: #475569;
-}
-
-/* ========== GLOSSARY ========== */
-.glossary-search {
-  width: 100%;
-  max-width: 520px;
-  margin: 0 auto 12px;
-  display: block;
-  padding: 14px 20px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  font-size: 1rem;
-  box-shadow: var(--shadow);
-}
-
-.glossary-counter {
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 600;
-  color: #475569;
-}
-
-.glossary-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 22px;
-}
-
-/* ========== TERM CARD ========== */
-.gterm {
-  background: var(--card);
-  border-radius: 18px;
-  padding: 22px;
-  box-shadow: var(--shadow);
-}
-
-.gterm h3 {
-  font-size: 1.25rem;
-}
-
-.gterm__en {
-  direction: ltr;
-  color: var(--secondary);
-  font-weight: 600;
-}
-
-.gterm__footer {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 18px;
-}
-
-/* ========== ADMIN ========== */
-.admin-bar {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.admin-btn {
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: #fff;
-  cursor: pointer;
-}
-
-.admin-btn.primary {
-  background: #2563eb;
-  color: #fff;
-  border: none;
-}
-
-.admin-btn.danger {
-  background: #ef4444;
-  color: #fff;
-  border: none;
-}
-
-.admin-panel {
-  max-width: 700px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-
-/* ========== MODAL ========== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.modal {
-  background: #fff;
-  padding: 24px;
-  border-radius: 14px;
-  max-width: 420px;
-  width: 90%;
-  text-align: center;
-}
-
-/* ========== UNDO TOAST ========== */
-.undo-toast {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #222;
-  color: #fff;
-  padding: 12px 16px;
-  border-radius: 10px;
-  display: flex;
-  gap: 12px;
-  z-index: 9999;
-}
-
-/* ========== RESPONSIVE ========== */
-
-/* Large screens */
-@media (min-width: 1400px) {
-  .home-grid,
-  .quick-links,
-  .cards-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .home-grid,
-  .quick-links,
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .container {
-    padding: 16px;
-  }
-
-  .home-grid,
-  .quick-links,
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .page-title {
-    font-size: 1.6rem;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-
-/* =========================
-   HOME PORTAL GRID
-========================= */
+/* =================================================
+   HOME – PORTAL GRID (SINGLE SOURCE OF TRUTH)
+================================================= */
 
 .portal-grid {
   display: grid;
@@ -531,8 +65,23 @@ body {
   align-items: stretch;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .portal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile — ONE COLUMN ONLY */
+@media (max-width: 768px) {
+  .portal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== PORTAL CARD ========== */
 .portal-card {
-  background: #fff;
+  background: var(--card);
   border-radius: 18px;
   padding: 20px;
   box-shadow: var(--shadow);
@@ -553,71 +102,172 @@ body {
 }
 
 .portal-card__img {
-  height: 160px;
+  height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .portal-card__img img {
-  max-width: 100%;
+  max-width: 90%;
   max-height: 100%;
   object-fit: contain;
 }
 
 .portal-card__title {
-  margin-top: 14px;
-  font-size: 1.1rem;
+  margin-top: 16px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #0f172a;
 }
 
+/* =================================================
+   GLOSSARY
+================================================= */
 
-/* ===== Responsive Portal Grid ===== */
-
-@media (max-width: 1024px) {
-  .portal-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.glossary-search {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 12px;
+  display: block;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  box-shadow: var(--shadow);
 }
 
+.glossary-counter {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #475569;
+}
 
-/* =========================
-   MOBILE FIX — HOME PORTAL
-========================= */
+.glossary-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+/* ========== TERM CARD ========== */
+.gterm {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.gterm h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.gterm__en {
+  direction: ltr;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.gterm__footer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+/* =================================================
+   ADMIN
+================================================= */
+
+.admin-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.admin-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  font-size: .95rem;
+}
+
+.admin-btn.primary {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+}
+
+.admin-btn.danger {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+}
+
+.admin-panel {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* =================================================
+   MODAL
+================================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+}
+
+/* =================================================
+   UNDO TOAST
+================================================= */
+
+.undo-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #222;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  display: flex;
+  gap: 12px;
+  z-index: 9999;
+}
+
+/* =================================================
+   MOBILE TYPOGRAPHY FIX
+================================================= */
+
 @media (max-width: 768px) {
-
-  /* إجبار عمود واحد */
-  .portal-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px;
+  .page-title {
+    font-size: 1.7rem;
   }
 
-  .portal-card {
-    padding: 20px;
-    border-radius: 20px;
-  }
-
-  /* تكبير الصورة */
-  .portal-card__img {
-    height: 180px;
-  }
-
-  .portal-card__img img {
-    max-width: 90%;
-  }
-
-  /* تكبير العنوان */
-  .portal-card__title {
-    font-size: 1.25rem;
-    margin-top: 16px;
-  }
-
-  /* عنوان القسم */
-  .section__title {
-    font-size: 1.6rem;
-  }
-
+  .page-subtitle,
   .section__desc {
     font-size: 1rem;
   }
