@@ -87,16 +87,7 @@
   font-weight: 700;
 }
 
-/* Grids */
-.grid3{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
 
-@media (max-width: 900px){
-  .grid3{ grid-template-columns: 1fr; }
-}
 
 /* ========== Footer ========== */
 /* One unified footer style (no duplicates) */

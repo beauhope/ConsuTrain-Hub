@@ -272,3 +272,26 @@ body {
     font-size: 1rem;
   }
 }
+/* =========================
+   HOME PORTAL – SINGLE SOURCE OF TRUTH
+========================= */
+
+.home-menu .portal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .home-menu .portal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile – عنصر واحد فقط */
+@media (max-width: 768px) {
+  .home-menu .portal-grid {
+    grid-template-columns: 1fr;
+  }
+}
