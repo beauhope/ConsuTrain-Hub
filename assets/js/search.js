@@ -10,7 +10,7 @@ function withBase(path) {
 }
 
 /* ===== Static pages ===== */
-const SITE_PAGES = [
+window.SITE_PAGES = window.SITE_PAGES || [
   { title: "محاور التميز", url: "topics.html", keywords: "تميز مؤسسي" },
   { title: "المقالات", url: "articles.html", keywords: "مقالات" },
   { title: "القاموس", url: "glossary.html", keywords: "مصطلحات" },

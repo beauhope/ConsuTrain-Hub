@@ -24,6 +24,14 @@ body {
   line-height: 1.7;
   padding-top: 72px; /* عدّل الرقم حسب ارتفاع الهيدر */
 }
+/* ===============================
+   Mobile header offset fix
+=============================== */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+}
 
 /* =====================
    2. VARIABLES
