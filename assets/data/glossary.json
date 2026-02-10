@@ -1,0 +1,304 @@
+[
+  {
+    "id": "kpi",
+    "term_ar": "مؤشر الأداء الرئيسي",
+    "term_en": "Key Performance Indicator (KPI)",
+    "definition": "مقياس يُستخدم لقياس مدى تحقيق الأهداف المحددة للمؤسسة أو الإدارة."
+  },
+  {
+    "id": "strategy",
+    "term_ar": "التخطيط الاستراتيجي",
+    "term_en": "Strategic Planning",
+    "definition": "عملية تحديد الاتجاه العام للمؤسسة وأهدافها طويلة المدى ووضع الخطط لتحقيقها."
+  },
+  {
+    "id": "operational-plan",
+    "term_ar": "الخطة التشغيلية",
+    "term_en": "Operational Plan",
+    "definition": "وثيقة تفصيلية توضح الأنشطة والإجراءات اللازمة لتنفيذ الأهداف خلال فترة زمنية محددة."
+  },
+  {
+    "id": "vision",
+    "term_ar": "الرؤية",
+    "term_en": "Vision",
+    "definition": "تصور مستقبلي طموح يوضح ما تطمح المؤسسة إلى تحقيقه على المدى البعيد."
+  },
+  {
+    "id": "mission",
+    "term_ar": "الرسالة",
+    "term_en": "Mission",
+    "definition": "السبب الأساسي لوجود المؤسسة، ويحدد طبيعة عملها وقيمها وخدماتها."
+  },
+  {
+    "id": "objectives",
+    "term_ar": "الأهداف",
+    "term_en": "Objectives",
+    "definition": "نتائج محددة تسعى المؤسسة إلى تحقيقها خلال فترة زمنية معينة."
+  },
+  {
+    "id": "policy",
+    "term_ar": "السياسة",
+    "term_en": "Policy",
+    "definition": "إطار توجيهي يحدد القواعد العامة والاتجاهات التي تحكم اتخاذ القرارات داخل المؤسسة."
+  },
+  {
+    "id": "procedure",
+    "term_ar": "الإجراء",
+    "term_en": "Procedure",
+    "definition": "خطوات متسلسلة ومحددة توضح كيفية تنفيذ نشاط أو مهمة معينة."
+  },
+  {
+    "id": "governance",
+    "term_ar": "الحوكمة",
+    "term_en": "Governance",
+    "definition": "نظام يحدد العلاقات والصلاحيات والمسؤوليات لضمان الشفافية والمساءلة وحسن الإدارة."
+  },
+  {
+    "id": "risk-management",
+    "term_ar": "إدارة المخاطر",
+    "term_en": "Risk Management",
+    "definition": "عملية تحديد وتحليل وتقييم المخاطر ووضع آليات للحد من آثارها."
+  },
+  {
+    "id": "stakeholders",
+    "term_ar": "أصحاب المصلحة",
+    "term_en": "Stakeholders",
+    "definition": "الأفراد أو الجهات التي تتأثر أو تؤثر في أنشطة وقرارات المؤسسة."
+  },
+  {
+    "id": "decision-making",
+    "term_ar": "اتخاذ القرار",
+    "term_en": "Decision Making",
+    "definition": "عملية اختيار أفضل بديل من بين عدة خيارات لتحقيق هدف معين."
+  },
+  {
+    "id": "performance-management",
+    "term_ar": "إدارة الأداء",
+    "term_en": "Performance Management",
+    "definition": "منهجية لمتابعة وتقييم وتحسين أداء الأفراد والفرق داخل المؤسسة."
+  },
+  {
+    "id": "quality-management",
+    "term_ar": "إدارة الجودة",
+    "term_en": "Quality Management",
+    "definition": "مجموعة الأنشطة التي تهدف إلى ضمان تحسين جودة الخدمات أو المنتجات."
+  },
+  {
+    "id": "continuous-improvement",
+    "term_ar": "التحسين المستمر",
+    "term_en": "Continuous Improvement",
+    "definition": "نهج إداري يركز على التطوير التدريجي والمستمر للعمليات والأداء."
+  },
+  {
+    "id": "organizational-structure",
+    "term_ar": "الهيكل التنظيمي",
+    "term_en": "Organizational Structure",
+    "definition": "طريقة تنظيم الوحدات الإدارية وتحديد العلاقات الوظيفية داخل المؤسسة."
+  },
+  {
+    "id": "job-description",
+    "term_ar": "الوصف الوظيفي",
+    "term_en": "Job Description",
+    "definition": "وثيقة توضح مهام ومسؤوليات ومتطلبات الوظيفة."
+  },
+  {
+    "id": "delegation",
+    "term_ar": "تفويض الصلاحيات",
+    "term_en": "Delegation of Authority",
+    "definition": "نقل جزء من الصلاحيات والمسؤوليات من المدير إلى المرؤوسين."
+  },
+  {
+    "id": "leadership",
+    "term_ar": "القيادة",
+    "term_en": "Leadership",
+    "definition": "القدرة على توجيه وتحفيز الأفراد لتحقيق الأهداف المشتركة."
+  },
+  {
+    "id": "teamwork",
+    "term_ar": "العمل الجماعي",
+    "term_en": "Teamwork",
+    "definition": "تعاون مجموعة من الأفراد لإنجاز مهام مشتركة بكفاءة."
+  },
+{
+  "id": "planning",
+  "term_ar": "التخطيط",
+  "term_en": "Planning",
+  "definition": "عملية تحديد الأهداف المستقبلية ووضع الخطوات اللازمة لتحقيقها."
+},
+{
+  "id": "organizing",
+  "term_ar": "التنظيم",
+  "term_en": "Organizing",
+  "definition": "ترتيب الموارد والأنشطة وتوزيع المهام بطريقة تضمن تحقيق الأهداف بكفاءة."
+},
+{
+  "id": "directing",
+  "term_ar": "التوجيه",
+  "term_en": "Directing",
+  "definition": "إرشاد وتحفيز العاملين لتنفيذ المهام وفق الخطط الموضوعة."
+},
+{
+  "id": "controlling",
+  "term_ar": "الرقابة",
+  "term_en": "Controlling",
+  "definition": "متابعة الأداء ومقارنته بالخطط واتخاذ الإجراءات التصحيحية عند الحاجة."
+},
+{
+  "id": "time-management",
+  "term_ar": "إدارة الوقت",
+  "term_en": "Time Management",
+  "definition": "تنظيم الوقت واستثماره بفعالية لإنجاز الأعمال في المواعيد المحددة."
+},
+{
+  "id": "change-management",
+  "term_ar": "إدارة التغيير",
+  "term_en": "Change Management",
+  "definition": "التعامل المنهجي مع التغييرات التنظيمية لضمان انتقال سلس وناجح."
+},
+{
+  "id": "process",
+  "term_ar": "العملية",
+  "term_en": "Process",
+  "definition": "سلسلة من الأنشطة المترابطة التي تحول المدخلات إلى مخرجات."
+},
+{
+  "id": "workflow",
+  "term_ar": "سير العمل",
+  "term_en": "Workflow",
+  "definition": "تسلسل الخطوات التي تمر بها المهام داخل المؤسسة."
+},
+{
+  "id": "efficiency",
+  "term_ar": "الكفاءة",
+  "term_en": "Efficiency",
+  "definition": "تحقيق أفضل النتائج باستخدام أقل قدر ممكن من الموارد."
+},
+{
+  "id": "effectiveness",
+  "term_ar": "الفعالية",
+  "term_en": "Effectiveness",
+  "definition": "مدى تحقيق الأهداف المحددة بغض النظر عن حجم الموارد المستخدمة."
+},
+{
+  "id": "benchmarking",
+  "term_ar": "المقارنة المعيارية",
+  "term_en": "Benchmarking",
+  "definition": "مقارنة أداء المؤسسة مع أفضل الممارسات لتحسين النتائج."
+},
+{
+  "id": "performance-evaluation",
+  "term_ar": "تقييم الأداء",
+  "term_en": "Performance Evaluation",
+  "definition": "قياس وتحليل أداء الأفراد أو الإدارات وفق معايير محددة."
+},
+{
+  "id": "internal-audit",
+  "term_ar": "التدقيق الداخلي",
+  "term_en": "Internal Audit",
+  "definition": "مراجعة داخلية مستقلة تهدف إلى تحسين العمليات وضمان الالتزام."
+},
+{
+  "id": "compliance",
+  "term_ar": "الامتثال",
+  "term_en": "Compliance",
+  "definition": "الالتزام بالأنظمة والقوانين والسياسات المعتمدة."
+},
+{
+  "id": "documentation",
+  "term_ar": "التوثيق",
+  "term_en": "Documentation",
+  "definition": "تسجيل المعلومات والإجراءات والقرارات بشكل منظم."
+},
+{
+  "id": "communication",
+  "term_ar": "الاتصال الإداري",
+  "term_en": "Administrative Communication",
+  "definition": "تبادل المعلومات داخل المؤسسة لضمان التنسيق الفعال."
+},
+{
+  "id": "coordination",
+  "term_ar": "التنسيق",
+  "term_en": "Coordination",
+  "definition": "تنظيم الجهود بين الإدارات المختلفة لتحقيق أهداف مشتركة."
+},
+{
+  "id": "empowerment",
+  "term_ar": "التمكين",
+  "term_en": "Empowerment",
+  "definition": "منح الموظفين الصلاحيات والموارد لاتخاذ القرارات وتحمل المسؤولية."
+},
+{
+  "id": "motivation",
+  "term_ar": "التحفيز",
+  "term_en": "Motivation",
+  "definition": "استخدام وسائل تشجيعية لرفع أداء العاملين وزيادة إنتاجيتهم."
+},
+{
+  "id": "conflict-management",
+  "term_ar": "إدارة النزاعات",
+  "term_en": "Conflict Management",
+  "definition": "التعامل مع الخلافات داخل بيئة العمل بطريقة بنّاءة."
+},
+{
+  "id": "sop",
+  "term_ar": "إجراءات العمل القياسية",
+  "term_en": "Standard Operating Procedures (SOP)",
+  "definition": "تعليمات مكتوبة توضح الطريقة المعتمدة لتنفيذ المهام."
+},
+{
+  "id": "task-management",
+  "term_ar": "إدارة المهام",
+  "term_en": "Task Management",
+  "definition": "تخطيط وتنظيم ومتابعة تنفيذ المهام اليومية."
+},
+{
+  "id": "reporting",
+  "term_ar": "إعداد التقارير",
+  "term_en": "Reporting",
+  "definition": "جمع وتحليل وعرض البيانات لدعم اتخاذ القرار."
+},
+{
+  "id": "accountability",
+  "term_ar": "المساءلة",
+  "term_en": "Accountability",
+  "definition": "تحمل المسؤولية عن القرارات والنتائج داخل المؤسسة."
+},
+{
+  "id": "transparency",
+  "term_ar": "الشفافية",
+  "term_en": "Transparency",
+  "definition": "وضوح الإجراءات والمعلومات وإتاحتها لأصحاب العلاقة."
+},
+{
+  "id": "resource-management",
+  "term_ar": "إدارة الموارد",
+  "term_en": "Resource Management",
+  "definition": "تخطيط واستخدام الموارد البشرية والمادية بكفاءة."
+},
+{
+  "id": "decision-support",
+  "term_ar": "دعم اتخاذ القرار",
+  "term_en": "Decision Support",
+  "definition": "توفير المعلومات والأدوات التي تساعد الإدارة على اتخاذ قرارات سليمة."
+},
+{
+  "id": "organizational-culture",
+  "term_ar": "الثقافة التنظيمية",
+  "term_en": "Organizational Culture",
+  "definition": "القيم والمعتقدات والسلوكيات التي تميز بيئة العمل."
+},
+{
+  "id": "business-continuity",
+  "term_ar": "استمرارية الأعمال",
+  "term_en": "Business Continuity",
+  "definition": "قدرة المؤسسة على مواصلة العمل أثناء الأزمات والظروف الطارئة."
+},
+{
+  "id": "innovation-management",
+  "term_ar": "إدارة الابتكار",
+  "term_en": "Innovation Management",
+  "definition": "تنظيم وتطوير الأفكار الجديدة لتحسين الأداء والخدمات."
+}
+]
+
+

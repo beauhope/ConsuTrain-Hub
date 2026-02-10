@@ -1,14 +1,264 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>القاموس الإداري | ConsuTrain Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
 <body>
-  <div id="site-header"></div>
 
-  <main class="section">
-    <div class="container">
-      <h1 class="section__title">عنوان الصفحة</h1>
-      <p class="section__desc">قريبًا…</p>
+<div id="site-header"></div>
+
+<main class="site">
+<section class="container">
+
+<h1 class="page-title">القاموس الإداري</h1>
+<p class="page-subtitle">مصطلحات إدارية مبسطة مع الترجمة</p>
+
+<input id="glossarySearch" class="glossary-search"
+       placeholder="ابحث عن مصطلح عربي أو إنجليزي">
+
+<div id="glossaryCounter" class="glossary-counter"></div>
+
+<!-- 🔐 Admin Bar -->
+<div class="admin-bar">
+  <button id="loginBtn" class="admin-btn">🔐 دخول المدير</button>
+  <button id="logoutBtn" class="admin-btn danger" style="display:none">🚪 خروج</button>
+</div>
+
+<!-- 🧩 Admin Panel -->
+<div id="adminPanel" class="admin-panel" style="display:none">
+  <h3>لوحة إدارة القاموس</h3>
+  <input id="newAr" placeholder="المصطلح بالعربية">
+  <input id="newEn" placeholder="English Term">
+  <textarea id="newDef" placeholder="التعريف"></textarea>
+  <button class="admin-btn primary" onclick="addTerm()">➕ إضافة مصطلح</button>
+</div>
+
+<div class="glossary-tools">
+  <button onclick="exportPDF()">📄 PDF</button>
+  <button onclick="exportWord()">📝 Word</button>
+  <button onclick="resetLocal()">♻️ إعادة ضبط</button>
+</div>
+
+<div id="glossaryList" class="glossary-list"></div>
+
+</section>
+</main>
+
+<div id="site-footer"></div>
+
+<!-- 🗑 Delete Confirmation Modal -->
+<div id="deleteModal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <h3>⚠️ تأكيد الحذف</h3>
+    <p id="deleteModalText"></p>
+    <div class="modal-actions">
+      <button class="btn danger" id="confirmDeleteBtn">نعم، احذف</button>
+      <button class="btn" onclick="closeDeleteModal()">إلغاء</button>
     </div>
-  </main>
+  </div>
+</div>
 
-  <div id="site-footer"></div>
+<!-- 🔄 Undo Toast -->
+<div id="undoToast" class="undo-toast" style="display:none">
+  <span>🗑 تم حذف المصطلح</span>
+  <button onclick="undoDelete()">تراجع</button>
+</div>
 
-  <script src="assets/js/includes.js"></script>
+<script src="assets/js/includes.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+/* ========= CONFIG ========= */
+const LS_KEY = "consutrain_glossary";
+const ADMIN_KEY = "consutrain_admin";
+const ADMIN_PASS = "admin123";
+
+/* ========= STATE ========= */
+let glossary = [];
+let deleteIndex = null;
+let lastDeleted = null;
+let undoTimer = null;
+
+/* ========= HELPERS ========= */
+const $ = id => document.getElementById(id);
+const saveLS = () => localStorage.setItem(LS_KEY, JSON.stringify(glossary));
+const isAdmin = () => localStorage.getItem(ADMIN_KEY) === "1";
+
+/* ========= RENDER ========= */
+function render(list){
+  $("glossaryCounter").textContent = `عدد النتائج: ${list.length}`;
+
+  $("glossaryList").innerHTML = list.map((i,index)=>`
+    <article class="gterm">
+      <h3>${i.ar}</h3>
+      <div class="gterm__en">${i.en}</div>
+      <p>${i.def}</p>
+
+      <div class="gterm__footer">
+        <button onclick="navigator.clipboard.writeText('${i.ar}')">نسخ المصطلح</button>
+        <button onclick="navigator.clipboard.writeText('${i.def}')">نسخ التعريف</button>
+        ${isAdmin() ? `
+          <button class="copy-btn danger"
+                  onclick="openDeleteModal(${index})">
+            🗑 حذف
+          </button>` : ""}
+      </div>
+    </article>
+  `).join("");
+}
+
+/* ========= LOAD ========= */
+function load(){
+  const ls = localStorage.getItem(LS_KEY);
+  if(ls){
+    glossary = JSON.parse(ls);
+    render(glossary);
+  }else{
+    fetch("assets/data/glossary.json")
+      .then(r=>r.json())
+      .then(d=>{
+        glossary = d.map(x=>({
+          ar:x.term_ar,
+          en:x.term_en,
+          def:x.definition
+        }));
+        saveLS();
+        render(glossary);
+      });
+  }
+}
+
+/* ========= SEARCH ========= */
+$("glossarySearch").oninput = e=>{
+  const q = e.target.value.toLowerCase();
+  render(glossary.filter(i =>
+    i.ar.includes(q) ||
+    i.en.toLowerCase().includes(q) ||
+    i.def.includes(q)
+  ));
+};
+
+/* ========= ADD ========= */
+function addTerm(){
+  const ar=$("newAr").value.trim(),
+        en=$("newEn").value.trim(),
+        def=$("newDef").value.trim();
+
+  if(!ar||!en||!def) return alert("أكمل جميع الحقول");
+
+  glossary.push({ar,en,def});
+  saveLS();
+  render(glossary);
+
+  $("newAr").value=$("newEn").value=$("newDef").value="";
+}
+
+/* ========= DELETE + UNDO ========= */
+function openDeleteModal(index){
+  deleteIndex = index;
+  $("deleteModalText").textContent =
+    `هل أنت متأكد من حذف المصطلح: "${glossary[index].ar}" ؟`;
+  $("deleteModal").style.display = "flex";
+}
+
+function closeDeleteModal(){
+  deleteIndex = null;
+  $("deleteModal").style.display = "none";
+}
+
+$("confirmDeleteBtn").onclick = ()=>{
+  if(deleteIndex === null) return;
+
+  lastDeleted = {
+    item: glossary[deleteIndex],
+    index: deleteIndex
+  };
+
+  glossary.splice(deleteIndex,1);
+  saveLS();
+  render(glossary);
+  closeDeleteModal();
+  showUndoToast();
+};
+
+function showUndoToast(){
+  $("undoToast").style.display = "flex";
+  clearTimeout(undoTimer);
+
+  undoTimer = setTimeout(()=>{
+    $("undoToast").style.display = "none";
+    lastDeleted = null;
+  }, 5000);
+}
+
+function undoDelete(){
+  if(!lastDeleted) return;
+
+  glossary.splice(lastDeleted.index, 0, lastDeleted.item);
+  saveLS();
+  render(glossary);
+
+  lastDeleted = null;
+  $("undoToast").style.display = "none";
+  clearTimeout(undoTimer);
+}
+
+/* ========= ADMIN ========= */
+$("loginBtn").onclick = ()=>{
+  if(prompt("كلمة المرور:") === ADMIN_PASS){
+    localStorage.setItem(ADMIN_KEY,"1");
+    location.reload();
+  }
+};
+
+$("logoutBtn").onclick = ()=>{
+  localStorage.removeItem(ADMIN_KEY);
+  location.reload();
+};
+
+if(isAdmin()){
+  $("adminPanel").style.display = "block";
+  $("loginBtn").style.display = "none";
+  $("logoutBtn").style.display = "inline-block";
+}
+
+/* ========= EXPORT ========= */
+function exportPDF(){
+  const {jsPDF}=window.jspdf;
+  const pdf=new jsPDF();
+  glossary.forEach((t,i)=>{
+    pdf.text(`${i+1}. ${t.ar} - ${t.en}\n${t.def}`,10,10+i*15);
+  });
+  pdf.save("glossary.pdf");
+}
+
+function exportWord(){
+  let html="<h1>القاموس الإداري</h1>";
+  glossary.forEach(t=>{
+    html+=`<h3>${t.ar} (${t.en})</h3><p>${t.def}</p>`;
+  });
+  const blob=new Blob([html],{type:"application/msword"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="glossary.doc";
+  a.click();
+}
+
+function resetLocal(){
+  if(confirm("حذف البيانات المحلية؟")){
+    localStorage.removeItem(LS_KEY);
+    location.reload();
+  }
+}
+
+load();
+</script>
+
 </body>
+</html>
