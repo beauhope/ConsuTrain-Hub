@@ -1,17 +1,49 @@
-<footer class="footer footer--dark">
-  <div class="container footer__inner">
-    <p class="footer__text">
-      <span data-i18n="footer_rights">© جميع الحقوق محفوظة</span>
-      <span class="sep">•</span>
-      <span> Consulting & Training Hub</span>
-      <br>
-      <span class="footer__credit">
-        الإشراف والتطوير البرمجي: <strong>يوسف جول (Youssef Joul)</strong>
-      </span>
-    </p>
+<footer class="site-footer">
+  <div class="footer-inner">
 
-    <a class="toTop" href="#" id="toTop" data-i18n="to_top">أعلى</a>
+    <!-- الحقوق -->
+    <div class="footer-copy">
+      <div>© جميع الحقوق محفوظة · Consulting & Training Hub</div>
+      <div class="footer-author">
+        الإشراف والتطوير البرمجي: <strong>Youssef Joul</strong>
+      </div>
+    </div>
+
+    <!-- روابط سريعة -->
+    <nav class="footer-links">
+      <a href="topics.html">محاور التميز</a>
+      <a href="articles.html">المقالات</a>
+      <a href="glossary.html">القاموس</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+
+    <!-- أيقونات التواصل -->
+    <div class="footer-social">
+      <a href="mailto:contact@consutrain.com" aria-label="Email">✉️</a>
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">in</a>
+      <a href="https://youtube.com" target="_blank" aria-label="YouTube">▶️</a>
+    </div>
+
   </div>
-  <script src="assets/js/search.js"></script>
-
 </footer>
+
+<!-- زر أعلى العائم -->
+<button id="scrollTopBtn" aria-label="أعلى">↑</button>
+
+<!-- SEO Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Consulting & Training Hub",
+  "url": "https://auhope.github.io",
+  "founder": {
+    "@type": "Person",
+    "name": "Youssef Joul"
+  },
+  "sameAs": [
+    "https://linkedin.com",
+    "https://youtube.com"
+  ]
+}
+</script>
