@@ -756,13 +756,13 @@ button.danger {
 ================================ */
 
 .site-footer {
-  background: #fff4e6;           /* برتقالي فاتح */
-  border-top: 4px solid #f59e0b; /* برتقالي ذهبي */
-  color: #4a3b2a;
+  background: #47505d;           /* برتقالي فاتح */
+  border-top: 4px solid #301f01; /* برتقالي ذهبي */
+  color: #d7cdc2;
 }
 
 .site-footer a {
-  color: #7a4a1c;
+  color: #efe7df;
 }
 
 .site-footer a:hover {
