@@ -147,9 +147,11 @@ function render(list){
 /* ========= LOAD ========= */
 function load(){
   const ls = localStorage.getItem(LS_KEY);
+
   if(ls){
     glossary = JSON.parse(ls);
     render(glossary);
+    injectGlossarySchema();
   }else{
     fetch("assets/data/glossary.json")
       .then(r=>r.json())
@@ -161,9 +163,11 @@ function load(){
         }));
         saveLS();
         render(glossary);
+        injectGlossarySchema();
       });
   }
 }
+
 
 /* ========= SEARCH ========= */
 $("glossarySearch").oninput = e=>{
@@ -311,7 +315,6 @@ function injectGlossarySchema() {
   document.head.appendChild(s);
 }
 
-injectGlossarySchema();
 </script>
 
 <!---- scroll btn-->
