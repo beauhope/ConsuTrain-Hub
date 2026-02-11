@@ -1,28 +1,34 @@
 /* ==========================================================
-   includes.js – FINAL STABLE VERSION
-   Works in root + subfolders + local + GitHub
+   includes.js – TRUE UNIVERSAL VERSION
+   Works:
+   - Local server
+   - GitHub Pages (repo name included)
+   - Root pages
+   - Subfolder pages
 ========================================================== */
 
 /* -------------------------
-   Detect correct base path
+   Calculate dynamic base
 ------------------------- */
-function detectBasePath() {
+function getBasePath() {
   const path = window.location.pathname;
 
-  // إذا كنا داخل مجلد مثل /knowledge/
-  if (path.includes("/knowledge/")) {
-    return "../";
-  }
+  // مثال:
+  // /ConsuTrain-Hub/index.html
+  // /ConsuTrain-Hub/knowledge/topics.html
 
-  if (path.includes("/tools/")) {
-    return "../";
-  }
+  const segments = path.split("/").filter(Boolean);
 
-  // الصفحة في الجذر
-  return "";
+  // لو نحن في:
+  // domain.com/RepoName/   → root
+  if (segments.length <= 2) return "";
+
+  // لو نحن داخل مجلد:
+  // domain.com/RepoName/knowledge/file.html
+  return "../";
 }
 
-const BASE = detectBasePath();
+const BASE = getBasePath();
 
 /* -------------------------
    Load partial
@@ -34,7 +40,6 @@ async function loadPartial(selector, url) {
   try {
     const res = await fetch(BASE + url, { cache: "no-cache" });
     if (!res.ok) throw new Error(res.status);
-
     el.innerHTML = await res.text();
   } catch (err) {
     console.error("Partial load failed:", BASE + url);
@@ -42,14 +47,13 @@ async function loadPartial(selector, url) {
 }
 
 /* -------------------------
-   Fix header links dynamically
+   Fix header links
 ------------------------- */
 function fixHeaderLinks() {
   document.querySelectorAll(".header-nav a, .header-brand").forEach(link => {
     const href = link.getAttribute("href");
     if (!href) return;
 
-    // لا نعدل الروابط الخارجية أو #
     if (href.startsWith("http") || href.startsWith("#")) return;
 
     link.setAttribute("href", BASE + href);
