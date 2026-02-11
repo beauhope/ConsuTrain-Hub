@@ -15,7 +15,6 @@
 
 html {
   font-size: 16px;
-  scroll-padding-top: var(--header-height); /* تعويض الهيدر الثابت */
 }
 
 body {
@@ -55,84 +54,32 @@ body {
    3) HEADER (Fixed + Stable Height)
 ================================================== */
 
+/* ==================================================
+   HEADER – STABLE STICKY VERSION
+================================================== */
+
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
 
   background: #47505d;
   color: #fff;
-
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
-
 
 .header-inner {
   max-width: 1200px;
   margin-inline: auto;
-  height: 100%;
   padding: 14px 20px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  flex-wrap: wrap; /* مهم لمنع الكسر */
 }
 
-/* ----- Brand ----- */
-
-.header-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #fff;
-}
-
-.brand-circle {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0b1f3a, #7cabe8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.brand-name {
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-/* ----- Navigation ----- */
-
-.header-nav {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.header-nav a {
-  color: #e5e7eb;
-  text-decoration: none;
-  font-size: 0.95rem;
-  padding: 6px 10px;
-  border-radius: 8px;
-  transition: background .2s ease;
-}
-
-.header-nav a:hover,
-.header-nav a.active {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-}
 
 /* ----- Search Button ----- */
 
