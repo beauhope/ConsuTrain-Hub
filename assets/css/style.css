@@ -1,11 +1,12 @@
 /* ==================================================
    ConsuTrain Hub – MASTER STYLE
-   CLEAN • STABLE • PRODUCTION
+   CLEAN • STRUCTURED • PRODUCTION READY
 ================================================== */
 
-/* =====================
-   1. RESET & BASE
-===================== */
+/* ==================================================
+   1) RESET & BASE
+================================================== */
+
 *,
 *::before,
 *::after {
@@ -14,6 +15,7 @@
 
 html {
   font-size: 16px;
+  scroll-padding-top: var(--header-height); /* تعويض الهيدر الثابت */
 }
 
 body {
@@ -22,28 +24,14 @@ body {
   background: #f6f8fb;
   color: #0f172a;
   line-height: 1.7;
-  padding-top: 90px; /* عدل الرقم حسب ارتفاع الهيدر الفعلي */
 }
 
-/* FORCE single column on mobile – final override */
-@media (max-width: 768px) {
-  .portal-grid {
-    grid-template-columns: 1fr !important;
-  }
+/* ==================================================
+   2) ROOT VARIABLES (Single Source of Truth)
+================================================== */
 
-  .portal-card {
-    width: 100% !important;
-  }
-  body {
-    padding-top: 120px;
-  }
-}
-
-
-/* =====================
-   2. VARIABLES
-===================== */
 :root {
+  /* ===== Colors ===== */
   --primary: #1e3a8a;
   --secondary: #64748b;
   --accent: #f59e0b;
@@ -55,30 +43,34 @@ body {
   --text: #0f172a;
   --muted: #6b7280;
 
-  --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  /* ===== Layout ===== */
   --radius: 16px;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+
+  /* ===== Header height (Desktop default) ===== */
+  --header-height: 110px;
 }
 
-/* ======================================
-   3. HEADER & NAV (STICKY)
-====================================== */
+/* ==================================================
+   3) HEADER (Fixed + Stable Height)
+================================================== */
 
 .site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0;
+  height: var(--header-height);
   z-index: 1000;
 
   background: #47505d;
   color: #fff;
 
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
 .header-inner {
   max-width: 1200px;
   margin-inline: auto;
+  height: 100%;
   padding: 14px 20px;
 
   display: flex;
@@ -86,6 +78,8 @@ body {
   justify-content: space-between;
   gap: 16px;
 }
+
+/* ----- Brand ----- */
 
 .header-brand {
   display: flex;
@@ -95,16 +89,26 @@ body {
   color: #fff;
 }
 
-.header-brand__logo {
-  width: 36px;
-  height: 36px;
+.brand-circle {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
+  background: linear-gradient(135deg, #0b1f3a, #7cabe8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
-.header-brand__name {
-  font-weight: 700;
-  font-size: 1rem;
+.brand-name {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
 }
+
+/* ----- Navigation ----- */
 
 .header-nav {
   display: flex;
@@ -119,471 +123,17 @@ body {
   font-size: 0.95rem;
   padding: 6px 10px;
   border-radius: 8px;
+  transition: background .2s ease;
 }
 
 .header-nav a:hover,
 .header-nav a.active {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   color: #fff;
 }
 
-/* Mobile Header */
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+/* ----- Search Button ----- */
 
-/* =====================
-   4. LAYOUT & TITLES
-===================== */
-.container {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding: 24px;
-}
-
-.page-title {
-  text-align: center;
-  margin: 40px 0 10px;
-  font-size: 2.2rem;
-  font-weight: 800;
-  font-size: 2.2rem;
-  margin-bottom: .5rem;
-  scroll-margin-top: 130px;
-}
-
-html {
-  scroll-padding-top: 120px;
-}
-
-
-
-/* =====================
-   5. PORTAL GRID
-===================== */
-.portal-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-/* تابلت */
-@media (max-width: 1024px) {
-  .portal-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* موبايل */
-@media (max-width: 600px) {
-  .portal-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-.portal-card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow);
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.portal-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-}
-
-.portal-card__img {
-  height: 170px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.portal-card__img img {
-  max-width: 90%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.portal-card__title {
-  margin-top: 16px;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-/* =================================================
-   6. ACCORDION – CORE (details / summary)
-================================================= */
-.accordion {
-  display: grid;
-  gap: 14px;
-}
-
-.acc {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.acc summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 14px 16px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  font-weight: 800;
-  color: var(--text);
-}
-
-.acc summary::-webkit-details-marker {
-  display: none;
-}
-
-.acc summary::after {
-  content: "+";
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-
-.acc[open] summary::after {
-  content: "–";
-  color: var(--primary);
-}
-
-.acc__body {
-  padding: 0 16px 16px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-}
-
-/* =========================
-   PILLARS ACCORDION
-========================= */
-.pillars-acc {
-  display: grid;
-  gap: 16px;
-}
-
-.pillar {
-  border: 1px solid var(--border);
-  background: var(--surface2);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-
-.pillar summary {
-  cursor: pointer;
-  padding: 16px;
-}
-
-.pillar__title {
-  font-weight: 900;
-  font-size: 1.1rem;
-  color: var(--text);
-}
-
-.pillar__hint {
-  margin-top: 6px;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-.pillar__body {
-  padding: 0 16px 16px;
-}
-
-/* =========================
-   ARTICLES ACCORDION
-========================= */
-.articles-acc {
-  display: grid;
-  gap: 16px;
-}
-
-.art {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.art summary {
-  cursor: pointer;
-  padding: 16px;
-  font-weight: 800;
-}
-
-.art summary::after {
-  content: "+";
-  float: left;
-}
-
-.art[open] summary::after {
-  content: "–";
-}
-
-.art__body {
-  padding: 16px;
-  border-top: 1px solid var(--border);
-  background: #f8fafc;
-}
-
-/* =====================
-   7. FOOTER
-===================== */
-.site-footer {
-  background: #f8fafc;
-  border-top: 1px solid var(--border);
-  font-size: 0.9rem;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding: 16px 20px;
-
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 20px;
-}
-
-.footer-links,
-.footer-social {
-  display: flex;
-  gap: 12px;
-}
-
-/* =====================
-   8. SCROLL TO TOP
-===================== */
-#scrollTopBtn {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: none;
-
-  background: var(--primary);
-  color: #fff;
-  cursor: pointer;
-  display: none;
-  z-index: 999;
-}
-
-#scrollTopBtn:hover {
-  background: #1e40af;
-}
-
-/* =====================
-   MOBILE
-===================== */
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 14px;
-    gap: 8px;
-  }
-
-  .header-nav {
-    gap: 8px;
-  }
-
-  .header-nav a {
-    font-size: 0.9rem;
-    padding: 4px 6px;
-  }
-}
-
-.page-subtitle {
-  text-align: center;
-  
-  margin-bottom: 30px;
-  color: #6b7280;
- }
-
-.glossary-search {
-  width: 100%;
-  padding: .9rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-  margin-bottom: .5rem;
-}
-
-.glossary-counter {
-  font-size: .9rem;
-  color: #555;
-  margin-bottom: 1.5rem;
-}
-.glossary-tools {
-  display: flex;
-  gap: .5rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.glossary-tools button {
-  padding: .5rem .9rem;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  background: #f9fafb;
-  cursor: pointer;
-  font-size: .9rem;
-}
-
-.glossary-tools button:hover {
-  background: #eef2ff;
-}
-.glossary-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.gterm {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 1.2rem 1.4rem;
-}
-
-.gterm h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.gterm__en {
-  color: #2563eb;
-  font-size: .9rem;
-  margin: .2rem 0 .6rem;
-}
-
-.gterm p {
-  margin: 0 0 1rem;
-  line-height: 1.8;
-  color: #374151;
-}
-.gterm__footer {
-  display: flex;
-  gap: .5rem;
-  flex-wrap: wrap;
-}
-
-.gterm__footer button {
-  padding: .35rem .7rem;
-  font-size: .8rem;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  background: #f3f4f6;
-  cursor: pointer;
-}
-
-.gterm__footer button:hover {
-  background: #e5e7eb;
-}
-
-button.danger {
-  background: #fee2e2;
-  border-color: #fecaca;
-}
-.admin-panel {
-  background: #f8fafc;
-  border: 1px dashed #c7d2fe;
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 2rem 0;
-}
-
-.glossary-search-wrapper {
-  position: sticky;
-  top: 70px; /* ارتفاع الهيدر */
-  z-index: 50;
-  background: #f9fafb;
-  padding: 1rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  border: 1px solid #e5e7eb;
-}
-
-
-#scrollTopBtn {
-  position: fixed;
-  bottom: 24px;
-  left: 24px; /* RTL: يسار الشاشة */
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: none;
-  background: linear-gradient(135deg, #0b1f3a, #12345f);
-  color: #fff;
-  font-size: 22px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,.25);
-  display: none;
-  z-index: 200;
-  transition: all .3s ease;
-}
-
-#scrollTopBtn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0,0,0,.35);
-  background: linear-gradient(135deg, #12345f, #0b1f3a);
-}
-
-
-
-
-/* الشعار والعنوان CTH */
-.header-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.brand-circle {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0b1f3a, #7cabe8);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.brand-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-
-/* تنسيق البحث في CTH */
 .header-search {
   display: flex;
   align-items: center;
@@ -593,7 +143,6 @@ button.danger {
   padding: 6px 12px;
   border-radius: 20px;
   cursor: pointer;
-  font-family: 'Cairo', sans-serif;
   transition: background 0.3s ease;
 }
 
@@ -601,23 +150,138 @@ button.danger {
   background: rgba(255, 255, 255, 0.16);
 }
 
-.search-icon {
-  font-size: 14px;
-  color: #ffb703;
+/* ==================================================
+   4) MAIN LAYOUT
+================================================== */
+
+/* تعويض الهيدر الثابت */
+main,
+.container {
+  padding-top: var(--header-height);
 }
 
-.search-text {
-  font-size: 12px;
-  color: #e0e0e0;
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
 }
 
+/* Titles */
 
-/* ===============================
-   GLOBAL SEARCH OVERLAY (FINAL)
-================================ */
+.page-title {
+  text-align: center;
+  margin: 40px 0 10px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  scroll-margin-top: var(--header-height);
+}
+
+.page-subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--muted);
+}
+
+/* ==================================================
+   5) PORTAL GRID
+================================================== */
+/* ==========================================
+   PORTAL CARD IMAGE CONTROL (FIXED)
+   يمنع تمدد الصور ويحافظ على التناسق
+========================================== */
+
+.portal-card__img {
+  height: 200px;            /* ارتفاع ثابت للصورة */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;         /* يمنع أي خروج */
+}
+
+.portal-card__img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;      /* يحافظ على التناسب */
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.portal-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ==================================================
+   6) ACCORDIONS (Unified Pattern)
+================================================== */
+
+.accordion,
+.pillars-acc,
+.articles-acc {
+  display: grid;
+  gap: 16px;
+}
+
+.acc,
+.pillar,
+.art {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.acc summary,
+.pillar summary,
+.art summary {
+  cursor: pointer;
+  padding: 16px;
+  font-weight: 800;
+}
+
+.acc summary::after,
+.art summary::after {
+  content: "+";
+  float: left;
+  color: var(--accent);
+}
+
+.acc[open] summary::after,
+.art[open] summary::after {
+  content: "–";
+  color: var(--primary);
+}
+
+.acc__body,
+.art__body,
+.pillar__body {
+  padding: 16px;
+  border-top: 1px solid var(--border);
+  background: var(--surface2);
+}
+
+/* ==================================================
+   7) GLOBAL SEARCH OVERLAY
+================================================== */
 
 .search-overlay {
-  position: fixed !important;
+  position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   display: none;
@@ -631,69 +295,12 @@ button.danger {
 }
 
 .search-box {
-  background: #ffffff;
+  background: #fff;
   width: 90%;
   max-width: 520px;
   border-radius: 12px;
   padding: 20px;
   position: relative;
-}
-
-#globalSearchInput {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  margin-bottom: 12px;
-}
-
-#closeSearch {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.search-results {
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.search__item {
-  display: block;
-  padding: 8px;
-  text-decoration: none;
-  color: #333;
-}
-
-.search__item:hover {
-  background: #f2f2f2;
-}
-
-.search__empty {
-  padding: 10px;
-  color: #777;
-  text-align: center;
-}
-
-#closeSearch {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  font-size: 18px;
-  cursor: pointer;
-  line-height: 1;
-}
-
-#closeSearch:hover {
-  background: #eee;
 }
 
 #globalSearchInput {
@@ -704,115 +311,103 @@ button.danger {
   border: 1px solid #ddd;
 }
 
-
-.search__empty {
-  margin-top: 12px;
-  text-align: center;
-  color: #777;
-  font-size: 14px;
-}
-
-
-.search-overlay.is-open .search-box {
-  animation: scaleIn 0.2s ease-out;
-}
-
-@keyframes scaleIn {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 .search-results {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .search__item {
-  display: block;
   padding: 10px 12px;
   border-radius: 8px;
   background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border);
   text-decoration: none;
   color: #1f2937;
-  font-size: 14px;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: background .2s ease;
 }
 
 .search__item:hover {
   background: #eef2ff;
-  transform: translateY(-1px);
-}
-.search-highlight {
-  background: #ffe08a;
-  padding: 0 2px;
-  border-radius: 3px;
-  font-weight: 600;
 }
 
-
-/* ===============================
-   FOOTER BACKGROUND – OVERRIDE
-   (Minimal & Safe)
-================================ */
+/* ==================================================
+   8) FOOTER
+================================================== */
 
 .site-footer {
-  background: #47505d;           /* برتقالي فاتح */
-  border-top: 4px solid #301f01; /* برتقالي ذهبي */
+  background: #47505d;
+  border-top: 4px solid #301f01;
   color: #d7cdc2;
+  font-size: 0.9rem;
 }
 
-.site-footer a {
-  color: #efe7df;
+.footer-inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 16px 20px;
+
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 20px;
 }
 
-.site-footer a:hover {
-  text-decoration: underline;
+/* ==================================================
+   9) SCROLL TO TOP BUTTON
+================================================== */
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #0b1f3a, #12345f);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  z-index: 200;
+  transition: all .3s ease;
 }
 
-.footer-copy strong {
-  color: #1f2937;
+#scrollTopBtn:hover {
+  transform: translateY(-4px);
 }
 
+/* ==================================================
+   10) RESPONSIVE RULES (ALL IN ONE PLACE)
+================================================== */
 
-/* ===============================
-   MOBILE HEADER – COMPACT MODE
-================================ */
+@media (max-width: 1024px) {
+  .portal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
 
+  /* زيادة ارتفاع الهيدر على الموبايل */
+  :root {
+    --header-height: 160px;
+  }
+
   .header-inner {
-    padding: 10px 14px;        /* تقليل الارتفاع العام */
-    gap: 10px;                 /* تقليل المسافة بين العناصر */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
-  .header-nav {
-    gap: 10px;                 /* تقليل المسافة بين روابط القائمة */
+  .portal-grid {
+    grid-template-columns: 1fr;
   }
 
-  .header-nav a {
-    font-size: 0.9rem;         /* تصغير بسيط للخط */
-    padding: 4px 8px;          /* تقليل padding */
-  }
-
-  .header-brand__logo,
-  .brand-circle {
-    width: 34px;
-    height: 34px;              /* تصغير الشعار */
-  }
-
-  .header-brand__name,
-  .brand-name {
-    font-size: 0.9rem;         /* تصغير اسم الموقع */
-  }
-
-  .header-search {
-    padding: 4px 10px;
-    font-size: 0.8rem;
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 }
