@@ -155,10 +155,10 @@ body {
 ================================================== */
 
 /* تعويض الهيدر الثابت */
-main,
-.container {
+body {
   padding-top: var(--header-height);
 }
+
 
 .container {
   max-width: 1200px;
@@ -252,11 +252,7 @@ main,
   scroll-margin-top: var(--header-height);
 }
 
-.page-subtitle {
-  text-align: center;
-  margin-bottom: 30px;
-  color: var(--muted);
-}
+
 
 /* ==================================================
    5) PORTAL GRID
@@ -469,7 +465,7 @@ main,
 
   /* زيادة ارتفاع الهيدر على الموبايل */
   :root {
-    --header-height: 160px;
+    --header-height: 140px;
   }
 
   .header-inner {
