@@ -10,6 +10,11 @@
 <!-- CSS الأداة (بعده حتى يخصص الأداة فقط) -->
 <link rel="stylesheet" href="./feasibility.css" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    window.SITE_BASE = location.hostname.includes("github.io")
+      ? "/ConsuTrain-Hub/"
+      : "/";
+  </script>
 </head>
 
 <body>

@@ -6,6 +6,13 @@
    - Root pages
    - Subfolder pages
 ========================================================== */
+/* ================================
+   SITE BASE (GitHub Safe)
+================================ */
+window.SITE_BASE = location.hostname.includes("github.io")
+  ? "/ConsuTrain-Hub"
+  : "";
+
 
 /* -------------------------
    Calculate dynamic base
@@ -92,15 +99,30 @@ function initToTop() {
   });
 }
 
+function fixNavLinks() {
+  document.querySelectorAll(".header-nav a, .header-brand").forEach(a => {
+    const href = a.getAttribute("href");
+    if (href && href.startsWith("/")) {
+      a.setAttribute("href", window.SITE_BASE + href);
+    }
+  });
+}
+
 /* -------------------------
    DOM Ready
 ------------------------- */
 document.addEventListener("DOMContentLoaded", async () => {
 
+  /* Header */
   await loadPartial("#site-header", "partials/header.html");
+
+  /* Fix absolute links */
+  fixNavLinks();
+
+  /* Footer */
   await loadPartial("#site-footer", "partials/footer.html");
 
-  fixHeaderLinks();
+  /* Helpers */
   setActiveNav();
   initToTop();
 
