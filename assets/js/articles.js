@@ -16,16 +16,17 @@ function withBase(path) {
 }
 
 async function fetchArticles() {
-  const res = await fetch(withBase("assets/data/articles.json"), { cache: "no-cache" });
-  if (!res.ok) throw new Error("Cannot load articles.json");
-  const data = await res.json();
+  const res = await fetch(withBase("assets/data/articles.json"), {
+    cache: "no-cache"
+  });
 
-  // يدعم شكلين:
-  // 1) [{...}, {...}]
-  // 2) { articles: [...] }
-  const articles = Array.isArray(data) ? data : (data.articles || []);
-  return articles;
+  if (!res.ok) throw new Error("Cannot load articles.json");
+
+  const data = await res.json();
+  return Array.isArray(data) ? data : (data.articles || []);
 }
+
+
 
 /* =========================
    (A) Articles page accordion
