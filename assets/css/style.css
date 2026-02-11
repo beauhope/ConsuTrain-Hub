@@ -22,8 +22,9 @@ body {
   background: #f6f8fb;
   color: #0f172a;
   line-height: 1.7;
-  
+  padding-top: 90px; /* عدل الرقم حسب ارتفاع الهيدر الفعلي */
 }
+
 /* FORCE single column on mobile – final override */
 @media (max-width: 768px) {
   .portal-grid {
@@ -33,10 +34,11 @@ body {
   .portal-card {
     width: 100% !important;
   }
+  body {
+    padding-top: 120px;
+  }
 }
-.page-title {
-  scroll-margin-top: 130px;
-}
+
 
 /* =====================
    2. VARIABLES
@@ -62,15 +64,16 @@ body {
 ====================================== */
 
 .site-header {
-   position: sticky;
+  position: fixed;
   top: 0;
-    right: 0;
   left: 0;
+  right: 0;
   z-index: 1000;
 
   background: #47505d;
   color: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
 .header-inner {
@@ -146,13 +149,16 @@ body {
   margin: 40px 0 10px;
   font-size: 2.2rem;
   font-weight: 800;
+  font-size: 2.2rem;
+  margin-bottom: .5rem;
+  scroll-margin-top: 130px;
 }
 
-.page-subtitle {
-  text-align: center;
-  color: var(--secondary);
-  margin-bottom: 30px;
+html {
+  scroll-padding-top: 120px;
 }
+
+
 
 /* =====================
    5. PORTAL GRID
@@ -390,29 +396,30 @@ body {
    MOBILE
 ===================== */
 @media (max-width: 768px) {
-  .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+    gap: 8px;
   }
-}
 
+  .header-nav {
+    gap: 8px;
+  }
 
-.container {
-  max-width: 920px;
-  margin: auto;
-  padding: 2rem 1rem;
-}
-.page-title {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: .5rem;
+  .header-nav a {
+    font-size: 0.9rem;
+    padding: 4px 6px;
+  }
 }
 
 .page-subtitle {
   text-align: center;
+  
+  margin-bottom: 30px;
   color: #6b7280;
-  margin-bottom: 2rem;
-}
+ }
+
 .glossary-search {
   width: 100%;
   padding: .9rem 1rem;
