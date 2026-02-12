@@ -9,18 +9,23 @@ function getRootPath() {
 
   const path = location.pathname;
 
-  // remove first slash and split
-  const segments = path.replace(/^\/+/, "").split("/");
+  // detect GitHub project page
+  if (path.includes(".github.io") || path.split("/").length > 2) {
 
-  // if file directly in root
-  if (segments.length <= 1) return "";
+    const segments = path.replace(/^\/+/, "").split("/");
 
-  // remove filename
-  segments.pop();
+    // remove filename
+    if (segments[segments.length - 1].includes(".")) {
+      segments.pop();
+    }
 
-  // create ../ for each folder depth
-  return segments.map(() => "../").join("");
+    return segments.length ? segments.map(() => "../").join("") : "";
+
+  }
+
+  return "";
 }
+
 
 const ROOT = getRootPath();
 
