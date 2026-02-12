@@ -7,23 +7,18 @@
 ------------------------- */
 function getRootPath() {
 
-  const path = location.pathname;
+  const origin = window.location.origin;
+  const path = window.location.pathname;
 
-  // detect GitHub project page
-  if (path.includes(".github.io") || path.split("/").length > 2) {
+  // detect if inside a GitHub project subfolder
+  const segments = path.split("/").filter(Boolean);
 
-    const segments = path.replace(/^\/+/, "").split("/");
-
-    // remove filename
-    if (segments[segments.length - 1].includes(".")) {
-      segments.pop();
-    }
-
-    return segments.length ? segments.map(() => "../").join("") : "";
-
+  // if project page (like /RepoName/...)
+  if (origin.includes("github.io") && segments.length > 0) {
+    return "/" + segments[0] + "/";
   }
 
-  return "";
+  return "/";
 }
 
 
