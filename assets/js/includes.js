@@ -1,22 +1,51 @@
 /* ==========================================================
-   includes.js – FINAL CLEAN VERSION
+   includes.js – AUTO ROOT PROFESSIONAL VERSION
 ========================================================== */
+
+/* -------------------------
+   Detect root path automatically
+------------------------- */
+function getRootPath() {
+
+  const path = location.pathname;
+
+  // remove first slash and split
+  const segments = path.replace(/^\/+/, "").split("/");
+
+  // if file directly in root
+  if (segments.length <= 1) return "";
+
+  // remove filename
+  segments.pop();
+
+  // create ../ for each folder depth
+  return segments.map(() => "../").join("");
+}
+
+const ROOT = getRootPath();
 
 /* -------------------------
    Load partial
 ------------------------- */
 async function loadPartial(selector, url) {
+
   const el = document.querySelector(selector);
   if (!el) return;
 
   try {
-    const base = window.PARTIALS_BASE || "";
-    const finalUrl = base + url;
+
+    const finalUrl = ROOT + url;
 
     const res = await fetch(finalUrl, { cache: "no-cache" });
     if (!res.ok) throw new Error(res.status);
 
     el.innerHTML = await res.text();
+
+    // after loading header fix links
+    if (selector === "#site-header") {
+      fixHeaderLinks();
+      setActiveNav();
+    }
 
   } catch (err) {
     console.error("Partial load failed:", url);
@@ -24,38 +53,47 @@ async function loadPartial(selector, url) {
 }
 
 /* -------------------------
-   Fix header links
+   Fix header links automatically
 ------------------------- */
 function fixHeaderLinks() {
-  const base = window.PARTIALS_BASE || "";
 
   document.querySelectorAll(".header-nav a, .header-brand").forEach(link => {
+
     const href = link.getAttribute("href");
     if (!href) return;
+
+    // ignore external or anchor
     if (href.startsWith("http") || href.startsWith("#")) return;
 
-    link.setAttribute("href", base + href);
+    link.setAttribute("href", ROOT + href);
+
   });
+
 }
 
 /* -------------------------
    Active nav
 ------------------------- */
 function setActiveNav() {
+
   const current =
     (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
   document.querySelectorAll(".header-nav a").forEach(a => {
+
     const href = (a.getAttribute("href") || "").toLowerCase();
     const file = href.split("/").pop();
+
     if (file === current) {
       a.classList.add("active");
     }
+
   });
+
 }
 
 /* -------------------------
-   Global Search Overlay (SINGLE SOURCE)
+   Global Search Overlay
 ------------------------- */
 function initGlobalSearch() {
 
@@ -65,7 +103,6 @@ function initGlobalSearch() {
 
   if (!overlay) return;
 
-  // تأكد أن overlay مغلق عند التحميل
   overlay.classList.remove("is-open");
   document.body.style.overflow = "";
 
@@ -89,33 +126,12 @@ function initGlobalSearch() {
       document.body.style.overflow = "";
     }
   });
+
 }
 
 /* -------------------------
-   DOM Ready
+   Global Search Engine
 ------------------------- */
-document.addEventListener("DOMContentLoaded", async () => {
-
-  await loadPartial("#site-header", "partials/header.html");
-  fixHeaderLinks();
-
-  await loadPartial("#site-footer", "partials/footer.html");
-
-  setActiveNav();
-  initGlobalSearch();
-  enableGlobalSearch();
-
-  const main = document.getElementById("site-main");
-  if (main && main.dataset.main) {
-    await loadPartial("#site-main", main.dataset.main);
-  }
-
-});
-
-/* -------------------------
-   search bar
-------------------------- */
-
 function enableGlobalSearch() {
 
   const input = document.getElementById("globalSearchInput");
@@ -139,11 +155,14 @@ function enableGlobalSearch() {
     elements.forEach(el => {
       const text = el.textContent.trim();
       if (text.toLowerCase().includes(query)) {
-        results.push(text);
+        results.push({ text, element: el });
       }
     });
 
-    results = [...new Set(results)];
+    // remove duplicates
+    results = results.filter(
+      (v, i, a) => a.findIndex(t => t.text === v.text) === i
+    );
 
     let html = `<div class="search-count">عدد النتائج: ${results.length}</div>`;
 
@@ -153,28 +172,21 @@ function enableGlobalSearch() {
       return;
     }
 
-    results.slice(0, 10).forEach(text => {
+    results.slice(0, 10).forEach(r => {
 
       const regex = new RegExp(`(${query})`, "gi");
-      const highlighted = text.replace(regex, `<span class="highlight">$1</span>`);
-
-      const element = Array.from(document.querySelectorAll("h1, h2, h3, a"))
-        .find(el => el.textContent.trim() === text);
+      const highlighted = r.text.replace(regex, `<span class="highlight">$1</span>`);
 
       let link = "#";
 
-      if (element) {
-
-        if (element.tagName.toLowerCase() === "a" && element.href) {
-          link = element.href;
-        } else {
-
-          if (!element.id) {
-            element.id = "search-target-" + Math.random().toString(36).substr(2,5);
-          }
-
-          link = window.location.pathname + "#" + element.id;
+      if (r.element.tagName.toLowerCase() === "a" && r.element.href) {
+        link = r.element.href;
+      } else {
+        if (!r.element.id) {
+          r.element.id = "search-target-" +
+            Math.random().toString(36).substr(2,5);
         }
+        link = location.pathname + "#" + r.element.id;
       }
 
       html += `
@@ -192,3 +204,20 @@ function enableGlobalSearch() {
 
 }
 
+/* -------------------------
+   DOM Ready
+------------------------- */
+document.addEventListener("DOMContentLoaded", async () => {
+
+  await loadPartial("#site-header", "partials/header.html");
+  await loadPartial("#site-footer", "partials/footer.html");
+
+  initGlobalSearch();
+  enableGlobalSearch();
+
+  const main = document.getElementById("site-main");
+  if (main && main.dataset.main) {
+    await loadPartial("#site-main", main.dataset.main);
+  }
+
+});

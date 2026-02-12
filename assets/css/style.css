@@ -467,3 +467,422 @@ body {
   border-radius: 4px;
   font-weight: 600;
 }
+
+
+
+
+/* ==========================================
+   AI GUIDE – FLOATING TOP BUTTON
+========================================== */
+
+#aiScrollTopBtn {
+  position: fixed;
+  bottom: 28px;
+  left: 28px; /* مناسب RTL */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #0b1f3a, #12345f);
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  transition: all .3s ease;
+}
+
+#aiScrollTopBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0,0,0,.35);
+}
+
+
+/* =========================
+   AI GUIDE LAYOUT
+========================= */
+
+.ai-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Sidebar */
+
+.ai-sidebar {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid #eee;
+}
+
+.ai-sidebar h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.ai-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ai-toc-list li {
+  margin-bottom: 10px;
+}
+
+.ai-toc-list a {
+  text-decoration: none;
+  color: #1e3a8a;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.ai-toc-list a:hover {
+  color: var(--accent);
+}
+
+/* Content Width */
+
+.ai-content {
+  max-width: 820px;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .ai-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-sidebar {
+    position: relative;
+    top: auto;
+  }
+}
+
+
+/* ===============================
+   AI Scroll Spy Active Link
+================================ */
+
+.ai-toc-list a {
+  display: block;
+  padding: 6px 0;
+  text-decoration: none;
+  color: #374151;
+  transition: all .2s ease;
+}
+
+.ai-toc-list a.active {
+  color: var(--primary);
+  font-weight: 700;
+  border-right: 3px solid var(--primary);
+  padding-right: 8px;
+}
+
+
+/* =========================================
+   AI LAYOUT – Sticky Sidebar
+========================================= */
+
+.ai-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Sidebar */
+.ai-sidebar {
+  position: sticky;
+  top: 100px; /* أقل من الهيدر قليلاً */
+  align-self: start;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+/* Content */
+.ai-content {
+  min-width: 0;
+}
+
+/* تحسين شكل الفهرس */
+.ai-sidebar h3 {
+  margin-top: 0;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.ai-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ai-toc-list li {
+  margin-bottom: 8px;
+}
+
+
+@media (max-width: 1024px) {
+  .ai-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-sidebar {
+    position: relative;
+    top: 0;
+    max-height: none;
+  }
+}
+
+
+/* =========================================
+   Reading Progress Bar
+========================================= */
+
+#readingProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, #f59e0b, #1e3a8a);
+  z-index: 2000;
+  transition: width 0.1s linear;
+}
+
+
+/* =========================================
+   Smooth Scroll (Global)
+========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 100px; /* يعوض ارتفاع الهيدر */
+}
+
+
+/* =========================================
+   Section Fade Animation
+========================================= */
+
+.ai-content section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.ai-content section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   AI GUIDE – PROFESSIONAL READING BLOCKS
+========================================= */
+
+.ai-content {
+  font-size: 17px;
+  line-height: 1.9;
+  max-width: 900px;
+}
+
+/* تحسين المسافات */
+.ai-content p {
+  margin-bottom: 18px;
+}
+
+.ai-content h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+.ai-content h3 {
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   CALLOUT BOXES
+========================= */
+
+.callout {
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin: 25px 0;
+  border-right: 6px solid;
+  background: #f9fafb;
+}
+
+/* Tip */
+.callout.tip {
+  border-color: #16a34a;
+  background: #ecfdf5;
+}
+
+/* Warning */
+.callout.warning {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+/* Insight */
+.callout.insight {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+/* Strategy */
+.callout.strategy {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+/* Blockquote تحسين */
+.ai-content blockquote {
+  background: #f3f4f6;
+  border-right: 5px solid var(--primary);
+  padding: 18px;
+  border-radius: 12px;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+/* List spacing */
+.ai-content ul {
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+.ai-content li {
+  margin-bottom: 8px;
+}
+
+
+/* =========================
+   Reading Time
+========================= */
+
+.reading-meta {
+  margin: 10px 0 25px;
+  font-size: 14px;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 8px 14px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: right;
+  background: #f8fafc;
+  border: none;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background .2s ease;
+}
+
+.faq-question:hover {
+  background: #e2e8f0;
+}
+
+.faq-answer {
+  display: none;
+  padding: 12px 16px;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+
+/* =========================
+   FAQ – Professional Version
+========================= */
+
+.faq {
+  margin-top: 30px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px 0;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background .2s ease;
+}
+
+.faq-question:hover {
+  background: #e2e8f0;
+}
+
+.faq-icon {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary);
+  transition: transform .2s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+  padding: 0 16px;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 16px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg); /* + يتحول إلى X احترافي */
+}
