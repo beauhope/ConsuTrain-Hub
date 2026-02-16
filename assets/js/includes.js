@@ -35,8 +35,9 @@ async function loadPartial(selector, url) {
   try {
 
     const finalUrl = ROOT + url;
+    /*const res = await fetch(finalUrl);    لإلغاء الفلاش لكن لم ينفع*/
 
-    const res = await fetch(finalUrl, { cache: "no-cache" });
+    const res = await fetch(finalUrl, { cache: "no-cache" }); 
     if (!res.ok) throw new Error(res.status);
 
     el.innerHTML = await res.text();

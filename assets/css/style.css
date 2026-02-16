@@ -2,6 +2,16 @@
    ConsuTrain Hub – MASTER STYLE
    CLEAN • STABLE • PRODUCTION READY
 ================================================== */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  animation: none !important;
+  transition: none !important;
+}
+#site-header {
+  min-height: 80px;
+}
 
 /* ==================================================
    1) RESET
@@ -97,7 +107,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   color: #fff;
-}
+ }
 
 .header-search:hover {
   background: rgba(255, 255, 255, 0.25);
